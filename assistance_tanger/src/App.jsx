@@ -971,7 +971,7 @@ export default function App() {
             <p className="text-lg text-slate-600">{t('map_desc')}</p>
           </div>
           <div className="reveal delay-100 h-[350px] overflow-hidden rounded-3xl border border-slate-100 shadow-xl shadow-slate-200 md:h-[500px]">
-            <iframe title="Carte de localisation Dépannage Tanger" src="https://maps.google.com/maps?q=Avenue%20Mohamed%20V,%20Tanger,%20Maroc&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+            <iframe title="Carte de localisation Dépannage Tanger" src="https://maps.google.com/maps?q=Mosqu%C3%A9e%20Al%20Majd,%20Tanger,%20Maroc&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
           </div>
         </div>
       </section>
