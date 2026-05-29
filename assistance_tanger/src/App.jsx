@@ -1001,7 +1001,7 @@ export default function App() {
             <div>
               <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">Contact</h4>
               <ul className="space-y-4 text-sm">
-                <li className="flex items-start gap-3"><MapPin className="h-5 w-5 shrink-0 text-amber-500" />Avenue Mohamed V, 90000 Tanger</li>
+                <li className="flex items-start gap-3"><MapPin className="h-5 w-5 shrink-0 text-amber-500" />Quartier El Majd, Tanger</li>
                 <li className="flex items-center gap-3"><PhoneCall className="h-5 w-5 text-amber-500" /><a href={phoneLink} className="font-bold text-white">{phoneNumber}</a></li>
                 <li className="flex items-center gap-3"><Clock className="h-5 w-5 text-amber-500" /><span dir="ltr">24/24 - 7/7</span></li>
               </ul>
