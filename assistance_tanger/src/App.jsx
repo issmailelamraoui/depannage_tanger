@@ -940,7 +940,7 @@ export default function App() {
         </div>
       </section>
 
-      <PortalLogin t={t} onLogin={handleLogin} loginName={loginName} setLoginName={setLoginName} loginId={loginId} setLoginId={setLoginId} loginPass={loginPass} setLoginPass={setLoginPass} />
+      {/* <PortalLogin t={t} onLogin={handleLogin} loginName={loginName} setLoginName={setLoginName} loginId={loginId} setLoginId={setLoginId} loginPass={loginPass} setLoginPass={setLoginPass} /> */}
 
       <section id="about" className="relative overflow-hidden bg-slate-50 py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
