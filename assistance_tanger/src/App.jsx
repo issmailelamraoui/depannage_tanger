@@ -356,26 +356,18 @@ const galleryItems = [
   {
     image: whatsappGallery1,
     brand: 'Mercedes-Benz',
-    name: 'Atego Plateau',
-    description: 'Dépanneuse plateau pour transport sécurisé de voitures.',
   },
   {
     image: whatsappGallery2,
-    brand: 'Renault Trucks',
-    name: 'Master Dépannage',
-    description: 'Intervention rapide en ville et zones industrielles.',
+    brand: 'Jet skis',
   },
   {
     image: whatsappGallery3,
-    brand: 'Iveco',
-    name: 'Daily Tow Truck',
-    description: 'Camion compact pour remorquage et assistance urgente.',
+    brand: 'Lamborghini Urus',
   },
   {
     image: whatsappGallery4,
-    brand: 'Mitsubishi Fuso',
-    name: 'Canter Recovery',
-    description: 'Plateau robuste pour voitures, motos et utilitaires.',
+    brand: 'Lamborghini Urus',
   },
 ];
 
