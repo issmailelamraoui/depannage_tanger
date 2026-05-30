@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { 
   PhoneCall, 
   ShieldCheck, 
@@ -919,6 +920,7 @@ export default function App() {
         </a>
       </div>
     </div>
+    <Analytics />
     </>
   );
 }
