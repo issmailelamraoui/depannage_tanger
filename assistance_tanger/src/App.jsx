@@ -104,7 +104,21 @@ const translations = {
     footer_address: "Quartier El Majd , Tanger, Maroc",
     footer_rights: "Dépannage Tanger. Tous droits réservés.",
     footer_legal1: "Mentions Légales",
-    footer_legal2: "Politique de Confidentialité"
+    footer_legal2: "Politique de Confidentialité",
+    a11y_skip: "Aller au contenu principal",
+    a11y_main_nav: "Navigation principale",
+    a11y_logo: "Melloussa Assistance - Dépannage et Remorquage Tanger",
+    a11y_change_lang: "Changer la langue",
+    a11y_open_menu: "Ouvrir le menu mobile",
+    a11y_close_menu: "Fermer le menu mobile",
+    a11y_call: "Appeler l'assistance immédiate",
+    a11y_whatsapp: "Contactez-nous sur WhatsApp",
+    a11y_map_link: "Voir Melloussa Assistance sur Google Maps",
+    a11y_stats_section: "Nos points forts",
+    a11y_gallery_view: "Voir la photo",
+    a11y_hero_bg: "Melloussa Assistance - Dépannage et Remorquage Tanger",
+    a11y_about_img: "Camion de dépannage Melloussa Assistance à Tanger",
+    a11y_map_img: "Carte de localisation de Melloussa Assistance à Tanger"
   },
   ar: {
     brandName: "ديباناج",
@@ -181,7 +195,21 @@ const translations = {
     footer_address: "شارع محمد الخامس، وسط المدينة، 90000 طنجة، المغرب",
     footer_rights: "ديباناج طنجة. جميع الحقوق محفوظة.",
     footer_legal1: "إشعار قانوني",
-    footer_legal2: "سياسة الخصوصية"
+    footer_legal2: "سياسة الخصوصية",
+    a11y_skip: "انتقل إلى المحتوى الرئيسي",
+    a11y_main_nav: "التنقل الرئيسي",
+    a11y_logo: "Melloussa Assistance - ديباناج وقطر السيارات طنجة",
+    a11y_change_lang: "تغيير اللغة",
+    a11y_open_menu: "فتح القائمة",
+    a11y_close_menu: "إغلاق القائمة",
+    a11y_call: "اتصل بالمساعدة فوراً",
+    a11y_whatsapp: "تواصل معنا عبر واتساب",
+    a11y_map_link: "عرض موقع Melloussa Assistance على خرائط Google",
+    a11y_stats_section: "نقاط قوتنا",
+    a11y_gallery_view: "عرض الصورة",
+    a11y_hero_bg: "Melloussa Assistance - ديباناج وقطر السيارات طنجة",
+    a11y_about_img: "شاحنة ديباناج Melloussa Assistance في طنجة",
+    a11y_map_img: "خريطة موقع Melloussa Assistance في طنجة"
   },
   en: {
     brandName: "Towing",
@@ -258,7 +286,21 @@ const translations = {
     footer_address: "Avenue Mohamed V, City Center, 90000 Tangier, Morocco",
     footer_rights: "Towing Tangier. All rights reserved.",
     footer_legal1: "Legal Notice",
-    footer_legal2: "Privacy Policy"
+    footer_legal2: "Privacy Policy",
+    a11y_skip: "Skip to main content",
+    a11y_main_nav: "Main navigation",
+    a11y_logo: "Melloussa Assistance - Towing and Recovery Tangier",
+    a11y_change_lang: "Change language",
+    a11y_open_menu: "Open mobile menu",
+    a11y_close_menu: "Close mobile menu",
+    a11y_call: "Call for immediate assistance",
+    a11y_whatsapp: "Contact us on WhatsApp",
+    a11y_map_link: "View Melloussa Assistance on Google Maps",
+    a11y_stats_section: "Our strengths",
+    a11y_gallery_view: "View photo",
+    a11y_hero_bg: "Melloussa Assistance - Towing and Recovery Tangier",
+    a11y_about_img: "Melloussa Assistance tow truck in Tangier",
+    a11y_map_img: "Map showing Melloussa Assistance location in Tangier"
   }
 };
 
@@ -303,7 +345,6 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lang, setLang] = useState('fr'); // 'fr', 'ar', 'en'
   const [showAllImages, setShowAllImages] = useState(false);
-  const [selectedVehicle, setSelectedVehicle] = useState(null);
   
   // Form States
   const [email, setEmail] = useState('');
@@ -387,6 +428,12 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Sync document language and text direction with active locale
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+  }, [lang, isRtl]);
+
   // Intersection Observer for animations
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -409,6 +456,14 @@ export default function App() {
   }, [lang, showAllImages]); 
 
   return (
+    <>
+      <a
+        href="#main-content"
+        className="sr-only"
+      >
+        {t('a11y_skip')}
+      </a>
+
     <div 
       className={`min-h-screen bg-slate-50 text-slate-800 overflow-x-hidden ${isRtl ? 'font-arabic' : 'font-sans'}`}
       dir={isRtl ? 'rtl' : 'ltr'}
@@ -417,13 +472,16 @@ export default function App() {
 
       {/* --- Header --- */}
       <header>
-        <nav className={`fixed w-full z-50 transition-colors duration-300 py-4 md:py-5 ${isHeaderSolid ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
+        <nav
+          aria-label={t('a11y_main_nav')}
+          className={`fixed w-full z-50 transition-colors duration-300 py-4 md:py-5 ${isHeaderSolid ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'}`}
+        >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <div className="flex items-center gap-2">
-              <div className="w-9 h-9 md:w-10 md:h-10 bg-amber-500 rounded-xl flex items-center justify-center shrink-0">
-                <LifeBuoy className="text-white w-5 h-5 md:w-6 md:h-6" />
+            <a href="#" aria-label={t('a11y_logo')} className="flex items-center gap-2">
+              <div className="w-9 h-9 md:w-10 md:h-10 bg-amber-500 rounded-xl flex items-center justify-center shrink-0" aria-hidden="true">
+                <LifeBuoy aria-hidden="true" className="text-white w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div className="flex flex-col">
                 <span className={`text-xl md:text-2xl font-bold tracking-tight leading-none ${isHeaderSolid ? 'text-blue-900' : 'text-white'}`}>
@@ -433,7 +491,7 @@ export default function App() {
                   Melloussa Assistance
                 </span>
               </div>
-            </div>
+            </a>
 
             {/* Desktop Links */}
             <div className="hidden lg:flex items-center gap-6 lg:gap-8">
@@ -444,7 +502,9 @@ export default function App() {
               
               {/* Language Switcher */}
               <button 
+                type="button"
                 onClick={toggleLanguage}
+                aria-label={t('a11y_change_lang')}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold transition-colors border ${isHeaderSolid ? 'border-slate-200 text-slate-700 hover:bg-slate-100' : 'border-white/30 text-white hover:bg-white/10'}`}
               >
                 <Globe aria-hidden="true" className="w-4 h-4" />
@@ -460,17 +520,19 @@ export default function App() {
             {/* Mobile Controls */}
             <div className="flex lg:hidden items-center gap-3">
               <button 
+                type="button"
                 onClick={toggleLanguage}
                 className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-colors border ${isHeaderSolid ? 'border-slate-200 text-slate-700 bg-slate-50' : 'border-white/30 text-white bg-white/10'} focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400`}
-                aria-label="Changer la langue"
+                aria-label={t('a11y_change_lang')}
               >
                 {getLangDisplay()}
               </button>
               
               <button 
+                type="button"
                 className={`p-2 rounded-lg transition-colors ${isHeaderSolid ? 'text-slate-800' : 'text-white'} focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                aria-label={mobileMenuOpen ? 'Fermer le menu mobile' : 'Ouvrir le menu mobile'}
+                aria-label={mobileMenuOpen ? t('a11y_close_menu') : t('a11y_open_menu')}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
               >
@@ -504,23 +566,25 @@ export default function App() {
           </div>
         </div>
       </nav>
+      </header>
 
+    <main id="main-content">
       {/* --- Hero Section --- */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden" aria-label={t('a11y_logo')}>
         <img
           src={heroBg}
           fetchPriority="high"
-          alt="Dépannage à Tanger - Melloussa Assistance"
+          alt={t('a11y_hero_bg')}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-slate-950/60"></div>
-        <div className="absolute top-1/4 left-10 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-slate-950/60" aria-hidden="true"></div>
+        <div className="absolute top-1/4 left-10 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
+        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white mb-6 md:mb-8 reveal">
-              <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse shrink-0"></span>
+              <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse shrink-0" aria-hidden="true"></span>
               <span className="text-xs md:text-sm font-medium">{t('hero_badge')}</span>
             </div>
             
@@ -540,7 +604,7 @@ export default function App() {
                 <PhoneCall aria-hidden="true" className="w-5 h-5 md:w-6 md:h-6 shrink-0" />
                 <span dir="ltr">{phoneNumber}</span>
               </a>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-6 md:px-8 py-3.5 md:py-4 rounded-full text-base md:text-lg font-bold transition-colors shadow-lg" aria-label="WhatsApp">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-6 md:px-8 py-3.5 md:py-4 rounded-full text-base md:text-lg font-bold transition-colors shadow-lg" aria-label={t('a11y_whatsapp')}>
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5 md:w-6 md:h-6 fill-current shrink-0">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
                 </svg>
@@ -551,17 +615,15 @@ export default function App() {
         </div>
 
         {/* Curved bottom edge */}
-        <div className="absolute bottom-0 w-full overflow-hidden leading-none">
-          <svg className="relative block w-full h-12 md:h-16 lg:h-24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <div className="absolute bottom-0 w-full overflow-hidden leading-none" aria-hidden="true">
+          <svg className="relative block w-full h-12 md:h-16 lg:h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
             <path className="fill-slate-50" d="M0 80 C200 20 400 120 600 80 C800 40 1000 110 1200 70 L1200 120 L0 120 Z" />
           </svg>
         </div>
       </section>
-    </header>
-
-    <main>
       {/* --- Quick Stats --- */}
-      <section className="py-6 md:py-10 bg-slate-50">
+      <section className="py-6 md:py-10 bg-slate-50" aria-labelledby="stats-heading">
+        <h2 id="stats-heading" className="sr-only">{t('a11y_stats_section')}</h2>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-6 md:p-8 -mt-16 md:-mt-24 relative z-20 reveal">
             {[
@@ -570,7 +632,7 @@ export default function App() {
               { icon: <ShieldCheck aria-hidden="true" className="w-7 h-7 text-blue-600 shrink-0" />, title: t('stat3_title'), desc: t('stat3_desc') }
             ].map((stat, idx) => (
               <div key={idx} className="flex items-center gap-4 p-3 md:p-4 rounded-2xl hover:bg-slate-50 transition-colors">
-                <div className="bg-blue-50 p-3 md:p-4 rounded-2xl">
+                <div className="bg-blue-50 p-3 md:p-4 rounded-2xl" aria-hidden="true">
                   {stat.icon}
                 </div>
                 <div>
@@ -587,8 +649,8 @@ export default function App() {
       <section id="services" className="py-16 md:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 reveal">
-            <h2 className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-wider mb-2 md:mb-3">{t('services_subtitle')}</h2>
-            <h3 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 leading-relaxed">{t('services_title')}</h3>
+            <p className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-wider mb-2 md:mb-3">{t('services_subtitle')}</p>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 leading-relaxed">{t('services_title')}</h2>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
               {t('services_desc')}
             </p>
@@ -602,10 +664,10 @@ export default function App() {
               { icon: <Zap aria-hidden="true" className="w-8 h-8" />, color: "emerald", title: t('srv4_title'), desc: t('srv4_desc') }
             ].map((service, idx) => (
               <div key={idx} className={`group bg-white rounded-3xl p-6 md:p-8 shadow-md border border-slate-100 reveal delay-${(idx+1)*100}`}>
-                <div className={`w-14 h-14 md:w-16 md:h-16 bg-${service.color}-50 text-${service.color}-500 rounded-2xl flex items-center justify-center mb-5 md:mb-6 shrink-0`}>
+                <div className={`w-14 h-14 md:w-16 md:h-16 bg-${service.color}-50 text-${service.color}-500 rounded-2xl flex items-center justify-center mb-5 md:mb-6 shrink-0`} aria-hidden="true">
                   {service.icon}
                 </div>
-                <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2 md:mb-3 leading-relaxed">{service.title}</h4>
+                <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2 md:mb-3 leading-relaxed">{service.title}</h3>
                 <p className="text-sm md:text-base text-slate-600 mb-5 md:mb-6 line-clamp-3 leading-relaxed">
                   {service.desc}
                 </p>
@@ -622,8 +684,8 @@ export default function App() {
       <section id="galerie" className="py-16 md:py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 reveal">
-            <h2 className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-wider mb-2 md:mb-3">{t('gallery_subtitle')}</h2>
-            <h3 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 leading-relaxed">{t('gallery_title')}</h3>
+            <p className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-wider mb-2 md:mb-3">{t('gallery_subtitle')}</p>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 leading-relaxed">{t('gallery_title')}</h2>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
               {t('gallery_desc')}
             </p>
@@ -631,11 +693,9 @@ export default function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-5xl mx-auto transition-all duration-500">
             {displayedImages.map((vehicle, index) => (
-              <button
+              <article
                 key={vehicle.src}
-                type="button"
-                onClick={() => setSelectedVehicle(vehicle)}
-                className="relative overflow-hidden rounded-2xl aspect-video group cursor-pointer shadow-md reveal active text-left focus:outline-none focus:ring-4 focus:ring-amber-400"
+                className="relative overflow-hidden rounded-2xl aspect-video group shadow-md reveal active"
               >
                 <img 
                   src={vehicle.src} 
@@ -644,18 +704,20 @@ export default function App() {
                   loading={index >= 2 ? 'lazy' : undefined}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
-                <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500" aria-hidden="true"></div>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-4 md:p-5 text-white">
                   <p className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-amber-300">{vehicle.brand}</p>
-                  <h4 className="text-base md:text-xl font-black leading-tight">{vehicle.name}</h4>
+                  <h3 className="text-base md:text-xl font-black leading-tight">{vehicle.name}</h3>
                 </div>
-              </button>
+              </article>
             ))}
           </div>
           
           <div className="mt-10 md:mt-12 text-center reveal delay-100">
             <button 
+              type="button"
               onClick={() => setShowAllImages(!showAllImages)}
+              aria-expanded={showAllImages}
               className="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 px-8 py-3.5 rounded-full font-bold transition-colors shadow-sm"
             >
               {showAllImages ? t('gallery_less') : t('gallery_more')}
@@ -675,7 +737,7 @@ export default function App() {
               <div className="absolute inset-0 bg-blue-900 blob-shape opacity-10 transform scale-105"></div>
               <img 
                 src={aboutTowTruck} 
-                alt="Équipe d'assistance Tanger" 
+                alt={t('a11y_about_img')} 
                 className="rounded-3xl shadow-xl relative z-10 w-full object-cover h-[350px] md:h-[500px]"
               />
               <div className={`absolute -bottom-4 md:-bottom-6 ${isRtl ? '-left-4 md:-left-6' : '-right-4 md:-right-6'} bg-amber-500 text-white p-4 md:p-6 rounded-2xl shadow-xl z-20`}>
@@ -686,8 +748,8 @@ export default function App() {
 
             {/* Text side */}
             <div className="reveal delay-200 order-1 lg:order-2">
-              <h2 className="text-xs md:text-sm font-bold text-blue-600 uppercase tracking-wider mb-2 md:mb-3">{t('about_subtitle')}</h2>
-              <h3 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 leading-relaxed">{t('about_title')}</h3>
+              <p className="text-xs md:text-sm font-bold text-blue-600 uppercase tracking-wider mb-2 md:mb-3">{t('about_subtitle')}</p>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 leading-relaxed">{t('about_title')}</h2>
               <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-loose">
                 {t('about_desc')}
               </p>
@@ -713,11 +775,11 @@ export default function App() {
       </section>
 
       {/* --- Map Section --- */}
-      <section id="localisation" className="py-16 md:py-24 bg-white border-t border-slate-100">
+      <section id="contact-section" className="py-16 md:py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 reveal">
-            <h2 className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-wider mb-2 md:mb-3">{t('map_subtitle')}</h2>
-            <h3 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 leading-relaxed">{t('map_title')}</h3>
+            <p className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-wider mb-2 md:mb-3">{t('map_subtitle')}</p>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 leading-relaxed">{t('map_title')}</h2>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
               {t('map_desc')}
             </p>
@@ -728,11 +790,12 @@ export default function App() {
               href="https://www.google.com/maps/search/?api=1&query=35.7416667,-5.7988889"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={t('a11y_map_link')}
               className="block w-full h-full"
             >
               <img
                 src={mapScreenshot}
-                alt="Carte de localisation de Melloussa Assistance à Tanger"
+                alt={t('a11y_map_img')}
                 width="1200"
                 height="800"
                 className="w-full h-full object-cover"
@@ -764,7 +827,7 @@ export default function App() {
             {/* Brand */}
             <div className="space-y-4">
               <div className="flex items-center gap-2 mb-4 md:mb-6">
-                <div className="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center shrink-0" aria-hidden="true">
                   <LifeBuoy aria-hidden="true" className="text-white w-5 h-5" />
                 </div>
                 <div className="flex flex-col">
@@ -783,11 +846,11 @@ export default function App() {
 
             {/* Links */}
             <div>
-              <h4 className="text-white font-bold mb-4 md:mb-6 uppercase tracking-wider text-sm">{t('footer_links_title')}</h4>
+              <h2 className="text-white font-bold mb-4 md:mb-6 uppercase tracking-wider text-sm">{t('footer_links_title')}</h2>
               <ul className="space-y-2.5 md:space-y-3">
                 {[t('footer_link1'), t('footer_link2'), t('footer_link3')].map((link, i) => (
                   <li key={i}>
-                    <a href={i === 2 ? phoneLink : '#'} className="hover:text-amber-500 transition-colors text-sm flex items-center gap-2">
+                    <a href={i === 0 ? '#' : i === 1 ? '#services' : '#contact-section'} className="hover:text-amber-500 transition-colors text-sm flex items-center gap-2">
                       <ChevronRight aria-hidden="true" className={`w-3 h-3 ${isRtl ? 'rotate-180' : ''} shrink-0`} /> {link}
                     </a>
                   </li>
@@ -797,7 +860,7 @@ export default function App() {
 
             {/* Services */}
             <div>
-              <h4 className="text-white font-bold mb-4 md:mb-6 uppercase tracking-wider text-sm">{t('footer_services_title')}</h4>
+              <h2 className="text-white font-bold mb-4 md:mb-6 uppercase tracking-wider text-sm">{t('footer_services_title')}</h2>
               <ul className="space-y-2.5 md:space-y-3">
                 {[t('footer_srv1'), t('footer_srv2'), t('footer_srv3'), t('footer_srv4')].map((link, i) => (
                   <li key={i}>
@@ -811,7 +874,7 @@ export default function App() {
 
             {/* Contact */}
             <div>
-              <h4 className="text-white font-bold mb-4 md:mb-6 uppercase tracking-wider text-sm">{t('footer_contact_title')}</h4>
+              <h2 className="text-white font-bold mb-4 md:mb-6 uppercase tracking-wider text-sm">{t('footer_contact_title')}</h2>
               <ul className="space-y-3 md:space-y-4">
                 <li className="flex items-start gap-3">
                   <MapPin aria-hidden="true" className="w-5 h-5 text-amber-500 shrink-0" />
@@ -841,19 +904,20 @@ export default function App() {
       </footer>
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3" role="group" aria-label={t('footer_contact_title')}>
         {/* Phone Button (Mobile only) - kept on the left for mobile users so they don't press it by mistake when clicking WA */}
-        <a href={phoneLink} aria-label="Appeler Melloussa Assistance" className="md:hidden w-14 h-14 bg-amber-500 hover:bg-amber-600 transition-colors text-white rounded-full flex items-center justify-center shadow-lg">
+        <a href={phoneLink} aria-label={t('a11y_call')} className="md:hidden w-14 h-14 bg-amber-500 hover:bg-amber-600 transition-colors text-white rounded-full flex items-center justify-center shadow-lg">
           <PhoneCall aria-hidden="true" className="w-6 h-6" />
         </a>
         
         {/* WhatsApp Button (All devices) */}
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Envoyer un message WhatsApp à Melloussa Assistance" className="w-14 h-14 bg-green-500 hover:bg-green-600 transition-colors text-white rounded-full flex items-center justify-center shadow-lg">
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label={t('a11y_whatsapp')} className="w-14 h-14 bg-green-500 hover:bg-green-600 transition-colors text-white rounded-full flex items-center justify-center shadow-lg">
           <svg viewBox="0 0 24 24" aria-hidden="true" className="w-8 h-8 fill-current">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
           </svg>
         </a>
       </div>
     </div>
+    </>
   );
 }
