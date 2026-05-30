@@ -19,11 +19,11 @@ import {
   Send,
   CheckCircle
 } from 'lucide-react';
-import whatsappGallery1 from './assets/gallery/whatsapp-1.jpeg';
-import whatsappGallery2 from './assets/gallery/whatsapp-2.jpeg';
-import whatsappGallery3 from './assets/gallery/whatsapp-3.jpeg';
-import whatsappGallery4 from './assets/gallery/whatsapp-4.jpeg';
-import aboutTowTruck from './assets/about/5098287-1-1024x683.jpg';
+import whatsappGallery1 from './assets/gallery/whatsapp-1.webp';
+import whatsappGallery2 from './assets/gallery/whatsapp-2.webp';
+import whatsappGallery3 from './assets/gallery/whatsapp-3.webp';
+import whatsappGallery4 from './assets/gallery/whatsapp-4.webp';
+import aboutTowTruck from './assets/about/5098287-1-1024x683.webp';
 
 // --- Translations Dictionary ---
 const translations = {
@@ -626,6 +626,7 @@ export default function App() {
                   src={vehicle.src} 
                   alt={`${vehicle.brand} ${vehicle.name} - dépannage Tanger et remorquage Tanger Med par Melloussa Assistance`} 
                   width="1600" height="900"
+                  fetchPriority={index === 0 ? 'high' : undefined}
                   loading={index >= 2 ? 'lazy' : undefined}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
