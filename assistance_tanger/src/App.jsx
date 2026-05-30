@@ -579,11 +579,11 @@ export default function App() {
         />
         <div className="absolute inset-0 bg-slate-950/75" aria-hidden="true"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/60 to-slate-950/80" aria-hidden="true"></div>
-        <div className="absolute top-1/4 left-10 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
-        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
+        <div aria-hidden="true"></div>
+        <div aria-hidden="true"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl bg-slate-900/50 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 shadow-2xl">
+          <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/80 backdrop-blur-sm border border-white/20 text-white mb-6 md:mb-8 reveal">
               <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse shrink-0" aria-hidden="true"></span>
               <span className="text-xs md:text-sm font-medium">{t('hero_badge')}</span>
@@ -623,22 +623,22 @@ export default function App() {
         </div>
       </section>
       {/* --- Quick Stats --- */}
-      <section className="py-6 md:py-10 bg-slate-50" aria-labelledby="stats-heading">
+<section className="py-6 md:py-10 bg-slate-50" aria-labelledby="stats-heading">
         <h2 id="stats-heading" className="sr-only">{t('a11y_stats_section')}</h2>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 -mt-16 md:-mt-24 relative z-20 reveal">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-6 md:p-8 -mt-16 md:-mt-24 relative z-20 reveal">
             {[
-              { icon: <Clock aria-hidden="true" className="w-7 h-7 text-amber-300 shrink-0" />, title: t('stat1_title'), desc: t('stat1_desc') },
-              { icon: <Activity aria-hidden="true" className="w-7 h-7 text-amber-300 shrink-0" />, title: t('stat2_title'), desc: t('stat2_desc') },
-              { icon: <ShieldCheck aria-hidden="true" className="w-7 h-7 text-amber-300 shrink-0" />, title: t('stat3_title'), desc: t('stat3_desc') }
+              { icon: <Clock aria-hidden="true" className="w-7 h-7 text-blue-600 shrink-0" />, title: t('stat1_title'), desc: t('stat1_desc') },
+              { icon: <Activity aria-hidden="true" className="w-7 h-7 text-blue-600 shrink-0" />, title: t('stat2_title'), desc: t('stat2_desc') },
+              { icon: <ShieldCheck aria-hidden="true" className="w-7 h-7 text-blue-600 shrink-0" />, title: t('stat3_title'), desc: t('stat3_desc') }
             ].map((stat, idx) => (
-              <div key={idx} className="flex items-center gap-4 bg-slate-900/85 backdrop-blur-md rounded-xl p-4 md:p-5 shadow-lg border border-white/10 hover:bg-slate-900/95 transition-colors">
-                <div className="bg-amber-500/20 p-3 md:p-4 rounded-xl border border-amber-400/20" aria-hidden="true">
+              <div key={idx} className="flex items-center gap-4 p-3 md:p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+                <div className="bg-blue-50 p-3 md:p-4 rounded-2xl" aria-hidden="true">
                   {stat.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-white leading-relaxed">{stat.title}</h3>
-                  <p className="text-sm md:text-base text-slate-300 leading-relaxed">{stat.desc}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-slate-800 leading-relaxed">{stat.title}</h3>
+                  <p className="text-sm md:text-base text-slate-500 leading-relaxed">{stat.desc}</p>
                 </div>
               </div>
             ))}
