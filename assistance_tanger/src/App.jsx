@@ -484,10 +484,10 @@ export default function App() {
                 <LifeBuoy aria-hidden="true" className="text-white w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div className="flex flex-col">
-                <span className={`text-xl md:text-2xl font-bold tracking-tight leading-none ${isHeaderSolid ? 'text-blue-900' : 'text-white'}`}>
-                  {t('brandName')}<span className="text-amber-500">{t('brandCity')}</span>
+                <span className={`text-xl md:text-2xl font-bold tracking-tight leading-none drop-shadow-md ${isHeaderSolid ? 'text-blue-900' : 'text-white'}`}>
+                  {t('brandName')}<span className={isHeaderSolid ? 'text-amber-600' : 'text-amber-300 drop-shadow-md'}>{t('brandCity')}</span>
                 </span>
-                <span className={`text-[10px] md:text-xs font-semibold tracking-widest uppercase mt-0.5 ${isHeaderSolid ? 'text-slate-500' : 'text-white/80'}`}>
+                <span className={`text-[10px] md:text-xs font-semibold tracking-widest uppercase mt-0.5 ${isHeaderSolid ? 'text-slate-600' : 'text-white drop-shadow-sm'}`}>
                   Melloussa Assistance
                 </span>
               </div>
@@ -495,10 +495,10 @@ export default function App() {
 
             {/* Desktop Links */}
             <div className="hidden lg:flex items-center gap-6 lg:gap-8">
-              <a href="#services" className={`text-sm font-medium hover:text-amber-500 transition-colors ${isHeaderSolid ? 'text-slate-600' : 'text-slate-200'}`}>{t('nav_services')}</a>
-              <a href="#galerie" className={`text-sm font-medium hover:text-amber-500 transition-colors ${isHeaderSolid ? 'text-slate-600' : 'text-slate-200'}`}>{t('nav_gallery')}</a>
-              <a href="#contact-section" className={`text-sm font-medium hover:text-amber-500 transition-colors ${isHeaderSolid ? 'text-slate-600' : 'text-slate-200'}`}>{t('nav_contact')}</a>
-              <a href="#about" className={`text-sm font-medium hover:text-amber-500 transition-colors ${isHeaderSolid ? 'text-slate-600' : 'text-slate-200'}`}>{t('nav_about')}</a>
+              <a href="#services" className={`text-sm font-medium transition-colors ${isHeaderSolid ? 'text-slate-700 hover:text-amber-700' : 'text-white hover:text-amber-300 drop-shadow-sm'}`}>{t('nav_services')}</a>
+              <a href="#galerie" className={`text-sm font-medium transition-colors ${isHeaderSolid ? 'text-slate-700 hover:text-amber-700' : 'text-white hover:text-amber-300 drop-shadow-sm'}`}>{t('nav_gallery')}</a>
+              <a href="#contact-section" className={`text-sm font-medium transition-colors ${isHeaderSolid ? 'text-slate-700 hover:text-amber-700' : 'text-white hover:text-amber-300 drop-shadow-sm'}`}>{t('nav_contact')}</a>
+              <a href="#about" className={`text-sm font-medium transition-colors ${isHeaderSolid ? 'text-slate-700 hover:text-amber-700' : 'text-white hover:text-amber-300 drop-shadow-sm'}`}>{t('nav_about')}</a>
               
               {/* Language Switcher */}
               <button 
@@ -545,16 +545,16 @@ export default function App() {
         {/* Mobile Menu Content */}
         <div id="mobile-menu" className={`lg:hidden absolute top-full left-0 w-full origin-top bg-white/95 backdrop-blur-md shadow-xl rounded-b-3xl border-t border-slate-100 transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'}`}>
           <div className="px-4 py-4 space-y-1.5">
-            <a href="#services" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3.5 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-50 rounded-2xl transition-colors">
+            <a href="#services" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3.5 text-base font-medium text-slate-800 hover:text-amber-700 hover:bg-slate-50 rounded-2xl transition-colors">
               {t('nav_services')}
             </a>
-            <a href="#galerie" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3.5 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-50 rounded-2xl transition-colors">
+            <a href="#galerie" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3.5 text-base font-medium text-slate-800 hover:text-amber-700 hover:bg-slate-50 rounded-2xl transition-colors">
               {t('nav_gallery')}
             </a>
-            <a href="#contact-section" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3.5 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-50 rounded-2xl transition-colors">
+            <a href="#contact-section" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3.5 text-base font-medium text-slate-800 hover:text-amber-700 hover:bg-slate-50 rounded-2xl transition-colors">
               {t('nav_contact')}
             </a>
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3.5 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-50 rounded-2xl transition-colors">
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3.5 text-base font-medium text-slate-800 hover:text-amber-700 hover:bg-slate-50 rounded-2xl transition-colors">
               {t('nav_about')}
             </a>
             <div className="pt-4 mt-2 border-t border-slate-100">
@@ -577,25 +577,26 @@ export default function App() {
           alt={t('a11y_hero_bg')}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-slate-950/60" aria-hidden="true"></div>
+        <div className="absolute inset-0 bg-slate-950/75" aria-hidden="true"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/60 to-slate-950/80" aria-hidden="true"></div>
         <div className="absolute top-1/4 left-10 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
         <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white mb-6 md:mb-8 reveal">
+          <div className="max-w-3xl bg-slate-900/50 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 shadow-2xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/80 backdrop-blur-sm border border-white/20 text-white mb-6 md:mb-8 reveal">
               <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse shrink-0" aria-hidden="true"></span>
               <span className="text-xs md:text-sm font-medium">{t('hero_badge')}</span>
             </div>
             
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-white leading-relaxed md:leading-normal mb-4 md:mb-6 reveal delay-100">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-white leading-relaxed md:leading-normal mb-4 md:mb-6 reveal delay-100 drop-shadow-lg">
               {t('hero_title1')}<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">
+              <span className="text-amber-300 drop-shadow-lg">
                 {t('hero_title2')}
               </span>
             </h1>
             
-            <p className="text-base md:text-xl text-slate-200 mb-8 md:mb-10 max-w-2xl reveal delay-200 leading-relaxed md:leading-loose">
+            <p className="text-base md:text-xl text-slate-100 mb-8 md:mb-10 max-w-2xl reveal delay-200 leading-relaxed md:leading-loose drop-shadow-sm">
               {t('hero_desc')}
             </p>
             
@@ -625,19 +626,19 @@ export default function App() {
       <section className="py-6 md:py-10 bg-slate-50" aria-labelledby="stats-heading">
         <h2 id="stats-heading" className="sr-only">{t('a11y_stats_section')}</h2>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-6 md:p-8 -mt-16 md:-mt-24 relative z-20 reveal">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 -mt-16 md:-mt-24 relative z-20 reveal">
             {[
-              { icon: <Clock aria-hidden="true" className="w-7 h-7 text-blue-600 shrink-0" />, title: t('stat1_title'), desc: t('stat1_desc') },
-              { icon: <Activity aria-hidden="true" className="w-7 h-7 text-blue-600 shrink-0" />, title: t('stat2_title'), desc: t('stat2_desc') },
-              { icon: <ShieldCheck aria-hidden="true" className="w-7 h-7 text-blue-600 shrink-0" />, title: t('stat3_title'), desc: t('stat3_desc') }
+              { icon: <Clock aria-hidden="true" className="w-7 h-7 text-amber-300 shrink-0" />, title: t('stat1_title'), desc: t('stat1_desc') },
+              { icon: <Activity aria-hidden="true" className="w-7 h-7 text-amber-300 shrink-0" />, title: t('stat2_title'), desc: t('stat2_desc') },
+              { icon: <ShieldCheck aria-hidden="true" className="w-7 h-7 text-amber-300 shrink-0" />, title: t('stat3_title'), desc: t('stat3_desc') }
             ].map((stat, idx) => (
-              <div key={idx} className="flex items-center gap-4 p-3 md:p-4 rounded-2xl hover:bg-slate-50 transition-colors">
-                <div className="bg-blue-50 p-3 md:p-4 rounded-2xl" aria-hidden="true">
+              <div key={idx} className="flex items-center gap-4 bg-slate-900/85 backdrop-blur-md rounded-xl p-4 md:p-5 shadow-lg border border-white/10 hover:bg-slate-900/95 transition-colors">
+                <div className="bg-amber-500/20 p-3 md:p-4 rounded-xl border border-amber-400/20" aria-hidden="true">
                   {stat.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-slate-800 leading-relaxed">{stat.title}</h3>
-                  <p className="text-sm md:text-base text-slate-500 leading-relaxed">{stat.desc}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-white leading-relaxed">{stat.title}</h3>
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed">{stat.desc}</p>
                 </div>
               </div>
             ))}
@@ -649,7 +650,7 @@ export default function App() {
       <section id="services" className="py-16 md:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 reveal">
-            <p className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-wider mb-2 md:mb-3">{t('services_subtitle')}</p>
+            <p className="text-xs md:text-sm font-bold text-amber-700 uppercase tracking-wider mb-2 md:mb-3">{t('services_subtitle')}</p>
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 leading-relaxed">{t('services_title')}</h2>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
               {t('services_desc')}
@@ -671,7 +672,7 @@ export default function App() {
                 <p className="text-sm md:text-base text-slate-600 mb-5 md:mb-6 line-clamp-3 leading-relaxed">
                   {service.desc}
                 </p>
-                <a href={phoneLink} className="inline-flex items-center gap-1.5 text-blue-600 font-semibold hover:text-amber-500 transition-colors text-sm md:text-base">
+                <a href={phoneLink} className="inline-flex items-center gap-1.5 text-blue-700 font-semibold hover:text-amber-700 transition-colors text-sm md:text-base">
                   {t('learn_more')} <ChevronRight aria-hidden="true" className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
                 </a>
               </div>
@@ -684,7 +685,7 @@ export default function App() {
       <section id="galerie" className="py-16 md:py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 reveal">
-            <p className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-wider mb-2 md:mb-3">{t('gallery_subtitle')}</p>
+            <p className="text-xs md:text-sm font-bold text-amber-700 uppercase tracking-wider mb-2 md:mb-3">{t('gallery_subtitle')}</p>
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 leading-relaxed">{t('gallery_title')}</h2>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
               {t('gallery_desc')}
@@ -706,7 +707,7 @@ export default function App() {
                 />
                 <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500" aria-hidden="true"></div>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-4 md:p-5 text-white">
-                  <p className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-amber-300">{vehicle.brand}</p>
+                  <p className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-amber-200">{vehicle.brand}</p>
                   <h3 className="text-base md:text-xl font-black leading-tight">{vehicle.name}</h3>
                 </div>
               </article>
@@ -778,7 +779,7 @@ export default function App() {
       <section id="contact-section" className="py-16 md:py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 reveal">
-            <p className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-wider mb-2 md:mb-3">{t('map_subtitle')}</p>
+            <p className="text-xs md:text-sm font-bold text-amber-700 uppercase tracking-wider mb-2 md:mb-3">{t('map_subtitle')}</p>
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 leading-relaxed">{t('map_title')}</h2>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
               {t('map_desc')}
@@ -810,8 +811,8 @@ export default function App() {
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
         <div className="max-w-4xl mx-auto px-4 relative z-10 reveal">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-relaxed">{t('banner_title')}</h2>
-          <p className="text-lg md:text-xl mb-8 md:mb-10 text-amber-50 px-2 leading-relaxed">{t('banner_desc')}</p>
-          <a href={phoneLink} className="inline-flex items-center justify-center gap-3 bg-white text-amber-500 hover:bg-slate-50 px-8 md:px-10 py-4 md:py-5 rounded-full text-xl md:text-2xl font-black transition-colors shadow-xl w-full sm:w-auto">
+          <p className="text-lg md:text-xl mb-8 md:mb-10 text-white/95 px-2 leading-relaxed">{t('banner_desc')}</p>
+          <a href={phoneLink} className="inline-flex items-center justify-center gap-3 bg-white text-amber-800 hover:bg-slate-50 px-8 md:px-10 py-4 md:py-5 rounded-full text-xl md:text-2xl font-black transition-colors shadow-xl w-full sm:w-auto">
             <PhoneCall aria-hidden="true" className="w-6 h-6 md:w-8 md:h-8 shrink-0" />
             <span dir="ltr">{phoneNumber}</span>
           </a>
@@ -832,7 +833,7 @@ export default function App() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xl md:text-2xl font-bold text-white tracking-tight leading-none">
-                    {t('brandName')}<span className="text-amber-500">{t('brandCity')}</span>
+                    {t('brandName')}<span className="text-amber-400">{t('brandCity')}</span>
                   </span>
                   <span className="text-[10px] md:text-xs font-semibold tracking-widest uppercase text-slate-400 mt-0.5">
                     Melloussa Assistance
@@ -850,7 +851,7 @@ export default function App() {
               <ul className="space-y-2.5 md:space-y-3">
                 {[t('footer_link1'), t('footer_link2'), t('footer_link3')].map((link, i) => (
                   <li key={i}>
-                    <a href={i === 0 ? '#' : i === 1 ? '#services' : '#contact-section'} className="hover:text-amber-500 transition-colors text-sm flex items-center gap-2">
+                    <a href={i === 0 ? '#' : i === 1 ? '#services' : '#contact-section'} className="hover:text-amber-400 transition-colors text-sm flex items-center gap-2">
                       <ChevronRight aria-hidden="true" className={`w-3 h-3 ${isRtl ? 'rotate-180' : ''} shrink-0`} /> {link}
                     </a>
                   </li>
@@ -864,7 +865,7 @@ export default function App() {
               <ul className="space-y-2.5 md:space-y-3">
                 {[t('footer_srv1'), t('footer_srv2'), t('footer_srv3'), t('footer_srv4')].map((link, i) => (
                   <li key={i}>
-                    <a href="#services" className="hover:text-amber-500 transition-colors text-sm flex items-center gap-2">
+                    <a href="#services" className="hover:text-amber-400 transition-colors text-sm flex items-center gap-2">
                       <ChevronRight aria-hidden="true" className={`w-3 h-3 ${isRtl ? 'rotate-180' : ''} shrink-0`} /> {link}
                     </a>
                   </li>
@@ -877,15 +878,15 @@ export default function App() {
               <h2 className="text-white font-bold mb-4 md:mb-6 uppercase tracking-wider text-sm">{t('footer_contact_title')}</h2>
               <ul className="space-y-3 md:space-y-4">
                 <li className="flex items-start gap-3">
-                  <MapPin aria-hidden="true" className="w-5 h-5 text-amber-500 shrink-0" />
+                  <MapPin aria-hidden="true" className="w-5 h-5 text-amber-400 shrink-0" />
                   <span className="text-sm">{t('footer_address')}</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <PhoneCall aria-hidden="true" className="w-5 h-5 text-amber-500 shrink-0" />
-                  <a href={phoneLink} className="text-sm font-bold text-white hover:text-amber-500 transition-colors" dir="ltr">{phoneNumber}</a>
+                  <PhoneCall aria-hidden="true" className="w-5 h-5 text-amber-400 shrink-0" />
+                  <a href={phoneLink} className="text-sm font-bold text-white hover:text-amber-400 transition-colors" dir="ltr">{phoneNumber}</a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Clock aria-hidden="true" className="w-5 h-5 text-amber-500 shrink-0" />
+                  <Clock aria-hidden="true" className="w-5 h-5 text-amber-400 shrink-0" />
                   <span className="text-sm" dir="ltr">24/24 - 7/7</span>
                 </li>
               </ul>
