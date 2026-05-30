@@ -416,7 +416,7 @@ export default function App() {
       <style>{customStyles}</style>
 
       {/* --- Navigation --- */}
-      <nav className={`fixed w-full z-50 transition-colors duration-300 ${isHeaderSolid ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-4 md:py-5'}`}>
+      <nav className={`fixed w-full z-50 transition-colors duration-300 py-4 md:py-5 ${isHeaderSolid ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -458,15 +458,16 @@ export default function App() {
 
             {/* Mobile Controls */}
             <div className="flex lg:hidden items-center gap-3">
-               <button 
+              <button 
                 onClick={toggleLanguage}
-                className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-colors border ${isHeaderSolid ? 'border-slate-200 text-slate-700 bg-slate-50' : 'border-white/30 text-white bg-white/10'}`}
+                className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-colors border ${isHeaderSolid ? 'border-slate-200 text-slate-700 bg-slate-50' : 'border-white/30 text-white bg-white/10'} focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400`}
+                aria-label="Changer la langue"
               >
                 {getLangDisplay()}
               </button>
               
               <button 
-                className={`p-2 rounded-lg transition-colors ${isHeaderSolid ? 'text-slate-800' : 'text-white'}`}
+                className={`p-2 rounded-lg transition-colors ${isHeaderSolid ? 'text-slate-800' : 'text-white'} focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label={mobileMenuOpen ? 'Fermer le menu mobile' : 'Ouvrir le menu mobile'}
               >
