@@ -19,6 +19,7 @@ import {
   Send,
   CheckCircle
 } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import whatsappGallery1 from './assets/gallery/whatsapp-1.jpeg';
 import whatsappGallery2 from './assets/gallery/whatsapp-2.jpeg';
 import whatsappGallery3 from './assets/gallery/whatsapp-3.jpeg';
@@ -827,6 +828,7 @@ export default function App() {
           </svg>
         </a>
       </div>
+      <SpeedInsights />
     </div>
   );
 }
