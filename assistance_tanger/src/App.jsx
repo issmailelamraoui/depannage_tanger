@@ -19,11 +19,13 @@ import {
   Send,
   CheckCircle
 } from 'lucide-react';
+import heroBg from './assets/hero-bg.webp';
 import whatsappGallery1 from './assets/gallery/whatsapp-1.webp';
 import whatsappGallery2 from './assets/gallery/whatsapp-2.webp';
 import whatsappGallery3 from './assets/gallery/whatsapp-3.webp';
 import whatsappGallery4 from './assets/gallery/whatsapp-4.webp';
 import aboutTowTruck from './assets/about/5098287-1-1024x683.webp';
+import mapScreenshot from './assets/map-screenshot.webp';
 
 // --- Translations Dictionary ---
 const translations = {
@@ -500,7 +502,14 @@ export default function App() {
       </nav>
 
       {/* --- Hero Section --- */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-hero-pattern overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <img
+          src={heroBg}
+          fetchPriority="high"
+          alt="Dépannage à Tanger - Melloussa Assistance"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-950/60"></div>
         <div className="absolute top-1/4 left-10 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
 
@@ -625,8 +634,7 @@ export default function App() {
                 <img 
                   src={vehicle.src} 
                   alt={`${vehicle.brand} ${vehicle.name} - dépannage Tanger et remorquage Tanger Med par Melloussa Assistance`} 
-                  width="1600" height="900"
-                  fetchPriority={index === 0 ? 'high' : undefined}
+                  width="600" height="340"
                   loading={index >= 2 ? 'lazy' : undefined}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
@@ -710,16 +718,20 @@ export default function App() {
           </div>
           
           <div className="w-full h-[350px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl shadow-slate-200 border border-slate-100 reveal delay-100">
-            <iframe 
-              title="Carte de localisation Dépannage Tanger"
-              src="https://maps.google.com/maps?q=35.7416667,-5.7988889&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen="" 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=35.7416667,-5.7988889"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full h-full"
+            >
+              <img
+                src={mapScreenshot}
+                alt="Carte de localisation de Melloussa Assistance à Tanger"
+                width="1200"
+                height="800"
+                className="w-full h-full object-cover"
+              />
+            </a>
           </div>
         </div>
       </section>
