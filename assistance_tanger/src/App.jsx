@@ -520,14 +520,14 @@ export default function App() {
               <span className="text-xs md:text-sm font-medium">{t('hero_badge')}</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-relaxed md:leading-normal mb-4 md:mb-6 reveal delay-100">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-white leading-relaxed md:leading-normal mb-4 md:mb-6 reveal delay-100">
               {t('hero_title1')}<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">
                 {t('hero_title2')}
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-200 mb-8 md:mb-10 max-w-2xl reveal delay-200 leading-relaxed md:leading-loose">
+            <p className="text-base md:text-xl text-slate-200 mb-8 md:mb-10 max-w-2xl reveal delay-200 leading-relaxed md:leading-loose">
               {t('hero_desc')}
             </p>
             
@@ -549,7 +549,7 @@ export default function App() {
         {/* Curved bottom edge */}
         <div className="absolute bottom-0 w-full overflow-hidden leading-none">
           <svg className="relative block w-full h-12 md:h-16 lg:h-24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,123,194.2,112.3Z" className="fill-slate-50"></path>
+            <path className="fill-slate-50" d="M0 80 C200 20 400 120 600 80 C800 40 1000 110 1200 70 L1200 120 L0 120 Z" />
           </svg>
         </div>
       </section>
