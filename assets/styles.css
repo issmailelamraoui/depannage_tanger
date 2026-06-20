@@ -67,7 +67,16 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+/* NOTE: native `scroll-behavior:smooth` removed on purpose — it fights Lenis
+   and makes the inertia stutter. Smooth scroll is now JS-driven (see site.js). */
+html{-webkit-text-size-adjust:100%;}
+
+/* ---- Lenis smooth scroll (official Studio Freight base rules) ---- */
+html.lenis,html.lenis body{height:auto;}
+.lenis.lenis-smooth{scroll-behavior:auto !important;}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain;}
+.lenis.lenis-stopped{overflow:hidden;}
+.lenis.lenis-smooth iframe{pointer-events:none;}
 body{
   margin:0;
   font-family:var(--font-body);
@@ -149,8 +158,11 @@ p{margin:0;}
 .tag-line{background:#fff;border:1px solid var(--line);color:var(--slate-600);}
 
 /* live dot */
+/* Live dot is static by default. The `pulse` animation is applied ONLY on
+   desktop ≥768px + motion-welcome (see the gated rule at the foot of this file)
+   → on mobile the dot stays lit but still, sparing the 4%-battery scenario. */
 .dot-live{width:9px;height:9px;border-radius:50%;background:#34d27b;box-shadow:0 0 0 0 rgba(52,210,123,.55);
-  animation:pulse 2.4s infinite;flex:none;}
+  flex:none;}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,210,123,.5);}70%{box-shadow:0 0 0 9px rgba(52,210,123,0);}100%{box-shadow:0 0 0 0 rgba(52,210,123,0);}}
 
 /* =================================================================
@@ -1036,7 +1048,7 @@ body{background:
    ================================================================= */
 
 /* drifting hero glow orbs (GPU transform; paused for reduced-motion) */
-@media (prefers-reduced-motion:no-preference){
+@media (min-width:768px) and (prefers-reduced-motion:no-preference){
   .hero-bg::before{animation:orbDriftA 18s var(--ease-smooth) infinite alternate;}
   .hero-bg::after{animation:orbDriftB 22s var(--ease-smooth) infinite alternate;}
 }
@@ -1169,5 +1181,35 @@ button,[role="button"]{
   .hero-float--tl, .hero-float--br{ animation:none !important; }
   .hero h1 .accent{ text-shadow:none; }
   .hero-cta .btn-primary::after{ content:none; }
+}
+
+/* =================================================================
+   LOW-END MOBILE PERFORMANCE GUARD  ( < 768px )
+   A desktop with a mouse never matches max-width:767.98px, so the premium
+   glass/blur UI on PC is left 100% untouched (hard constraint).
+
+   backdrop-filter:blur() repaints its whole region on EVERY scroll frame →
+   the "scroll freeze" + battery drain on a Mali-class GPU. On phones we swap
+   it for a solid 98%-opaque surface: visually near-identical, zero per-frame
+   GPU work. Each surface keeps its own hue (light header, onyx dock).
+   ================================================================= */
+@media (max-width:767.98px){
+  .site-header.scrolled,
+  .app-dock,
+  .mobile-bar{
+    -webkit-backdrop-filter:none !important;
+    backdrop-filter:none !important;
+  }
+  .site-header.scrolled{background:rgba(252,250,247,.98) !important;} /* light, solid 98% */
+  .app-dock{background:rgba(27,26,23,.98) !important;}               /* onyx, solid 98% */
+  .mobile-bar{background:rgba(255,255,255,.98) !important;}          /* light, solid 98% */
+}
+
+/* Infinite animations run ONLY on desktop (≥768px) + motion-welcome.
+   On mobile the live dot stays lit but static — no endless repaint loop
+   waking the CPU/GPU on a near-empty battery. (orbDriftA/B are gated the
+   same way at their source declaration above.) */
+@media (min-width:768px) and (prefers-reduced-motion:no-preference){
+  .dot-live{animation:pulse 2.4s infinite;}
 }
 

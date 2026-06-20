@@ -312,17 +312,18 @@ function initReveal(){
   // preview / capture harness the rAF chain won't run, so content simply stays visible.
   requestAnimationFrame(()=>requestAnimationFrame(()=>{
     document.documentElement.classList.add("anim-ready");
-    let pending=els.slice();
-    const check=()=>{
-      const vh=window.innerHeight||document.documentElement.clientHeight;
-      pending=pending.filter(el=>{const r=el.getBoundingClientRect();if(r.top<vh*0.94&&r.bottom>0){el.classList.add("in");return false;}return true;});
-      if(!pending.length){window.removeEventListener("scroll",onScroll);window.removeEventListener("resize",onScroll);}
-    };
-    let ticking=false;
-    const onScroll=()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{check();ticking=false;});}};
-    window.addEventListener("scroll",onScroll,{passive:true});
-    window.addEventListener("resize",onScroll);
-    check();
+    // PERF: an IntersectionObserver replaces the old scroll handler that called
+    // getBoundingClientRect() on every element each frame (forced synchronous
+    // layout → main-thread jank on weak mobile CPUs). The observer is evaluated
+    // off the scroll path, so scrolling stays smooth on a Redmi-class device.
+    if(!("IntersectionObserver" in window)){ els.forEach(e=>e.classList.add("in")); return; }
+    const io=new IntersectionObserver((entries,obs)=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting){ en.target.classList.add("in"); obs.unobserve(en.target); }
+      });
+    },{rootMargin:"0px 0px -6% 0px",threshold:0});
+    els.forEach(el=>io.observe(el));
+    // Safety net: if the observer never fires (edge capture harness), reveal all.
     setTimeout(()=>els.forEach(e=>e.classList.add("in")),2600);
   }));
 }
@@ -345,6 +346,70 @@ function initMobileLangCycle(){
     const cur=document.documentElement.lang||'fr';
     const idx=LANGS.indexOf(cur);
     applyLang(LANGS[(idx+1)%LANGS.length]);
+  });
+}
+
+/* ---- Lenis premium smooth scroll (desktop only) ---------------------------
+   Strategy:
+   - Inertial "Apple/Linear" decay on the PC wheel (smoothWheel:true).
+   - On touch devices we DON'T hijack the gesture: native momentum scroll is
+     smoother than any JS overlay, so Lenis is NEVER even downloaded there —
+     the ~5KB CDN script is injected lazily, only when a real mouse is present.
+     That keeps the low-end-mobile / flaky-3G payload as light as possible.
+   - prefers-reduced-motion is respected (accessibility + no motion sickness).
+   The instance is exposed as window.__lenis so other modules can scrollTo().
+--------------------------------------------------------------------------- */
+function initLenis(){
+  const finePointer = window.matchMedia("(pointer:fine)").matches;
+  const reduced     = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+  // Touch / reduced-motion → native scroll, and we don't fetch Lenis at all.
+  if(!finePointer || reduced){ initAnchorScroll(null); return; }
+
+  // Real mouse → lazy-load the Lenis CDN, then start the premium glide.
+  const s = document.createElement("script");
+  s.src = "https://unpkg.com/lenis@1.3.23/dist/lenis.min.js";
+  s.async = true;
+  s.onload  = startLenis;
+  s.onerror = ()=>initAnchorScroll(null);   // CDN down → graceful native scroll
+  document.head.appendChild(s);
+}
+function startLenis(){
+  if(typeof Lenis==="undefined"){ initAnchorScroll(null); return; }
+  const lenis = new Lenis({
+    // Apple/Linear-style decay: long, soft exponential ease-out.
+    duration: 1.15,
+    easing: (t)=>Math.min(1, 1.001 - Math.pow(2, -10*t)), // expo-out
+    smoothWheel: true,     // inertia on the PC wheel
+    syncTouch: false,      // hands off on touch → native momentum
+    wheelMultiplier: 1,
+    touchMultiplier: 1.5,
+  });
+  window.__lenis = lenis;
+
+  // The RAF loop that drives the interpolation, tied to the display refresh.
+  function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+
+  initAnchorScroll(lenis);
+}
+
+/* ---- Anchor links glide to target with a -80px navbar offset ---- */
+function initAnchorScroll(lenis){
+  document.querySelectorAll('a[href^="#"]').forEach(link=>{
+    const hash = link.getAttribute("href");
+    if(!hash || hash==="#") return;                       // skip bare "#" placeholders
+    const target = document.getElementById(hash.slice(1));
+    if(!target) return;                                   // skip dead anchors
+    link.addEventListener("click", e=>{
+      e.preventDefault();
+      if(lenis){
+        lenis.scrollTo(target, { offset:-80, duration:1.2 });
+      }else{
+        // No Lenis (mobile/reduced) → manual offset jump, navbar-safe.
+        const y = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top:y, behavior:"auto" });
+      }
+    });
   });
 }
 
@@ -400,6 +465,6 @@ function initEmergency(){
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
-  initLang(); initMobileLangCycle(); initHeader(); initMobileMenu(); initFaq(); initReveal(); initTOC(); initEmergency();
+  initLang(); initMobileLangCycle(); initHeader(); initMobileMenu(); initFaq(); initReveal(); initTOC(); initEmergency(); initLenis();
   if(window.lucide) lucide.createIcons();
 });
