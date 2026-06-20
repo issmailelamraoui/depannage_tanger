@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="/assets/styles.css">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":["Organization","LocalBusiness","AutomotiveBusiness"],"name":"Melloussa Assistance","image":"https://www.melloussaassistance.com/og.jpg","logo":"https://www.melloussaassistance.com/logo.png","telephone":"+212668195992","url":"https://www.melloussaassistance.com","priceRange":"MAD","address":{"@type":"PostalAddress","streetAddress":"Zone Franche Melloussa","addressLocality":"Tanger","addressRegion":"Tanger-Tétouan-Al Hoceïma","postalCode":"90000","addressCountry":"MA"},"geo":{"@type":"GeoCoordinates","latitude":35.7595,"longitude":-5.8339},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},"contactPoint":{"@type":"ContactPoint","telephone":"+212668195992","contactType":"customer service","areaServed":"MA","availableLanguage":["French","Arabic","English"]},"areaServed":["Tanger","Malabata","Gzenaya","Tanger Med","Médina","Kasbah","Aéroport Ibn Battouta","Cap Spartel","Centre-ville"],"sameAs":["https://www.facebook.com/melloussaassistance","https://www.instagram.com/melloussaassistance"]}
@@ -27,6 +27,7 @@
 <meta name="twitter:title" content="Urgence Dépannage Tanger — Intervention Immédiate 24/7 | Melloussa Assistance">
 <meta name="twitter:description" content="Demande de dépanneuse à Tanger en 3 touches. Appelez ou envoyez votre position par WhatsApp. Réponse immédiate 24h/24. ☎ 06 68 19 59 92.">
 <meta name="twitter:image" content="https://www.melloussaassistance.com/og.jpg">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="dc6f1895-7a8c-4374-b241-3a149c8962e7"></script>
 </head>
 <body class="has-dock">
 
@@ -49,7 +50,7 @@
       <div class="lang-switch" role="group" aria-label="Language">
         <button data-lang="fr">FR</button><button data-lang="ar">ع</button><button data-lang="en">EN</button>
       </div>
-      <a href="tel:+212668195992" class="nav-call"><i data-lucide="phone"></i>06 68 19 59 92</a>
+      <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="nav-call"><i data-lucide="phone"></i>06 68 19 59 92</a>
       <button class="menu-toggle" aria-label="Menu"><i data-lucide="menu"></i></button>
     </div>
   </div>
@@ -74,8 +75,8 @@
   </nav>
 
   <div class="mm-cta">
-    <a href="tel:+212668195992" class="btn btn-primary btn-block btn-lg"><i data-lucide="phone"></i><span data-i18n="cta.truck">Appeler une dépanneuse</span></a>
-    <a href="https://wa.me/212668195992" class="btn btn-whatsapp btn-block btn-lg"><i data-lucide="message-circle"></i>WhatsApp</a>
+    <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-block btn-lg"><i data-lucide="phone"></i><span data-i18n="cta.truck">Appeler une dépanneuse</span></a>
+    <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="btn btn-whatsapp btn-block btn-lg"><i data-lucide="message-circle"></i>WhatsApp</a>
   </div>
 </div>
 
@@ -95,7 +96,7 @@
     <div class="em-wrap em-flow">
 
       <!-- fastest: call -->
-      <a href="tel:+212668195992" class="em-call-top reveal">
+      <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="em-call-top reveal">
         <span class="ec-ico"><i data-lucide="phone-call"></i></span>
         <span><small data-i18n="em.badge">Intervention immédiate</small><b data-i18n="em.callnow">Appeler maintenant · 06 68 19 59 92</b></span>
       </a>
@@ -145,7 +146,7 @@
       </div>
 
       <!-- send -->
-      <a class="em-send btn btn-whatsapp btn-block btn-lg reveal" href="https://wa.me/212668195992" style="margin-top:6px"><i data-lucide="message-circle"></i><span data-i18n="em.send">Envoyer sur WhatsApp</span></a>
+      <a class="em-send btn btn-whatsapp btn-block btn-lg reveal" href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" style="margin-top:6px"><i data-lucide="message-circle"></i><span data-i18n="em.send">Envoyer sur WhatsApp</span></a>
       <p class="reveal" style="text-align:center;font-size:13.5px;color:var(--slate-400);margin-top:14px" data-i18n="em.note">Réponse immédiate · la dépanneuse la plus proche est envoyée</p>
 
       <!-- reassurance -->
@@ -170,11 +171,11 @@
 
 <!-- APP DOCK -->
 <nav class="app-dock" aria-label="Actions rapides">
-  <a href="https://wa.me/212668195992" class="dock-side wa"><i data-lucide="message-circle"></i><span data-i18n="dock.wa">WhatsApp</span></a>
-  <a href="tel:+212668195992" class="dock-call"><i data-lucide="phone-call"></i><span data-i18n="dock.call">Appeler</span></a>
+  <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="dock-side wa"><i data-lucide="message-circle"></i><span data-i18n="dock.wa">WhatsApp</span></a>
+  <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="dock-call"><i data-lucide="phone-call"></i><span data-i18n="dock.call">Appeler</span></a>
   <a href="/contact/" class="dock-side"><i data-lucide="map-pin"></i><span data-i18n="ct.route">Itinéraire</span></a>
 </nav>
 
-<script src="assets/site.js"></script>
+<script src="/assets/site.js"></script>
 </body>
 </html>

@@ -1,0 +1,8 @@
+# Claude Code (config locale)
+.claude/
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+*~
+.vscode/

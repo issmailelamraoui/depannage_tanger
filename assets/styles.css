@@ -115,21 +115,27 @@ p{margin:0;}
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
   font-family:var(--font-display);font-weight:600;font-size:16px;
   padding:15px 26px;border-radius:var(--r-pill);border:1.5px solid transparent;
-  cursor:pointer;transition:transform .18s ease,box-shadow .25s ease,background .2s ease,border-color .2s;
+  cursor:pointer;
   white-space:nowrap;letter-spacing:-.01em;line-height:1;
 }
 [dir="rtl"] .btn{font-family:var(--font-ar);}
 .btn svg{width:19px;height:19px;}
+
+/* Primary — orange */
 .btn-primary{background:var(--orange-500);color:#fff;box-shadow:var(--sh-orange);}
-.btn-primary:hover{background:var(--orange-600);transform:translateY(-2px);box-shadow:0 16px 38px rgba(227,95,18,.4);}
+
+/* WhatsApp — green */
 .btn-whatsapp{background:#1faf54;color:#fff;box-shadow:0 12px 30px rgba(31,175,84,.3);}
-.btn-whatsapp:hover{background:#1c9d4c;transform:translateY(-2px);}
+
+/* Ghost — on dark hero */
 .btn-ghost-light{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.22);backdrop-filter:blur(6px);}
-.btn-ghost-light:hover{background:rgba(255,255,255,.13);transform:translateY(-2px);}
+
+/* Dark */
 .btn-dark{background:var(--navy-800);color:#fff;}
-.btn-dark:hover{background:var(--navy-700);transform:translateY(-2px);}
+
+/* Outline */
 .btn-outline{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:var(--sh-sm);}
-.btn-outline:hover{border-color:var(--navy-400);color:var(--navy-500);transform:translateY(-2px);}
+
 .btn-lg{padding:18px 32px;font-size:17px;}
 .btn-block{width:100%;}
 
@@ -198,9 +204,7 @@ p{margin:0;}
 
 .nav-call{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);
   font-weight:700;font-size:15px;color:#fff;background:var(--orange-500);
-  padding:11px 18px;border-radius:var(--r-pill);box-shadow:var(--sh-orange);transition:transform .18s,background .2s;}
-.nav-call:hover{background:var(--orange-600);transform:translateY(-2px);}
-.nav-call{white-space:nowrap;}
+  padding:11px 18px;border-radius:var(--r-pill);box-shadow:var(--sh-orange);white-space:nowrap;}
 .nav-call svg{width:17px;height:17px;}
 
 .menu-toggle{display:none;background:transparent;border:none;padding:8px;color:inherit;}
@@ -241,7 +245,8 @@ p{margin:0;}
 /* Hero media card */
 .hero-media{position:relative;}
 .hero-photo{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-lg);
-  border:1px solid rgba(255,255,255,.12);aspect-ratio:4/4.6;}
+  aspect-ratio:3/2;
+  width:100%;height:auto;display:block;object-fit:cover;object-position:center;}
 .hero-float{position:absolute;background:#fff;border-radius:var(--r);box-shadow:var(--sh-lg);
   padding:14px 16px;display:flex;align-items:center;gap:12px;color:var(--ink);}
 .hero-float .fi{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;flex:none;}
@@ -872,27 +877,6 @@ body{background:
   radial-gradient(120% 60% at 100% 0%,rgba(244,115,31,.025),transparent 60%),
   var(--bg);}
 
-/* ---------- Buttons: gradient fill + sheen sweep + spring lift ---------- */
-.btn{position:relative;overflow:hidden;isolation:isolate;
-  transition:transform .3s var(--ease-spring),box-shadow .3s var(--ease-smooth),background .25s ease,border-color .25s ease,color .2s ease;}
-.btn::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;
-  background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.35) 50%,transparent 80%);
-  transform:translateX(-130%);transition:transform .6s var(--ease-smooth);mix-blend-mode:overlay;}
-.btn:hover::after{transform:translateX(130%);}
-.btn:active{transform:translateY(0) scale(.97);}
-.btn svg{transition:transform .3s var(--ease-spring);}
-.btn-primary{background:var(--grad-orange);background-size:140% 140%;background-position:0% 50%;
-  box-shadow:var(--sh-orange);transition:transform .3s var(--ease-spring),box-shadow .3s var(--ease-smooth),background-position .5s ease;}
-.btn-primary:hover{background-position:100% 50%;transform:translateY(-3px);
-  box-shadow:0 18px 40px -8px rgba(227,95,18,.55),0 6px 14px -3px rgba(227,95,18,.35);}
-.btn-primary:hover svg{transform:translateX(2px) scale(1.05);}
-[dir="rtl"] .btn-primary:hover svg{transform:translateX(-2px) scale(1.05);}
-.btn-whatsapp{background:linear-gradient(135deg,#27c265 0%,#1faf54 55%,#1c9d4c 100%);
-  box-shadow:0 10px 26px -6px rgba(31,175,84,.45);}
-.btn-whatsapp:hover{transform:translateY(-3px);box-shadow:0 18px 40px -8px rgba(31,175,84,.5);}
-.btn-ghost-light{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.26);
-  backdrop-filter:blur(10px) saturate(140%);}
-.btn-ghost-light:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.4);transform:translateY(-3px);}
 
 /* ---------- Eyebrow: gradient accent ---------- */
 .eyebrow::before{background:var(--grad-orange);width:26px;height:2.5px;}
@@ -917,8 +901,7 @@ body{background:
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 8px 20px -6px rgba(227,95,18,.4);}
 
 /* nav-call premium */
-.nav-call{background:var(--grad-orange);box-shadow:var(--sh-orange);overflow:hidden;}
-.nav-call:hover{transform:translateY(-2px);box-shadow:0 16px 34px -8px rgba(227,95,18,.5);}
+.nav-call{background:var(--grad-orange);box-shadow:var(--sh-orange);}
 
 /* ---------- Hero: atmospheric depth + finer grain ---------- */
 .hero,.page-hero,.doc-hero,.mk-hero{background:var(--grad-onyx);}
@@ -1001,12 +984,8 @@ body{background:
 .app-dock{background:rgba(252,250,247,.82);backdrop-filter:blur(24px) saturate(180%);
   -webkit-backdrop-filter:blur(24px) saturate(180%);
   box-shadow:0 -1px 0 rgba(28,22,14,.06),0 -10px 40px -10px rgba(28,22,14,.18);}
-.dock-side{transition:transform .3s var(--ease-spring),background .25s ease,color .2s ease;}
-.dock-side:active{transform:scale(.93);}
 .dock-call{background:var(--grad-orange);
-  box-shadow:0 12px 28px -6px rgba(227,95,18,.55),0 0 0 4px #fff;
-  transition:transform .3s var(--ease-spring),box-shadow .3s ease;}
-.dock-call:active{transform:translateY(-30px) scale(.95);}
+  box-shadow:0 12px 28px -6px rgba(227,95,18,.55),0 0 0 4px #fff;}
 
 /* ---------- Forms: premium focus ---------- */
 .field input,.field select,.field textarea{transition:border-color .2s ease,box-shadow .25s ease,background .2s ease;}
@@ -1038,7 +1017,6 @@ body{background:
   .callout{border-radius:18px;}
   /* fade card hover-lifts into press states on touch */
   .tile:active,.ct-tile:active,.svc-card:active{transform:scale(.98);}
-  .dock-call:active{transform:translateY(-22px) scale(.95);}
 }
 
 /* crisper rendering of gradient text on webkit */
@@ -1099,32 +1077,3 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .site-footer .footer-col .btn,
 .site-footer .footer-col .btn span{color:#fff !important;}
 
-/* =================================================================
-   ★★★  SIMPLE BUTTONS OVERRIDE (sitewide)
-   Calm, professional buttons — no sheen sweep, no spring bounce.
-   Keeps a clean color + subtle shadow change on hover only.
-   ================================================================= */
-.btn{transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease,color .2s ease !important;}
-.btn::after{display:none !important;}            /* kill sheen sweep */
-.btn svg{transition:none !important;}
-.btn:hover{transform:none !important;}
-.btn:active{transform:translateY(1px) !important;}
-
-/* primary: solid orange, simple darken on hover (no gradient slide) */
-.btn-primary{background:var(--orange-500) !important;background-size:auto !important;
-  background-position:0 0 !important;box-shadow:0 2px 6px rgba(227,95,18,.25) !important;}
-.btn-primary:hover{background:var(--orange-600) !important;
-  box-shadow:0 4px 10px rgba(227,95,18,.3) !important;transform:none !important;}
-
-/* whatsapp */
-.btn-whatsapp:hover{background:#1c9d4c !important;transform:none !important;box-shadow:0 4px 10px rgba(31,175,84,.25) !important;}
-
-/* secondary / outline / ghost: simple */
-.btn-ghost-light:hover,.btn-outline:hover,.btn-dark:hover{transform:none !important;}
-
-/* nav + dock call buttons: calm them too */
-.nav-call{transition:background-color .2s ease !important;}
-.nav-call:hover{transform:none !important;background:var(--orange-600) !important;}
-.dock-call{transition:background-color .2s ease,box-shadow .2s ease !important;}
-.dock-call:active{transform:scale(.97) !important;}
-.dock-side:active{transform:scale(.97) !important;}

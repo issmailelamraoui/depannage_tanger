@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="/assets/styles.css">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":["AutoRepair","LocalBusiness","AutomotiveBusiness"],"name":"Melloussa Assistance - Dépannage & Remorquage Tanger","image":"https://www.melloussaassistance.com/og.jpg","logo":"https://www.melloussaassistance.com/logo.png","telephone":"+212668195992","url":"https://www.melloussaassistance.com","priceRange":"MAD","address":{"@type":"PostalAddress","streetAddress":"Zone Franche Melloussa","addressLocality":"Tanger","addressRegion":"Tanger-Tétouan-Al Hoceïma","postalCode":"90000","addressCountry":"MA"},"geo":{"@type":"GeoCoordinates","latitude":35.7595,"longitude":-5.8339},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},"contactPoint":{"@type":"ContactPoint","telephone":"+212668195992","contactType":"customer service","areaServed":"MA","availableLanguage":["French","Arabic","English"]},"areaServed":["Tanger","Melloussa","Zone Industrielle TAC","Tanger Med","Port Tanger Med","Cap Spartel","Gzenaya","Malabata","Médina","Kasbah","Aéroport Ibn Battouta","Centre-ville"],"sameAs":["https://www.facebook.com/melloussaassistance","https://www.instagram.com/melloussaassistance"]}
@@ -27,6 +27,7 @@
 <meta name="twitter:title" content="Dépannage Auto Tanger & Melloussa 24/7 — 06 68 19 59 92 | Melloussa Assistance">
 <meta name="twitter:description" content="Remorquage et dépannage auto à Tanger 24h/24 et 7j/7. Dépanneuse en moins de 30 min : panne, accident, batterie, pneu, carburant, clés. ☎ 06 68 19 59 92.">
 <meta name="twitter:image" content="https://www.melloussaassistance.com/og.jpg">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="dc6f1895-7a8c-4374-b241-3a149c8962e7"></script>
 </head>
 <body class="has-dock">
 
@@ -51,7 +52,7 @@
       <div class="lang-switch" role="group" aria-label="Language">
         <button data-lang="fr">FR</button><button data-lang="ar">ع</button><button data-lang="en">EN</button>
       </div>
-      <a href="tel:+212668195992" class="nav-call"><i data-lucide="phone"></i>06 68 19 59 92</a>
+      <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="nav-call"><i data-lucide="phone"></i>06 68 19 59 92</a>
       <button class="menu-toggle" aria-label="Menu"><i data-lucide="menu"></i></button>
     </div>
   </div>
@@ -83,8 +84,8 @@
     <div class="mm-stat"><b>★ 4,9</b><span data-i18n="trust.rating.l">480+ avis</span></div>
   </div>
   <div class="mm-cta">
-    <a href="tel:+212668195992" class="btn btn-primary btn-block btn-lg"><i data-lucide="phone-call"></i><span data-i18n="cta.truck">Appeler une dépanneuse</span></a>
-    <a href="https://wa.me/212668195992" class="btn btn-whatsapp btn-block"><i data-lucide="message-circle"></i>WhatsApp</a>
+    <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-block btn-lg"><i data-lucide="phone-call"></i><span data-i18n="cta.truck">Appeler une dépanneuse</span></a>
+    <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="btn btn-whatsapp btn-block"><i data-lucide="message-circle"></i>WhatsApp</a>
   </div>
 </div>
 
@@ -99,7 +100,7 @@
       <h1 class="reveal" data-delay="1"><span data-i18n="hero.title">Remorquage &amp; dépannage auto à Tanger,</span> <span class="accent" data-i18n="hero.title.accent">24h/24.</span></h1>
       <p class="sub reveal" data-delay="2" data-i18n="hero.sub">En panne, accident, batterie à plat ou pneu crevé ? Une dépanneuse arrive vers vous en moins de 30 minutes, partout à Tanger.</p>
       <div class="hero-cta reveal" data-delay="3">
-        <a href="tel:+212668195992" class="btn btn-primary btn-lg"><i data-lucide="phone-call"></i><span data-i18n="cta.truck">Appeler une dépanneuse</span></a>
+        <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-lg"><i data-lucide="phone-call"></i><span data-i18n="cta.truck">Appeler une dépanneuse</span></a>
         <a href="/emergency/" class="btn btn-ghost-light btn-lg"><i data-lucide="siren"></i><span data-i18n="cta.express">Demande express</span></a>
       </div>
       <div class="hero-trust reveal" data-delay="4">
@@ -109,7 +110,12 @@
       </div>
     </div>
     <div class="hero-media reveal" data-delay="2">
-      <div class="hero-photo ph"><div class="ph-label">PHOTO · Dépanneuse Melloussa<br>chargeant un véhicule (verticale)</div></div>
+      <img src="/assets/hero-depanneuse.webp"
+           alt="Dépanneuse plateau Melloussa Assistance — remorquage et dépannage auto à Tanger, sokours auto autoroute Melloussa, depannage tomobil tanger 24h/24"
+           class="hero-photo"
+           loading="eager"
+           fetchpriority="high"
+           width="1366" height="911">
       <div class="hero-float hero-float--tl">
         <div class="fi" style="background:var(--orange-tint);color:var(--orange-600)"><i data-lucide="timer"></i></div>
         <div><small data-i18n="trust.eta.l">Arrivée moyenne</small><b data-i18n="trust.eta.b">&lt; 30 min</b></div>
@@ -142,11 +148,11 @@
     </div>
     <div class="tiles">
       <a href="/service/" class="tile reveal"><div class="tile-ico"><i data-lucide="truck"></i></div><h3 data-i18n="svc.tow.t">Remorquage</h3><p data-i18n="svc.tow.d">Véhicule en panne ou accidenté, remorqué en sécurité.</p></a>
-      <a href="/batterie-tanger/" class="tile reveal"><div class="tile-ico"><i data-lucide="battery-charging"></i></div><h3 data-i18n="svc.bat.t">Batterie / démarrage</h3><p data-i18n="svc.bat.d">Batterie à plat ? Démarrage immédiat sur place.</p></a>
-      <a href="/crevaison-tanger/" class="tile reveal"><div class="tile-ico"><i data-lucide="disc-3"></i></div><h3 data-i18n="svc.tire.t">Pneu crevé</h3><p data-i18n="svc.tire.d">Changement de roue ou réparation rapide sur place.</p></a>
+      <a href="/depannage-batterie-tanger/" class="tile reveal"><div class="tile-ico"><i data-lucide="battery-charging"></i></div><h3 data-i18n="svc.bat.t">Batterie / démarrage</h3><p data-i18n="svc.bat.d">Batterie à plat ? Démarrage immédiat sur place.</p></a>
+      <a href="/crevaison-pneu-tanger/" class="tile reveal"><div class="tile-ico"><i data-lucide="disc-3"></i></div><h3 data-i18n="svc.tire.t">Pneu crevé</h3><p data-i18n="svc.tire.d">Changement de roue ou réparation rapide sur place.</p></a>
       <a href="/service/" class="tile reveal"><div class="tile-ico"><i data-lucide="fuel"></i></div><h3 data-i18n="svc.fuel.t">Panne de carburant</h3><p data-i18n="svc.fuel.d">Livraison de carburant là où vous êtes.</p></a>
-      <a href="/ouverture-porte-tanger/" class="tile reveal"><div class="tile-ico"><i data-lucide="key-round"></i></div><h3 data-i18n="svc.key.t">Clés enfermées</h3><p data-i18n="svc.key.d">Ouverture de véhicule sans dégât.</p></a>
-      <a href="/poids-lourd-tanger-med/" class="tile reveal"><div class="tile-ico"><i data-lucide="container"></i></div><h3 data-i18n="svc.pl.t">Poids lourd &amp; flotte</h3><p data-i18n="svc.pl.d">Camions, utilitaires et contrats entreprise à Tanger Med.</p></a>
+      <a href="/ouverture-porte-vehicule-tanger/" class="tile reveal"><div class="tile-ico"><i data-lucide="key-round"></i></div><h3 data-i18n="svc.key.t">Clés enfermées</h3><p data-i18n="svc.key.d">Ouverture de véhicule sans dégât.</p></a>
+      <a href="/remorquage-poids-lourd-tanger-med/" class="tile reveal"><div class="tile-ico"><i data-lucide="container"></i></div><h3 data-i18n="svc.pl.t">Poids lourd &amp; flotte</h3><p data-i18n="svc.pl.d">Camions, utilitaires et contrats entreprise à Tanger Med.</p></a>
       <a href="/service/" class="tile reveal"><div class="tile-ico"><i data-lucide="car-front"></i></div><h3 data-i18n="svc.accident.t">Accident / enlèvement</h3><p data-i18n="svc.accident.d">Assistance et enlèvement après accident.</p></a>
       <a href="/emergency/" class="tile tile-urgent reveal"><div class="tile-ico"><i data-lucide="siren"></i></div><h3 data-i18n="dock.express">Urgence</h3><span class="tile-go"><span data-i18n="cta.express">Demande express</span><i data-lucide="arrow-right"></i></span></a>
     </div>
@@ -217,13 +223,13 @@
       <h2 style="margin-top:14px;font-size:clamp(26px,3.6vw,38px)" data-i18n="zn.title">Partout à Tanger et sur les grands axes.</h2>
       <p class="lead" style="margin-top:16px;color:var(--slate-500)" data-i18n="zn.lead">En ville comme sur l'autoroute, une dépanneuse Melloussa intervient rapidement près de vous.</p>
       <div class="zone-pins">
-        <a href="/medina/" class="zone-pin"><i data-lucide="landmark"></i><span data-i18n="zn.mk">Médina &amp; Kasbah</span></a>
-        <a href="/cap-spartel/" class="zone-pin"><i data-lucide="lighthouse"></i><span data-i18n="zn.cs">Cap Spartel</span></a>
-        <a href="/centreville/" class="zone-pin"><i data-lucide="building-2"></i><span data-i18n="zn.cv">Centre ville</span></a>
+        <a href="/depannage-medina-kasbah-tanger/" class="zone-pin"><i data-lucide="landmark"></i><span data-i18n="zn.mk">Médina &amp; Kasbah</span></a>
+        <a href="/depannage-cap-spartel-grottes-hercule/" class="zone-pin"><i data-lucide="lighthouse"></i><span data-i18n="zn.cs">Cap Spartel</span></a>
+        <a href="/depannage-centreville-tanger/" class="zone-pin"><i data-lucide="building-2"></i><span data-i18n="zn.cv">Centre ville</span></a>
         <a href="/district/" class="zone-pin"><i data-lucide="map-pin"></i><span data-i18n="zn.mal">Malabata</span></a>
-        <a href="/corniche-iberia/" class="zone-pin"><i data-lucide="waves"></i><span data-i18n="zn.ci">Corniche &amp; Iberia</span></a>
-        <a href="/tanger-med/" class="zone-pin"><i data-lucide="anchor"></i><span data-i18n="zn.tm">Tanger Med</span></a>
-        <a href="/aeroport/" class="zone-pin"><i data-lucide="plane"></i><span data-i18n="zn.ap">Aéroport Ibn Battouta</span></a>
+        <a href="/depannage-corniche-iberia-tanger/" class="zone-pin"><i data-lucide="waves"></i><span data-i18n="zn.ci">Corniche &amp; Iberia</span></a>
+        <a href="/depannage-tanger-med-zone-franche/" class="zone-pin"><i data-lucide="anchor"></i><span data-i18n="zn.tm">Tanger Med</span></a>
+        <a href="/depannage-aeroport-ibn-battouta-boukhalef-tanger/" class="zone-pin"><i data-lucide="plane"></i><span data-i18n="zn.ap">Aéroport Ibn Battouta</span></a>
         <a href="/contact/" class="zone-pin" style="border-style:dashed;color:var(--orange-700)"><span data-i18n="zn.cta">Votre secteur</span><i data-lucide="arrow-right"></i></a>
       </div>
     </div>
@@ -236,10 +242,10 @@
     <div class="prose reveal" style="max-width:none">
       <span class="eyebrow" data-i18n="guide.eyebrow">Guide dépannage à Tanger</span>
       <h2 style="margin-top:12px;font-size:clamp(26px,3.6vw,38px)" data-i18n="guide.h2">Remorquage &amp; dépannage auto à Tanger&nbsp;: tout ce qu'il faut savoir</h2>
-      <p style="margin-top:16px" data-i18n="guide.p1">Tanger n'est pas une ville comme les autres pour un automobiliste. Entre les ruelles en forte pente de la <a href="/medina/">Médina et de la Kasbah</a>, le trafic dense du <a href="/centreville/">centre ville</a> autour du Boulevard Pasteur, les longues lignes droites de la <a href="/corniche-iberia/">Corniche</a> et les grands axes qui filent vers <a href="/tanger-med/">Tanger Med</a> et l'<a href="/aeroport/">aéroport Ibn Battouta</a>, chaque secteur a ses propres contraintes — et ses propres pannes typiques. C'est précisément pour cela qu'une assistance routière <strong>réellement locale</strong> fait la différence&nbsp;: elle sait où vous êtes, comment y accéder, et avec quel matériel intervenir.</p>
+      <p style="margin-top:16px" data-i18n="guide.p1">Tanger n'est pas une ville comme les autres pour un automobiliste. Entre les ruelles en forte pente de la <a href="/depannage-medina-kasbah-tanger/">Médina et de la Kasbah</a>, le trafic dense du <a href="/depannage-centreville-tanger/">centre ville</a> autour du Boulevard Pasteur, les longues lignes droites de la <a href="/depannage-corniche-iberia-tanger/">Corniche</a> et les grands axes qui filent vers <a href="/depannage-tanger-med-zone-franche/">Tanger Med</a> et l'<a href="/depannage-aeroport-ibn-battouta-boukhalef-tanger/">aéroport Ibn Battouta</a>, chaque secteur a ses propres contraintes — et ses propres pannes typiques. C'est précisément pour cela qu'une assistance routière <strong>réellement locale</strong> fait la différence&nbsp;: elle sait où vous êtes, comment y accéder, et avec quel matériel intervenir.</p>
 
       <h3 data-i18n="guide.h3.1">Les pannes les plus fréquentes à Tanger</h3>
-      <p data-i18n="guide.p2">L'air marin et l'humidité de la baie accélèrent l'usure des <a href="/batterie-tanger/">batteries</a>&nbsp;: c'est la première cause d'immobilisation, surtout le matin et en hiver. Viennent ensuite les <a href="/crevaison-tanger/">crevaisons</a> sur les portions de route dégradées et les grands axes, les <a href="/ouverture-porte-tanger/">clés enfermées</a> dans des moments de précipitation, et les pannes mécaniques nécessitant un <a href="/service/">remorquage</a> vers un garage. Pour les professionnels, l'enjeu se déplace vers la <a href="/poids-lourd-tanger-med/">flotte et les poids lourds</a> de la zone logistique.</p>
+      <p data-i18n="guide.p2">L'air marin et l'humidité de la baie accélèrent l'usure des <a href="/depannage-batterie-tanger/">batteries</a>&nbsp;: c'est la première cause d'immobilisation, surtout le matin et en hiver. Viennent ensuite les <a href="/crevaison-pneu-tanger/">crevaisons</a> sur les portions de route dégradées et les grands axes, les <a href="/ouverture-porte-vehicule-tanger/">clés enfermées</a> dans des moments de précipitation, et les pannes mécaniques nécessitant un <a href="/service/">remorquage</a> vers un garage. Pour les professionnels, l'enjeu se déplace vers la <a href="/remorquage-poids-lourd-tanger-med/">flotte et les poids lourds</a> de la zone logistique.</p>
 
       <h3 data-i18n="guide.h3.2">Faut-il toujours remorquer le véhicule&nbsp;?</h3>
       <p data-i18n="guide.p3">Non, et c'est un principe que nous tenons&nbsp;: si une panne peut être réglée sur place — batterie, roue, carburant, faux contact — nous le faisons, sans remorquage inutile. Le remorquage n'intervient que lorsque le véhicule ne peut réellement plus rouler en sécurité. Notre rôle est de vous remettre sur la route au plus vite, pas de multiplier les opérations.</p>
@@ -258,7 +264,7 @@
       </div>
 
       <h3 data-i18n="guide.h3.4">Une couverture pensée pour toute la ville</h3>
-      <p data-i18n="guide.p4">De la pointe de <a href="/cap-spartel/">Cap Spartel</a> à l'ouest jusqu'au port de Tanger Med à l'est, en passant par tous les quartiers résidentiels et les zones d'activité, nos dépanneuses sont réparties pour réduire le délai d'arrivée. Découvrez la page dédiée à votre secteur pour les informations locales, les pannes typiques et les conseils d'accès — ou appelez-nous directement, nous localisons la dépanneuse la plus proche de vous.</p>
+      <p data-i18n="guide.p4">De la pointe de <a href="/depannage-cap-spartel-grottes-hercule/">Cap Spartel</a> à l'ouest jusqu'au port de Tanger Med à l'est, en passant par tous les quartiers résidentiels et les zones d'activité, nos dépanneuses sont réparties pour réduire le délai d'arrivée. Découvrez la page dédiée à votre secteur pour les informations locales, les pannes typiques et les conseils d'accès — ou appelez-nous directement, nous localisons la dépanneuse la plus proche de vous.</p>
     </div>
   </div>
 </section>
@@ -281,7 +287,7 @@
       <i data-lucide="message-circle"></i>
       <div>
         <p><strong data-i18n="faq.darija.t">Vous cherchez en darija ou en français marocain&nbsp;?</strong></p>
-        <p style="margin-top:6px;font-size:0.88em;line-height:1.75;color:var(--slate-500)" data-i18n="faq.darija.p">On comprend aussi&nbsp;: <b>depannage tomobil tanger</b> · <b>batri taht lia</b> · <b>sokours auto autoroute Melloussa</b> · <b>grue Tanger Med</b> · <b>mecanicien hdaya</b>. Appelez le <a href="tel:+212668195992">06&nbsp;68&nbsp;19&nbsp;59&nbsp;92</a> — réponse immédiate, 24h/24.</p>
+        <p style="margin-top:6px;font-size:0.88em;line-height:1.75;color:var(--slate-500)" data-i18n="faq.darija.p">On comprend aussi&nbsp;: <b>depannage tomobil tanger</b> · <b>batri taht lia</b> · <b>sokours auto autoroute Melloussa</b> · <b>grue Tanger Med</b> · <b>mecanicien hdaya</b>. Appelez le <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent">06&nbsp;68&nbsp;19&nbsp;59&nbsp;92</a> — réponse immédiate, 24h/24.</p>
       </div>
     </div>
   </div>
@@ -293,8 +299,8 @@
     <span class="eyebrow" style="color:var(--orange-400);justify-content:center" data-i18n="em.badge">Intervention immédiate</span>
     <h2 style="max-width:640px;margin-top:12px" data-i18n="hero.title">Remorquage &amp; dépannage auto à Tanger, 24h/24.</h2>
     <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:26px">
-      <a href="tel:+212668195992" class="btn btn-primary btn-lg"><i data-lucide="phone-call"></i>06 68 19 59 92</a>
-      <a href="https://wa.me/212668195992" class="btn btn-whatsapp btn-lg"><i data-lucide="message-circle"></i>WhatsApp</a>
+      <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-lg"><i data-lucide="phone-call"></i>06 68 19 59 92</a>
+      <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="btn btn-whatsapp btn-lg"><i data-lucide="message-circle"></i>WhatsApp</a>
     </div>
   </div>
 </section>
@@ -309,31 +315,27 @@
         <div class="footer-social">
           <a href="#" aria-label="Site web"><i data-lucide="globe"></i></a>
           <a href="#" aria-label="Instagram"><i data-lucide="camera"></i></a>
-          <a href="https://wa.me/212668195992" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+          <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
         </div>
       </div>
       <div class="footer-col"><h4 data-i18n="ft.services">Services</h4><ul>
         <li><a href="/service/" data-i18n="svc.tow.t">Remorquage</a></li>
-        <li><a href="/batterie-tanger/" data-i18n="svc.bat.t">Batterie / démarrage</a></li>
-        <li><a href="/crevaison-tanger/" data-i18n="svc.tire.t">Pneu crevé</a></li>
-        <li><a href="/ouverture-porte-tanger/" data-i18n="svc.key.t">Clés enfermées</a></li>
-        <li><a href="/poids-lourd-tanger-med/" data-i18n="svc.pl.t">Poids lourd &amp; flotte</a></li>
+        <li><a href="/depannage-batterie-tanger/" data-i18n="svc.bat.t">Batterie / démarrage</a></li>
+        <li><a href="/crevaison-pneu-tanger/" data-i18n="svc.tire.t">Pneu crevé</a></li>
+        <li><a href="/ouverture-porte-vehicule-tanger/" data-i18n="svc.key.t">Clés enfermées</a></li>
+        <li><a href="/remorquage-poids-lourd-tanger-med/" data-i18n="svc.pl.t">Poids lourd &amp; flotte</a></li>
       </ul></div>
       <div class="footer-col"><h4 data-i18n="ft.zones">Zones</h4><ul>
-        <li><a href="/medina/" data-i18n="zn.mk">Médina &amp; Kasbah</a></li>
-        <li><a href="/cap-spartel/" data-i18n="zn.cs">Cap Spartel</a></li>
-        <li><a href="/centreville/" data-i18n="zn.cv">Centre ville</a></li>
-        <li><a href="/tanger-med/" data-i18n="zn.tm">Tanger Med</a></li>
-        <li><a href="/aeroport/" data-i18n="zn.ap">Aéroport</a></li>
-        <li><a href="/corniche-iberia/" data-i18n="zn.ci">Corniche &amp; Iberia</a></li>
+        <li><a href="/depannage-medina-kasbah-tanger/" data-i18n="zn.mk">Médina &amp; Kasbah</a></li>
+        <li><a href="/depannage-cap-spartel-grottes-hercule/" data-i18n="zn.cs">Cap Spartel</a></li>
+        <li><a href="/depannage-centreville-tanger/" data-i18n="zn.cv">Centre ville</a></li>
+        <li><a href="/depannage-tanger-med-zone-franche/" data-i18n="zn.tm">Tanger Med</a></li>
+        <li><a href="/depannage-aeroport-ibn-battouta-boukhalef-tanger/" data-i18n="zn.ap">Aéroport</a></li>
+        <li><a href="/depannage-corniche-iberia-tanger/" data-i18n="zn.ci">Corniche &amp; Iberia</a></li>
       </ul></div>
       <div class="footer-col"><h4 data-i18n="ft.cta">Urgence 24/7</h4>
-        <a href="tel:+212668195992" class="btn btn-primary btn-block" style="margin-bottom:12px"><i data-lucide="phone"></i>06 68 19 59 92</a>
-        <a href="https://wa.me/212668195992" class="btn btn-whatsapp btn-block"><i data-lucide="message-circle"></i>WhatsApp</a>
-        <ul style="margin-top:22px">
-          <li><a href="/mockups/" style="color:var(--orange-400);font-weight:700">📱 Mockups mobiles</a></li>
-          <li><a href="/strategy/" style="color:var(--orange-400);font-weight:700">📐 Design & SEO</a></li>
-        </ul>
+        <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-block" style="margin-bottom:12px"><i data-lucide="phone"></i>06 68 19 59 92</a>
+        <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="btn btn-whatsapp btn-block"><i data-lucide="message-circle"></i>WhatsApp</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -345,12 +347,12 @@
 
 <!-- APP DOCK -->
 <nav class="app-dock" aria-label="Actions rapides">
-  <a href="https://wa.me/212668195992" class="dock-side wa"><i data-lucide="message-circle"></i><span data-i18n="dock.wa">WhatsApp</span></a>
-  <a href="tel:+212668195992" class="dock-call"><i data-lucide="phone-call"></i><span data-i18n="dock.call">Appeler</span></a>
+  <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="dock-side wa"><i data-lucide="message-circle"></i><span data-i18n="dock.wa">WhatsApp</span></a>
+  <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="dock-call"><i data-lucide="phone-call"></i><span data-i18n="dock.call">Appeler</span></a>
   <a href="/emergency/" class="dock-side"><i data-lucide="siren"></i><span data-i18n="dock.express">Urgence</span></a>
 </nav>
 
-<script src="assets/site.js"></script>
+<script src="/assets/site.js"></script>
 <script>
 Object.assign(I18N.fr,{
 "faq.darija.t":"Vous cherchez en darija ou en français marocain&nbsp;?",
@@ -361,9 +363,9 @@ Object.assign(I18N.fr,{
 "svc.pl.t":"Poids lourd & flotte","svc.pl.d":"Camions, utilitaires et contrats entreprise à Tanger Med.",
 "guide.eyebrow":"Guide dépannage à Tanger",
 "guide.h2":"Remorquage &amp; dépannage auto à Tanger&nbsp;: tout ce qu'il faut savoir",
-"guide.p1":"Tanger n'est pas une ville comme les autres pour un automobiliste. Entre les ruelles en forte pente de la <a href=\"/medina/\">Médina et de la Kasbah</a>, le trafic dense du <a href=\"/centreville/\">centre ville</a> autour du Boulevard Pasteur, les longues lignes droites de la <a href=\"/corniche-iberia/\">Corniche</a> et les grands axes qui filent vers <a href=\"/tanger-med/\">Tanger Med</a> et l'<a href=\"/aeroport/\">aéroport Ibn Battouta</a>, chaque secteur a ses propres contraintes — et ses propres pannes typiques. C'est précisément pour cela qu'une assistance routière <strong>réellement locale</strong> fait la différence&nbsp;: elle sait où vous êtes, comment y accéder, et avec quel matériel intervenir.",
+"guide.p1":"Tanger n'est pas une ville comme les autres pour un automobiliste. Entre les ruelles en forte pente de la <a href=\"/depannage-medina-kasbah-tanger/\">Médina et de la Kasbah</a>, le trafic dense du <a href=\"/depannage-centreville-tanger/\">centre ville</a> autour du Boulevard Pasteur, les longues lignes droites de la <a href=\"/depannage-corniche-iberia-tanger/\">Corniche</a> et les grands axes qui filent vers <a href=\"/depannage-tanger-med-zone-franche/\">Tanger Med</a> et l'<a href=\"/depannage-aeroport-ibn-battouta-boukhalef-tanger/\">aéroport Ibn Battouta</a>, chaque secteur a ses propres contraintes — et ses propres pannes typiques. C'est précisément pour cela qu'une assistance routière <strong>réellement locale</strong> fait la différence&nbsp;: elle sait où vous êtes, comment y accéder, et avec quel matériel intervenir.",
 "guide.h3.1":"Les pannes les plus fréquentes à Tanger",
-"guide.p2":"L'air marin et l'humidité de la baie accélèrent l'usure des <a href=\"/batterie-tanger/\">batteries</a>&nbsp;: c'est la première cause d'immobilisation, surtout le matin et en hiver. Viennent ensuite les <a href=\"/crevaison-tanger/\">crevaisons</a> sur les portions de route dégradées et les grands axes, les <a href=\"/ouverture-porte-tanger/\">clés enfermées</a> dans des moments de précipitation, et les pannes mécaniques nécessitant un <a href=\"/service/\">remorquage</a> vers un garage. Pour les professionnels, l'enjeu se déplace vers la <a href=\"/poids-lourd-tanger-med/\">flotte et les poids lourds</a> de la zone logistique.",
+"guide.p2":"L'air marin et l'humidité de la baie accélèrent l'usure des <a href=\"/depannage-batterie-tanger/\">batteries</a>&nbsp;: c'est la première cause d'immobilisation, surtout le matin et en hiver. Viennent ensuite les <a href=\"/crevaison-pneu-tanger/\">crevaisons</a> sur les portions de route dégradées et les grands axes, les <a href=\"/ouverture-porte-vehicule-tanger/\">clés enfermées</a> dans des moments de précipitation, et les pannes mécaniques nécessitant un <a href=\"/service/\">remorquage</a> vers un garage. Pour les professionnels, l'enjeu se déplace vers la <a href=\"/remorquage-poids-lourd-tanger-med/\">flotte et les poids lourds</a> de la zone logistique.",
 "guide.h3.2":"Faut-il toujours remorquer le véhicule&nbsp;?",
 "guide.p3":"Non, et c'est un principe que nous tenons&nbsp;: si une panne peut être réglée sur place — batterie, roue, carburant, faux contact — nous le faisons, sans remorquage inutile. Le remorquage n'intervient que lorsque le véhicule ne peut réellement plus rouler en sécurité. Notre rôle est de vous remettre sur la route au plus vite, pas de multiplier les opérations.",
 "guide.h3.3":"Que faire en attendant la dépanneuse&nbsp;?",
@@ -373,7 +375,7 @@ Object.assign(I18N.fr,{
 "guide.li4":"Gardez votre téléphone chargé et restez joignable&nbsp;: nous vous rappelons en approche.",
 "guide.callout":"Nos opérateurs vous répondent en <strong>français, en arabe (darija)</strong> et en <strong>anglais</strong>. Que vous disiez «&nbsp;j'ai besoin d'une dépanneuse&nbsp;», «&nbsp;<span lang=\"ar\" dir=\"rtl\">عندي طوموبيل خاصها الريمورکاج</span>&nbsp;» ou «&nbsp;I need a tow truck&nbsp;», vous serez compris immédiatement.",
 "guide.h3.4":"Une couverture pensée pour toute la ville",
-"guide.p4":"De la pointe de <a href=\"/cap-spartel/\">Cap Spartel</a> à l'ouest jusqu'au port de Tanger Med à l'est, en passant par tous les quartiers résidentiels et les zones d'activité, nos dépanneuses sont réparties pour réduire le délai d'arrivée. Découvrez la page dédiée à votre secteur pour les informations locales, les pannes typiques et les conseils d'accès — ou appelez-nous directement, nous localisons la dépanneuse la plus proche de vous."
+"guide.p4":"De la pointe de <a href=\"/depannage-cap-spartel-grottes-hercule/\">Cap Spartel</a> à l'ouest jusqu'au port de Tanger Med à l'est, en passant par tous les quartiers résidentiels et les zones d'activité, nos dépanneuses sont réparties pour réduire le délai d'arrivée. Découvrez la page dédiée à votre secteur pour les informations locales, les pannes typiques et les conseils d'accès — ou appelez-nous directement, nous localisons la dépanneuse la plus proche de vous."
 });
 Object.assign(I18N.ar,{
 "faq.darija.t":"تبحثون بالدارجة أو الفرنسية المغربية؟",
@@ -384,9 +386,9 @@ Object.assign(I18N.ar,{
 "svc.pl.t":"الشاحنات الثقيلة والأسطول","svc.pl.d":"شاحنات وسيارات خدمة وعقود مؤسسات بطنجة المتوسط.",
 "guide.eyebrow":"دليل الديباناج في طنجة",
 "guide.h2":"السحب وديباناج السيارات في طنجة: كل ما تحتاجون معرفته",
-"guide.p1":"طنجة ليست مدينة عادية للسائق. بين الأزقة المنحدرة لـ<a href=\"/medina/\">المدينة العتيقة والقصبة</a>، والحركة المكثّفة في <a href=\"/centreville/\">وسط المدينة</a> حول بوليفار باستور، والمحاور الطويلة نحو <a href=\"/tanger-med/\">طنجة المتوسط</a> و<a href=\"/aeroport/\">مطار ابن بطوطة</a>، لكل قطاع قيوده الخاصة وأعطاله النموذجية. لهذا بالضبط تُحدث مساعدة طرقية <strong>محلية حقاً</strong> الفارق: تعرف أين أنتم، كيف الوصول إليكم، وبأي معدات التدخل.",
+"guide.p1":"طنجة ليست مدينة عادية للسائق. بين الأزقة المنحدرة لـ<a href=\"/depannage-medina-kasbah-tanger/\">المدينة العتيقة والقصبة</a>، والحركة المكثّفة في <a href=\"/depannage-centreville-tanger/\">وسط المدينة</a> حول بوليفار باستور، والمحاور الطويلة نحو <a href=\"/depannage-tanger-med-zone-franche/\">طنجة المتوسط</a> و<a href=\"/depannage-aeroport-ibn-battouta-boukhalef-tanger/\">مطار ابن بطوطة</a>، لكل قطاع قيوده الخاصة وأعطاله النموذجية. لهذا بالضبط تُحدث مساعدة طرقية <strong>محلية حقاً</strong> الفارق: تعرف أين أنتم، كيف الوصول إليكم، وبأي معدات التدخل.",
 "guide.h3.1":"أكثر الأعطال شيوعاً في طنجة",
-"guide.p2":"الهواء البحري ورطوبة الخليج تُسرّع تلف <a href=\"/batterie-tanger/\">البطاريات</a>: هي السبب الأول للتوقف، خاصةً صباحاً وشتاءً. ثم تأتي <a href=\"/crevaison-tanger/\">ثقوب الإطارات</a> على الطرق المتردية والمحاور الكبرى، و<a href=\"/ouverture-porte-tanger/\">المفاتيح داخل السيارة</a> في لحظات التسرع، والأعطال الميكانيكية التي تستلزم <a href=\"/service/\">سحباً</a> نحو الورشة. أما للمهنيين، ينتقل الرهان نحو <a href=\"/poids-lourd-tanger-med/\">الأسطول والشاحنات الثقيلة</a> في المنطقة اللوجستية.",
+"guide.p2":"الهواء البحري ورطوبة الخليج تُسرّع تلف <a href=\"/depannage-batterie-tanger/\">البطاريات</a>: هي السبب الأول للتوقف، خاصةً صباحاً وشتاءً. ثم تأتي <a href=\"/crevaison-pneu-tanger/\">ثقوب الإطارات</a> على الطرق المتردية والمحاور الكبرى، و<a href=\"/ouverture-porte-vehicule-tanger/\">المفاتيح داخل السيارة</a> في لحظات التسرع، والأعطال الميكانيكية التي تستلزم <a href=\"/service/\">سحباً</a> نحو الورشة. أما للمهنيين، ينتقل الرهان نحو <a href=\"/remorquage-poids-lourd-tanger-med/\">الأسطول والشاحنات الثقيلة</a> في المنطقة اللوجستية.",
 "guide.h3.2":"هل يجب دائماً سحب المركبة؟",
 "guide.p3":"لا، وهذا مبدأ نتمسك به: إن كان العطل قابلاً للحل في المكان — بطارية، إطار، وقود، اتصال كهربائي — نفعل ذلك دون سحب غير ضروري. السحب لا يتدخّل إلا حين تعذّر السير بأمان فعلاً. دورنا إعادتكم للطريق بأسرع وقت، لا تكثير العمليات.",
 "guide.h3.3":"ماذا تفعلون في انتظار الدبّانجي؟",
@@ -396,7 +398,7 @@ Object.assign(I18N.ar,{
 "guide.li4":"احتفظوا بشحن هاتفكم وابقوا متاحين: نتصل بكم عند الاقتراب.",
 "guide.callout":"يردّ مشغّلونا بـ<strong>الفرنسية والعربية (الدارجة)</strong> وبـ<strong>الإنجليزية</strong>. سواء قلتم «j'ai besoin d'une dépanneuse» أو «<span lang=\"ar\" dir=\"rtl\">عندي طوموبيل خاصها الريمورکاج</span>» أو «I need a tow truck»، ستُفهَمون فوراً.",
 "guide.h3.4":"تغطية مُصمَّمة لكل المدينة",
-"guide.p4":"من أقصى <a href=\"/cap-spartel/\">رأس سبارتيل</a> غرباً حتى ميناء طنجة المتوسط شرقاً، مروراً بجميع الأحياء السكنية ومناطق النشاط، دبّانجياتنا موزّعة للحدّ من وقت الوصول. اكتشفوا الصفحة المخصّصة لقطاعكم لمعلومات محلية وأعطال نموذجية ونصائح الوصول — أو اتصلوا بنا مباشرةً، نحدّد أقرب دبّانجي منكم."
+"guide.p4":"من أقصى <a href=\"/depannage-cap-spartel-grottes-hercule/\">رأس سبارتيل</a> غرباً حتى ميناء طنجة المتوسط شرقاً، مروراً بجميع الأحياء السكنية ومناطق النشاط، دبّانجياتنا موزّعة للحدّ من وقت الوصول. اكتشفوا الصفحة المخصّصة لقطاعكم لمعلومات محلية وأعطال نموذجية ونصائح الوصول — أو اتصلوا بنا مباشرةً، نحدّد أقرب دبّانجي منكم."
 });
 Object.assign(I18N.en,{
 "faq.darija.t":"Searching in Darija or Moroccan French?",
@@ -407,9 +409,9 @@ Object.assign(I18N.en,{
 "svc.pl.t":"Heavy vehicles & fleet","svc.pl.d":"Trucks, vans and fleet contracts at Tanger Med.",
 "guide.eyebrow":"Breakdown guide in Tanger",
 "guide.h2":"Towing &amp; car breakdown in Tanger: everything you need to know",
-"guide.p1":"Tanger is not an ordinary city for a driver. Between the steep alleys of the <a href=\"/medina/\">Medina and Kasbah</a>, the dense traffic of the <a href=\"/centreville/\">city centre</a> around Boulevard Pasteur, the long straight roads of the <a href=\"/corniche-iberia/\">Corniche</a> and the main routes heading to <a href=\"/tanger-med/\">Tanger Med</a> and <a href=\"/aeroport/\">Ibn Battouta airport</a>, every sector has its own constraints — and its own typical breakdowns. That is precisely why <strong>genuinely local</strong> roadside assistance makes the difference: it knows where you are, how to reach you, and which equipment to bring.",
+"guide.p1":"Tanger is not an ordinary city for a driver. Between the steep alleys of the <a href=\"/depannage-medina-kasbah-tanger/\">Medina and Kasbah</a>, the dense traffic of the <a href=\"/depannage-centreville-tanger/\">city centre</a> around Boulevard Pasteur, the long straight roads of the <a href=\"/depannage-corniche-iberia-tanger/\">Corniche</a> and the main routes heading to <a href=\"/depannage-tanger-med-zone-franche/\">Tanger Med</a> and <a href=\"/depannage-aeroport-ibn-battouta-boukhalef-tanger/\">Ibn Battouta airport</a>, every sector has its own constraints — and its own typical breakdowns. That is precisely why <strong>genuinely local</strong> roadside assistance makes the difference: it knows where you are, how to reach you, and which equipment to bring.",
 "guide.h3.1":"The most common breakdowns in Tanger",
-"guide.p2":"Sea air and bay humidity accelerate <a href=\"/batterie-tanger/\">battery</a> wear: it is the leading cause of breakdown, especially in the morning and in winter. Next come <a href=\"/crevaison-tanger/\">flat tyres</a> on degraded road sections and main roads, <a href=\"/ouverture-porte-tanger/\">keys locked inside</a> in moments of haste, and mechanical failures requiring a <a href=\"/service/\">tow</a> to a garage. For professionals, the challenge shifts to the <a href=\"/poids-lourd-tanger-med/\">fleet and heavy vehicles</a> of the logistics zone.",
+"guide.p2":"Sea air and bay humidity accelerate <a href=\"/depannage-batterie-tanger/\">battery</a> wear: it is the leading cause of breakdown, especially in the morning and in winter. Next come <a href=\"/crevaison-pneu-tanger/\">flat tyres</a> on degraded road sections and main roads, <a href=\"/ouverture-porte-vehicule-tanger/\">keys locked inside</a> in moments of haste, and mechanical failures requiring a <a href=\"/service/\">tow</a> to a garage. For professionals, the challenge shifts to the <a href=\"/remorquage-poids-lourd-tanger-med/\">fleet and heavy vehicles</a> of the logistics zone.",
 "guide.h3.2":"Do you always need to tow the vehicle?",
 "guide.p3":"No, and that is a principle we hold to: if a breakdown can be fixed on the spot — battery, tyre, fuel, loose connection — we do it, without unnecessary towing. Towing only happens when the vehicle genuinely cannot be driven safely. Our role is to get you back on the road as quickly as possible, not to multiply operations.",
 "guide.h3.3":"What to do while waiting for the breakdown truck?",
@@ -419,7 +421,7 @@ Object.assign(I18N.en,{
 "guide.li4":"Keep your phone charged and stay reachable: we will call you as we approach.",
 "guide.callout":"Our operators respond in <strong>French, Arabic (Darija)</strong> and <strong>English</strong>. Whether you say «j'ai besoin d'une dépanneuse», «<span lang=\"ar\" dir=\"rtl\">عندي طوموبيل خاصها الريمورکاج</span>» or «I need a tow truck», you will be understood immediately.",
 "guide.h3.4":"Coverage designed for the whole city",
-"guide.p4":"From the tip of <a href=\"/cap-spartel/\">Cap Spartel</a> in the west to the port of Tanger Med in the east, covering all residential neighbourhoods and business zones, our breakdown trucks are distributed to reduce arrival time. Discover the page dedicated to your sector for local information, typical breakdowns and access tips — or call us directly and we will locate the nearest breakdown truck to you."
+"guide.p4":"From the tip of <a href=\"/depannage-cap-spartel-grottes-hercule/\">Cap Spartel</a> in the west to the port of Tanger Med in the east, covering all residential neighbourhoods and business zones, our breakdown trucks are distributed to reduce arrival time. Discover the page dedicated to your sector for local information, typical breakdowns and access tips — or call us directly and we will locate the nearest breakdown truck to you."
 });
 if(window.__mlRelang) window.__mlRelang();
 </script>
