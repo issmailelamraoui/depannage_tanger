@@ -1077,3 +1077,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .site-footer .footer-col .btn,
 .site-footer .footer-col .btn span{color:#fff !important;}
 
+/* ============================================================
+   MOBILE UX — nettoyage tactile
+   1) supprime le flash bleu natif (tap highlight) partout
+   2) bloque la sélection/copie accidentelle (appui long) sur les actions
+   3) retire l'anneau de focus au pointeur — l'accessibilité CLAVIER
+      reste assurée par le bloc :focus-visible ci-dessus
+   ============================================================ */
+
+/* 1) Tap highlight transparent sur TOUS les éléments (boutons, liens, FAQ, cartes…) */
+*{ -webkit-tap-highlight-color:transparent; }
+
+/* 2) Pas de sélection de texte sur les éléments d'action (les zones de texte/FAQ-réponses restent sélectionnables) */
+.btn,.nav-call,.dock-side,.dock-call,.tile,.zone-pin,.link-chip,.tag,.faq-q,.logo,
+button,[role="button"]{
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  user-select:none;
+}
+
+/* 3) Pas d'outline au clic souris/tactile ; conservé au clavier via :focus-visible */
+:focus:not(:focus-visible){ outline:none; }
+
