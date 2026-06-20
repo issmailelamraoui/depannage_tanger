@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mockups mobiles — Melloussa Assistance | Remorquage Tanger</title>
+<meta name="description" content="Maquettes mobiles détaillées de Melloussa Assistance : accueil, service, urgence et contact. Layouts mobile, tablette et desktop.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  body{background:
+    radial-gradient(900px 500px at 80% -5%,rgba(150,120,84,.10),transparent 60%),
+    var(--bg-soft);}
+  .mk-hero{background:var(--navy-800);color:var(--on-dark);position:relative;overflow:hidden;margin-top:-74px;padding-top:74px;}
+  .mk-block{margin-bottom:clamp(48px,7vw,90px);}
+  .mk-split{display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:clamp(28px,5vw,60px);align-items:start;}
+  @media (max-width:880px){ .mk-split{grid-template-columns:1fr;gap:30px;justify-items:center;} .mk-notes{width:100%;} }
+
+  /* phone frame */
+  .phone{
+    width:340px;flex:none;border-radius:46px;background:linear-gradient(160deg,#211f1b,#13110d);
+    padding:13px;box-shadow:0 40px 80px -24px rgba(20,17,12,.5),0 0 0 2px rgba(255,255,255,.04),inset 0 0 0 1px rgba(255,255,255,.05);
+    position:sticky;top:94px;
+  }
+  .phone-screen{position:relative;border-radius:34px;overflow:hidden;background:#fff;aspect-ratio:340/720;}
+  .phone-notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);z-index:5;
+    width:108px;height:30px;background:#0c0a07;border-radius:0 0 18px 18px;}
+  .phone-notch::after{content:"";position:absolute;top:11px;right:24px;width:8px;height:8px;border-radius:50%;
+    background:#2a261f;box-shadow:inset 0 0 0 1.5px #3d382e;}
+  .phone iframe{width:390px;height:826px;border:0;transform:scale(.8718);transform-origin:top left;background:#fff;}
+  .phone-iframe-wrap{position:absolute;inset:0;overflow:hidden;}
+  .phone-cap{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;
+    color:var(--on-dark-dim);font-size:13px;font-weight:600;}
+  .phone-cap.dark{color:var(--slate-500);}
+  .phone-actions{display:flex;gap:8px;justify-content:center;margin-top:14px;}
+  .phone-actions a{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;
+    padding:8px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--slate-700);}
+  .phone-actions a:hover{border-color:var(--orange-500);color:var(--orange-700);}
+  .phone-actions svg{width:14px;height:14px;}
+
+  /* notes */
+  .mk-notes{max-width:640px;}
+  .mk-kicker{display:inline-flex;align-items:center;gap:9px;background:var(--navy-800);color:#fff;
+    font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.04em;
+    padding:7px 14px;border-radius:999px;margin-bottom:16px;}
+  .mk-kicker .n{color:var(--orange-400);}
+  .mk-notes h2{font-size:clamp(24px,3.4vw,34px);margin-bottom:8px;}
+  .mk-lead{font-size:17px;color:var(--slate-600);margin-bottom:24px;}
+
+  .bp-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0 8px;}
+  @media (max-width:560px){ .bp-row{grid-template-columns:1fr;} }
+  .bp{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 15px;position:relative;overflow:hidden;}
+  .bp::before{content:"";position:absolute;top:0;inset-inline-start:0;width:100%;height:3px;}
+  .bp.mob::before{background:var(--orange-500);}
+  .bp.tab::before{background:var(--navy-400);}
+  .bp.desk::before{background:var(--navy-700);}
+  .bp .bp-h{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:700;
+    font-size:14px;color:var(--ink);margin-bottom:4px;}
+  .bp .bp-h svg{width:17px;height:17px;color:var(--slate-400);}
+  .bp .bp-w{font-size:11.5px;color:var(--slate-400);font-weight:600;font-family:ui-monospace,monospace;margin-bottom:9px;}
+  .bp p{font-size:13.5px;color:var(--slate-600);line-height:1.5;}
+
+  .mk-sec{border-top:1px solid var(--line);padding-top:18px;margin-top:18px;}
+  .mk-sec h3{font-size:16px;margin-bottom:12px;display:flex;align-items:center;gap:9px;}
+  .mk-sec h3 .si{width:30px;height:30px;border-radius:9px;background:var(--orange-tint);color:var(--orange-600);
+    display:grid;place-items:center;flex:none;}
+  .mk-sec h3 .si svg{width:17px;height:17px;}
+  .mk-grid3{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;font-size:14px;}
+  .mk-grid3 .lab{font-weight:700;color:var(--navy-600);white-space:nowrap;font-size:12.5px;
+    display:inline-flex;align-items:center;gap:6px;}
+  .mk-grid3 .lab .dot{width:8px;height:8px;border-radius:50%;flex:none;}
+  .mk-grid3 .val{color:var(--slate-600);line-height:1.5;}
+
+  .feat-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .feat-list span{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:8px 13px;font-size:13px;font-weight:600;color:var(--slate-700);}
+  .feat-list svg{width:15px;height:15px;color:#1faf54;}
+</style>
+<link rel="canonical" href="https://www.melloussaassistance.com/mockups/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.melloussaassistance.com/mockups/">
+<meta property="og:title" content="Aperçu Mobile & Mockups | Melloussa Assistance — Dépannage Tanger">
+<meta property="og:description" content="Prévisualisations des interfaces mobiles du site Melloussa Assistance, service de remorquage et dépannage à Tanger.">
+<meta property="og:image" content="https://www.melloussaassistance.com/og.jpg">
+<meta property="og:site_name" content="Melloussa Assistance">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aperçu Mobile & Mockups | Melloussa Assistance — Dépannage Tanger">
+<meta name="twitter:description" content="Prévisualisations des interfaces mobiles du site Melloussa Assistance, service de remorquage et dépannage à Tanger.">
+<meta name="twitter:image" content="https://www.melloussaassistance.com/og.jpg">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="/" class="logo" aria-label="Melloussa Assistance">
+      <span class="logo-mark"><span>M</span></span>
+      <span class="logo-text"><b>Melloussa</b><small>Assistance</small></span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/" data-i18n="mk.nav.site">Voir le site</a></li>
+        <li><a href="#home" data-i18n="mk.nav.home">Accueil</a></li>
+        <li><a href="#service" data-i18n="mk.nav.svc">Service</a></li>
+        <li><a href="#emergency" data-i18n="mk.nav.em">Urgence</a></li>
+        <li><a href="#contact" data-i18n="mk.nav.ct">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" role="group"><button data-lang="fr">FR</button><button data-lang="ar">ع</button><button data-lang="en">EN</button></div>
+      <a href="/strategy/" class="nav-call"><i data-lucide="layout-dashboard"></i><span data-i18n="mk.nav.str">Design &amp; SEO</span></a>
+      <button class="menu-toggle" aria-label="Menu"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
+  <div class="mm-head">
+    <a href="/" class="logo"><span class="logo-mark"><span>M</span></span><span class="logo-text"><b style="color:#fff">Melloussa</b><small>Assistance</small></span></a>
+    <div class="mm-head-actions">
+      <div class="lang-switch" role="group"><button data-lang="fr">FR</button><button data-lang="ar">ع</button><button data-lang="en">EN</button></div>
+      <button class="mm-close" aria-label="Fermer"><i data-lucide="x"></i></button>
+    </div>
+  </div>
+  <nav>
+    <a href="/"><i data-lucide="globe"></i><span data-i18n="mk.nav.site">Voir le site</span></a>
+    <a href="#home"><i data-lucide="home"></i><span data-i18n="mk.nav.home">Accueil</span></a>
+    <a href="#service"><i data-lucide="truck"></i><span data-i18n="mk.nav.svc">Service</span></a>
+    <a href="#emergency"><i data-lucide="siren"></i><span data-i18n="mk.nav.em">Urgence</span></a>
+    <a href="#contact"><i data-lucide="phone"></i><span data-i18n="mk.nav.ct">Contact</span></a>
+    <a href="/strategy/"><i data-lucide="layout-dashboard"></i><span data-i18n="mk.nav.str">Design &amp; SEO</span></a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="mk-hero">
+  <div class="hero-bg"><div class="hero-grid-lines"></div></div>
+  <div class="wrap" style="position:relative;z-index:2;padding-block:clamp(44px,7vw,76px)">
+    <span class="doc-meta" data-i18n="mk.meta.tag">Mockups · Mobile-first · v2</span>
+    <h1 style="color:#fff;font-size:clamp(30px,4.8vw,52px);margin-top:18px;max-width:860px" data-i18n="mk.h1">Maquettes mobiles — pensées comme une application</h1>
+    <p style="color:var(--on-dark-dim);font-size:clamp(16px,2vw,20px);margin-top:18px;max-width:680px" data-i18n="mk.sub">Plus de 85&nbsp;% des visiteurs arrivent sur smartphone. Chaque écran est conçu pour le pouce d'abord, puis adapté à la tablette et au desktop. Les maquettes ci-dessous sont <b style="color:#fff">interactives</b> — touchez, changez de langue, testez.</p>
+    <div class="feat-list" style="margin-top:24px">
+      <span style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);color:#fff"><i data-lucide="check"></i><span data-i18n="mk.feat1">Boutons d'appel géants</span></span>
+      <span style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);color:#fff"><i data-lucide="check"></i><span data-i18n="mk.feat2">Dock fixe Appel / WhatsApp</span></span>
+      <span style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);color:#fff"><i data-lucide="check"></i><span data-i18n="mk.feat3">Trilingue FR / AR / EN</span></span>
+      <span style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);color:#fff"><i data-lucide="check"></i><span data-i18n="mk.feat4">Chargement léger 4G</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-block:clamp(44px,6vw,80px)">
+  <div class="wrap">
+
+    <!-- ===== HOMEPAGE ===== -->
+    <div class="mk-block mk-split" id="home">
+      <div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="phone-iframe-wrap"><iframe src="index.html" title="Accueil mobile" scrolling="no"></iframe></div>
+          </div>
+        </div>
+        <div class="phone-cap"><i data-lucide="smartphone" style="width:15px;height:15px"></i>390 px · iPhone</div>
+        <div class="phone-actions"><a href="/" target="_blank"><i data-lucide="external-link"></i><span data-i18n="mk.open">Ouvrir en plein écran</span></a></div>
+      </div>
+      <div class="mk-notes">
+        <span class="mk-kicker"><span class="n">01</span> <span data-i18n="mk.01.kicker">Page d'accueil</span></span>
+        <h2 data-i18n="mk.01.h2">L'accueil, comme l'écran d'accueil d'une app.</h2>
+        <p class="mk-lead" data-i18n="mk.01.lead">Un héros plein écran avec la promesse, un seul gros bouton d'appel, des preuves chiffrées, puis une grille de services en tuiles tactiles. Le dock d'urgence reste collé en bas.</p>
+
+        <div class="bp-row">
+          <div class="bp mob"><div class="bp-h"><i data-lucide="smartphone"></i><span data-i18n="mk.bp.mob">Mobile</span></div><div class="bp-w">≤ 760 px</div><p data-i18n="mk.01.mob">1 colonne. Photo héros masquée pour aller à l'essentiel. CTA pleine largeur empilés. Tuiles services en 2 colonnes. Dock fixe en bas.</p></div>
+          <div class="bp tab"><div class="bp-h"><i data-lucide="tablet"></i><span data-i18n="mk.bp.tab">Tablette</span></div><div class="bp-w">761–1000 px</div><p data-i18n="mk.01.tab">Héros 1 colonne aéré. Tuiles services en 3 colonnes. Le dock laisse place au bouton d'appel d'en-tête.</p></div>
+          <div class="bp desk"><div class="bp-h"><i data-lucide="monitor"></i><span data-i18n="mk.bp.desk">Desktop</span></div><div class="bp-w">≥ 1001 px</div><p data-i18n="mk.01.desk">Héros 2 colonnes (texte + photo + cartes flottantes). Tuiles en 4 colonnes. Navigation complète en en-tête.</p></div>
+        </div>
+
+        <div class="mk-sec">
+          <h3><span class="si"><i data-lucide="rectangle-horizontal"></i></span><span data-i18n="mk.s.hero">Héros</span></h3>
+          <div class="mk-grid3">
+            <span class="lab"><span class="dot" style="background:var(--orange-500)"></span><span data-i18n="mk.bp.mob">Mobile</span></span><span class="val" data-i18n="mk.01.hero.mob">Titre 31–42 px, sous-titre court, 2 CTA empilés pleine largeur, 3 preuves en bandeau segmenté.</span>
+            <span class="lab"><span class="dot" style="background:var(--navy-400)"></span><span data-i18n="mk.bp.tab">Tablette</span></span><span class="val" data-i18n="mk.01.hero.tab">Mêmes éléments, plus d'air, CTA côte à côte.</span>
+            <span class="lab"><span class="dot" style="background:var(--navy-700)"></span><span data-i18n="mk.bp.desk">Desktop</span></span><span class="val" data-i18n="mk.01.hero.desk">Colonne texte + visuel à droite avec cartes « 30 min » et « assuré ».</span>
+          </div>
+        </div>
+        <div class="mk-sec">
+          <h3><span class="si"><i data-lucide="layout-grid"></i></span><span data-i18n="mk.s.svc">Services</span></h3>
+          <div class="mk-grid3">
+            <span class="lab"><span class="dot" style="background:var(--orange-500)"></span><span data-i18n="mk.bp.mob">Mobile</span></span><span class="val" data-i18n="mk.01.svc.mob">Tuiles 2 colonnes, cible tactile ≥ 128 px de haut, tuile « Urgence » pleine largeur.</span>
+            <span class="lab"><span class="dot" style="background:var(--navy-400)"></span><span data-i18n="mk.bp.tab">Tablette</span></span><span class="val" data-i18n="mk.01.svc.tab">3 colonnes.</span>
+            <span class="lab"><span class="dot" style="background:var(--navy-700)"></span><span data-i18n="mk.bp.desk">Desktop</span></span><span class="val" data-i18n="mk.01.svc.desk">4 colonnes, survol qui soulève la carte.</span>
+          </div>
+        </div>
+        <div class="feat-list">
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.01.f1">Appel en 1 touche</span></span>
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.01.f2">Dock Appel / WhatsApp / Urgence</span></span>
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.01.f3">Sélecteur de langue</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SERVICE ===== -->
+    <div class="mk-block mk-split" id="service">
+      <div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="phone-iframe-wrap"><iframe src="service.html" title="Service mobile" scrolling="no"></iframe></div>
+          </div>
+        </div>
+        <div class="phone-cap"><i data-lucide="smartphone" style="width:15px;height:15px"></i><span data-i18n="mk.02.cap">Page Remorquage</span></div>
+        <div class="phone-actions"><a href="/service/" target="_blank"><i data-lucide="external-link"></i><span data-i18n="mk.open">Ouvrir en plein écran</span></a></div>
+      </div>
+      <div class="mk-notes">
+        <span class="mk-kicker"><span class="n">02</span> <span data-i18n="mk.02.kicker">Page service</span></span>
+        <h2 data-i18n="mk.02.h2">Le service, clair et orienté action.</h2>
+        <p class="mk-lead" data-i18n="mk.02.lead">En-tête sombre avec fil d'Ariane et promesse, contenu lisible, FAQ en accordéon, et une carte d'appel qui suit le scroll sur grand écran.</p>
+
+        <div class="bp-row">
+          <div class="bp mob"><div class="bp-h"><i data-lucide="smartphone"></i><span data-i18n="mk.bp.mob">Mobile</span></div><div class="bp-w">≤ 760 px</div><p data-i18n="mk.02.mob">1 colonne&nbsp;: contenu puis carte d'appel. Listes à puces aérées. FAQ pliée par défaut. Dock fixe.</p></div>
+          <div class="bp tab"><div class="bp-h"><i data-lucide="tablet"></i><span data-i18n="mk.bp.tab">Tablette</span></div><div class="bp-w">761–1000 px</div><p data-i18n="mk.02.tab">Toujours 1 colonne mais marges plus larges&nbsp;; titres agrandis.</p></div>
+          <div class="bp desk"><div class="bp-h"><i data-lucide="monitor"></i><span data-i18n="mk.bp.desk">Desktop</span></div><div class="bp-w">≥ 1001 px</div><p data-i18n="mk.02.desk">2 colonnes&nbsp;: article + carte d'appel <b>sticky</b> à droite avec délais et garanties.</p></div>
+        </div>
+
+        <div class="mk-sec">
+          <h3><span class="si"><i data-lucide="phone"></i></span><span data-i18n="mk.s.callcard">Carte d'appel</span></h3>
+          <div class="mk-grid3">
+            <span class="lab"><span class="dot" style="background:var(--orange-500)"></span><span data-i18n="mk.bp.mob">Mobile</span></span><span class="val" data-i18n="mk.02.call.mob">Insérée dans le flux après le contenu&nbsp;; boutons pleine largeur.</span>
+            <span class="lab"><span class="dot" style="background:var(--navy-700)"></span><span data-i18n="mk.bp.desk">Desktop</span></span><span class="val" data-i18n="mk.02.call.desk">Colonne sticky toujours visible pendant la lecture.</span>
+          </div>
+        </div>
+        <div class="mk-sec">
+          <h3><span class="si"><i data-lucide="list"></i></span><span data-i18n="mk.s.faq">FAQ &amp; maillage</span></h3>
+          <div class="mk-grid3">
+            <span class="lab"><span class="dot" style="background:var(--orange-500)"></span><span data-i18n="mk.bp.all">Tous écrans</span></span><span class="val" data-i18n="mk.02.faq">Accordéon une-ouverte-à-la-fois&nbsp;; chips de quartiers cliquables pour le SEO local.</span>
+          </div>
+        </div>
+        <div class="feat-list">
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.02.f1">Fil d'Ariane SEO</span></span>
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.02.f2">Liens service ↔ quartiers</span></span>
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.02.f3">FAQ structurée</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== EMERGENCY ===== -->
+    <div class="mk-block mk-split" id="emergency">
+      <div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="phone-iframe-wrap"><iframe src="emergency.html" title="Urgence mobile" scrolling="no"></iframe></div>
+          </div>
+        </div>
+        <div class="phone-cap"><i data-lucide="smartphone" style="width:15px;height:15px"></i><span data-i18n="mk.03.cap">Demande express</span></div>
+        <div class="phone-actions"><a href="/emergency/" target="_blank"><i data-lucide="external-link"></i><span data-i18n="mk.open">Ouvrir en plein écran</span></a></div>
+      </div>
+      <div class="mk-notes">
+        <span class="mk-kicker"><span class="n">03</span> <span data-i18n="mk.03.kicker">Demande d'urgence</span></span>
+        <h2 data-i18n="mk.03.h2">Une dépanneuse en 3 touches.</h2>
+        <p class="mk-lead" data-i18n="mk.03.lead">Le chemin le plus court possible&nbsp;: un bouton d'appel géant en haut, puis — pour ceux qui préfèrent écrire — problème, véhicule, position GPS et numéro, le tout envoyé pré-rempli sur WhatsApp.</p>
+
+        <div class="bp-row">
+          <div class="bp mob"><div class="bp-h"><i data-lucide="smartphone"></i><span data-i18n="mk.bp.mob">Mobile</span></div><div class="bp-w">≤ 760 px</div><p data-i18n="mk.03.mob">Pensé pour une main&nbsp;: gros bouton d'appel, chips à toucher, géolocalisation auto, clavier minimal (tél). Envoi WhatsApp pré-rempli.</p></div>
+          <div class="bp tab"><div class="bp-h"><i data-lucide="tablet"></i><span data-i18n="mk.bp.tab">Tablette</span></div><div class="bp-w">761–1000 px</div><p data-i18n="mk.03.tab">Formulaire centré max-largeur 560 px&nbsp;; chips sur 1–2 rangées.</p></div>
+          <div class="bp desk"><div class="bp-h"><i data-lucide="monitor"></i><span data-i18n="mk.bp.desk">Desktop</span></div><div class="bp-w">≥ 1001 px</div><p data-i18n="mk.03.desk">Même flux centré&nbsp;; le bouton d'appel reste prioritaire en haut.</p></div>
+        </div>
+
+        <div class="mk-sec">
+          <h3><span class="si"><i data-lucide="hand-pointer"></i></span><span data-i18n="mk.s.clicks">Le moins de clics possible</span></h3>
+          <div class="mk-grid3">
+            <span class="lab"><span class="dot" style="background:var(--orange-500)"></span><span data-i18n="mk.03.step0lbl">Étape 0</span></span><span class="val" data-i18n="mk.03.step0">Appel direct en 1 touche (chemin le plus rapide).</span>
+            <span class="lab"><span class="dot" style="background:var(--navy-400)"></span><span data-i18n="mk.03.step1lbl">Étape 1–3</span></span><span class="val" data-i18n="mk.03.step1">Problème (chip) → véhicule (chip) → « Utiliser ma position » → numéro.</span>
+            <span class="lab"><span class="dot" style="background:var(--navy-700)"></span><span data-i18n="mk.03.sendlbl">Envoi</span></span><span class="val" data-i18n="mk.03.send">WhatsApp s'ouvre avec le message déjà écrit. Aucune saisie superflue.</span>
+          </div>
+        </div>
+        <div class="feat-list">
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.03.f1">Géolocalisation 1 touche</span></span>
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.03.f2">Chips tactiles ≥ 50 px</span></span>
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.03.f3">WhatsApp pré-rempli</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CONTACT ===== -->
+    <div class="mk-block mk-split" id="contact">
+      <div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="phone-iframe-wrap"><iframe src="contact.html" title="Contact mobile" scrolling="no"></iframe></div>
+          </div>
+        </div>
+        <div class="phone-cap"><i data-lucide="smartphone" style="width:15px;height:15px"></i><span data-i18n="mk.04.cap">Contact</span></div>
+        <div class="phone-actions"><a href="/contact/" target="_blank"><i data-lucide="external-link"></i><span data-i18n="mk.open">Ouvrir en plein écran</span></a></div>
+      </div>
+      <div class="mk-notes">
+        <span class="mk-kicker"><span class="n">04</span> <span data-i18n="mk.04.kicker">Page contact</span></span>
+        <h2 data-i18n="mk.04.h2">Joindre en un geste, au choix.</h2>
+        <p class="mk-lead" data-i18n="mk.04.lead">Quatre grandes tuiles d'action — Appel, WhatsApp, Itinéraire, E-mail — puis horaires, zone, carte et un court formulaire de rappel.</p>
+
+        <div class="bp-row">
+          <div class="bp mob"><div class="bp-h"><i data-lucide="smartphone"></i><span data-i18n="mk.bp.mob">Mobile</span></div><div class="bp-w">≤ 760 px</div><p data-i18n="mk.04.mob">Tuiles d'action en 2 colonnes, hautes et tactiles. Infos puis carte puis formulaire, empilés. Dock fixe.</p></div>
+          <div class="bp tab"><div class="bp-h"><i data-lucide="tablet"></i><span data-i18n="mk.bp.tab">Tablette</span></div><div class="bp-w">761–1000 px</div><p data-i18n="mk.04.tab">Tuiles 2–4 colonnes&nbsp;; infos et formulaire commencent à se côtoyer.</p></div>
+          <div class="bp desk"><div class="bp-h"><i data-lucide="monitor"></i><span data-i18n="mk.bp.desk">Desktop</span></div><div class="bp-w">≥ 1001 px</div><p data-i18n="mk.04.desk">Tuiles en 4 colonnes&nbsp;; infos + carte à gauche, formulaire à droite.</p></div>
+        </div>
+
+        <div class="mk-sec">
+          <h3><span class="si"><i data-lucide="square-mouse-pointer"></i></span><span data-i18n="mk.s.tiles">Tuiles d'action</span></h3>
+          <div class="mk-grid3">
+            <span class="lab"><span class="dot" style="background:var(--orange-500)"></span><span data-i18n="mk.bp.mob">Mobile</span></span><span class="val" data-i18n="mk.04.tiles.mob">2 colonnes, chaque tuile ≥ 90 px&nbsp;; « Appeler » en tuile sombre mise en avant.</span>
+            <span class="lab"><span class="dot" style="background:var(--navy-700)"></span><span data-i18n="mk.bp.desk">Desktop</span></span><span class="val" data-i18n="mk.04.tiles.desk">Rangée de 4 tuiles égales.</span>
+          </div>
+        </div>
+        <div class="feat-list">
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.04.f1">4 canaux en 1 écran</span></span>
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.04.f2">Formulaire 1 main</span></span>
+          <span><i data-lucide="check-circle-2"></i><span data-i18n="mk.04.f3">Carte intégrée</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== RESPONSIVE SYSTEM ===== -->
+    <div class="doc-section" style="border-radius:var(--r-xl)">
+      <span class="eyebrow" data-i18n="mk.resp.eyebrow">Système responsive</span>
+      <h2 style="margin-bottom:8px" data-i18n="mk.resp.h2">Une grille, trois respirations.</h2>
+      <p style="color:var(--slate-600);max-width:680px" data-i18n="mk.resp.sub">Le même code s'adapte par points de rupture. Mobile d'abord&nbsp;: les styles de base ciblent le téléphone, puis on enrichit vers le haut.</p>
+      <table class="doc-table" style="margin-top:18px">
+        <thead><tr>
+          <th data-i18n="mk.tbl.el">Élément</th>
+          <th><i data-lucide="smartphone" style="width:14px;height:14px;vertical-align:-2px"></i> <span data-i18n="mk.tbl.mob">Mobile · ≤760</span></th>
+          <th><i data-lucide="tablet" style="width:14px;height:14px;vertical-align:-2px"></i> <span data-i18n="mk.tbl.tab">Tablette · 761–1000</span></th>
+          <th><i data-lucide="monitor" style="width:14px;height:14px;vertical-align:-2px"></i> <span data-i18n="mk.tbl.desk">Desktop · ≥1001</span></th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b data-i18n="mk.tbl.r1.el">Navigation</b></td><td data-i18n="mk.tbl.r1.mob">Menu plein écran + dock bas</td><td data-i18n="mk.tbl.r1.tab">Bouton d'appel d'en-tête</td><td data-i18n="mk.tbl.r1.desk">Liens complets en en-tête</td></tr>
+          <tr><td><b data-i18n="mk.tbl.r2.el">Tuiles services</b></td><td data-i18n="mk.tbl.r2.mob">2 colonnes</td><td data-i18n="mk.tbl.r2.tab">3 colonnes</td><td data-i18n="mk.tbl.r2.desk">4 colonnes</td></tr>
+          <tr><td><b data-i18n="mk.tbl.r3.el">Héros</b></td><td data-i18n="mk.tbl.r3.mob">1 colonne, sans photo</td><td data-i18n="mk.tbl.r3.tab">1 colonne aérée</td><td data-i18n="mk.tbl.r3.desk">2 colonnes + visuel</td></tr>
+          <tr><td><b data-i18n="mk.tbl.r4.el">Pages service / quartier</b></td><td data-i18n="mk.tbl.r4.mob">1 colonne</td><td data-i18n="mk.tbl.r4.tab">1 colonne large</td><td data-i18n="mk.tbl.r4.desk">Article + aside sticky</td></tr>
+          <tr><td><b data-i18n="mk.tbl.r5.el">Actions d'urgence</b></td><td data-i18n="mk.tbl.r5.mob">Dock fixe en bas</td><td data-i18n="mk.tbl.r5.tab">Dock masqué, CTA en-tête</td><td data-i18n="mk.tbl.r5.desk">CTA en-tête + sections</td></tr>
+          <tr><td><b data-i18n="mk.tbl.r6.el">Typographie titre</b></td><td data-i18n="mk.tbl.r6.mob">31–42 px</td><td data-i18n="mk.tbl.r6.tab">fluide</td><td data-i18n="mk.tbl.r6.desk">jusqu'à 64 px</td></tr>
+        </tbody>
+      </table>
+      <div class="callout" style="margin-top:20px"><i data-lucide="gauge"></i><p data-i18n="mk.perf"><b>Performance mobile&nbsp;:</b> 2 polices web seulement, icônes SVG légères, animations limitées à de courts fondus (désactivés si « réduire les animations »), zéro image lourde décorative. Objectif&nbsp;: chargement fluide en 4G et bons Core Web Vitals.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <span class="logo"><span class="logo-mark"><span>M</span></span><span class="logo-text"><b style="color:#fff">Melloussa</b><small>Assistance</small></span></span>
+      <span data-i18n="mk.footer">Mockups mobiles · Tanger · Maroc · ☎ +212 6 68 19 59 92</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+Object.assign(I18N.fr,{
+"meta.title":"Mockups mobiles — Melloussa Assistance | Remorquage Tanger",
+"meta.desc":"Maquettes mobiles détaillées de Melloussa Assistance : accueil, service, urgence et contact. Layouts mobile, tablette et desktop.",
+"mk.nav.site":"Voir le site","mk.nav.home":"Accueil","mk.nav.svc":"Service","mk.nav.em":"Urgence","mk.nav.ct":"Contact","mk.nav.str":"Design & SEO",
+"mk.meta.tag":"Mockups · Mobile-first · v2",
+"mk.h1":"Maquettes mobiles — pensées comme une application",
+"mk.sub":"Plus de 85&nbsp;% des visiteurs arrivent sur smartphone. Chaque écran est conçu pour le pouce d'abord, puis adapté à la tablette et au desktop. Les maquettes ci-dessous sont <b style=\"color:#fff\">interactives</b> — touchez, changez de langue, testez.",
+"mk.feat1":"Boutons d'appel géants","mk.feat2":"Dock fixe Appel / WhatsApp","mk.feat3":"Trilingue FR / AR / EN","mk.feat4":"Chargement léger 4G",
+"mk.open":"Ouvrir en plein écran",
+"mk.bp.mob":"Mobile","mk.bp.tab":"Tablette","mk.bp.desk":"Desktop","mk.bp.all":"Tous écrans",
+"mk.01.kicker":"Page d'accueil","mk.01.h2":"L'accueil, comme l'écran d'accueil d'une app.",
+"mk.01.lead":"Un héros plein écran avec la promesse, un seul gros bouton d'appel, des preuves chiffrées, puis une grille de services en tuiles tactiles. Le dock d'urgence reste collé en bas.",
+"mk.01.mob":"1 colonne. Photo héros masquée pour aller à l'essentiel. CTA pleine largeur empilés. Tuiles services en 2 colonnes. Dock fixe en bas.",
+"mk.01.tab":"Héros 1 colonne aéré. Tuiles services en 3 colonnes. Le dock laisse place au bouton d'appel d'en-tête.",
+"mk.01.desk":"Héros 2 colonnes (texte + photo + cartes flottantes). Tuiles en 4 colonnes. Navigation complète en en-tête.",
+"mk.s.hero":"Héros","mk.01.hero.mob":"Titre 31–42 px, sous-titre court, 2 CTA empilés pleine largeur, 3 preuves en bandeau segmenté.",
+"mk.01.hero.tab":"Mêmes éléments, plus d'air, CTA côte à côte.","mk.01.hero.desk":"Colonne texte + visuel à droite avec cartes « 30 min » et « assuré ».",
+"mk.s.svc":"Services","mk.01.svc.mob":"Tuiles 2 colonnes, cible tactile ≥ 128 px de haut, tuile « Urgence » pleine largeur.",
+"mk.01.svc.tab":"3 colonnes.","mk.01.svc.desk":"4 colonnes, survol qui soulève la carte.",
+"mk.01.f1":"Appel en 1 touche","mk.01.f2":"Dock Appel / WhatsApp / Urgence","mk.01.f3":"Sélecteur de langue",
+"mk.02.cap":"Page Remorquage","mk.02.kicker":"Page service","mk.02.h2":"Le service, clair et orienté action.",
+"mk.02.lead":"En-tête sombre avec fil d'Ariane et promesse, contenu lisible, FAQ en accordéon, et une carte d'appel qui suit le scroll sur grand écran.",
+"mk.02.mob":"1 colonne&nbsp;: contenu puis carte d'appel. Listes à puces aérées. FAQ pliée par défaut. Dock fixe.",
+"mk.02.tab":"Toujours 1 colonne mais marges plus larges&nbsp;; titres agrandis.",
+"mk.02.desk":"2 colonnes&nbsp;: article + carte d'appel <b>sticky</b> à droite avec délais et garanties.",
+"mk.s.callcard":"Carte d'appel","mk.02.call.mob":"Insérée dans le flux après le contenu&nbsp;; boutons pleine largeur.",
+"mk.02.call.desk":"Colonne sticky toujours visible pendant la lecture.",
+"mk.s.faq":"FAQ & maillage","mk.02.faq":"Accordéon une-ouverte-à-la-fois&nbsp;; chips de quartiers cliquables pour le SEO local.",
+"mk.02.f1":"Fil d'Ariane SEO","mk.02.f2":"Liens service ↔ quartiers","mk.02.f3":"FAQ structurée",
+"mk.03.cap":"Demande express","mk.03.kicker":"Demande d'urgence","mk.03.h2":"Une dépanneuse en 3 touches.",
+"mk.03.lead":"Le chemin le plus court possible&nbsp;: un bouton d'appel géant en haut, puis — pour ceux qui préfèrent écrire — problème, véhicule, position GPS et numéro, le tout envoyé pré-rempli sur WhatsApp.",
+"mk.03.mob":"Pensé pour une main&nbsp;: gros bouton d'appel, chips à toucher, géolocalisation auto, clavier minimal (tél). Envoi WhatsApp pré-rempli.",
+"mk.03.tab":"Formulaire centré max-largeur 560 px&nbsp;; chips sur 1–2 rangées.",
+"mk.03.desk":"Même flux centré&nbsp;; le bouton d'appel reste prioritaire en haut.",
+"mk.s.clicks":"Le moins de clics possible",
+"mk.03.step0lbl":"Étape 0","mk.03.step0":"Appel direct en 1 touche (chemin le plus rapide).",
+"mk.03.step1lbl":"Étape 1–3","mk.03.step1":"Problème (chip) → véhicule (chip) → « Utiliser ma position » → numéro.",
+"mk.03.sendlbl":"Envoi","mk.03.send":"WhatsApp s'ouvre avec le message déjà écrit. Aucune saisie superflue.",
+"mk.03.f1":"Géolocalisation 1 touche","mk.03.f2":"Chips tactiles ≥ 50 px","mk.03.f3":"WhatsApp pré-rempli",
+"mk.04.cap":"Contact","mk.04.kicker":"Page contact","mk.04.h2":"Joindre en un geste, au choix.",
+"mk.04.lead":"Quatre grandes tuiles d'action — Appel, WhatsApp, Itinéraire, E-mail — puis horaires, zone, carte et un court formulaire de rappel.",
+"mk.04.mob":"Tuiles d'action en 2 colonnes, hautes et tactiles. Infos puis carte puis formulaire, empilés. Dock fixe.",
+"mk.04.tab":"Tuiles 2–4 colonnes&nbsp;; infos et formulaire commencent à se côtoyer.",
+"mk.04.desk":"Tuiles en 4 colonnes&nbsp;; infos + carte à gauche, formulaire à droite.",
+"mk.s.tiles":"Tuiles d'action","mk.04.tiles.mob":"2 colonnes, chaque tuile ≥ 90 px&nbsp;; « Appeler » en tuile sombre mise en avant.",
+"mk.04.tiles.desk":"Rangée de 4 tuiles égales.",
+"mk.04.f1":"4 canaux en 1 écran","mk.04.f2":"Formulaire 1 main","mk.04.f3":"Carte intégrée",
+"mk.resp.eyebrow":"Système responsive","mk.resp.h2":"Une grille, trois respirations.",
+"mk.resp.sub":"Le même code s'adapte par points de rupture. Mobile d'abord&nbsp;: les styles de base ciblent le téléphone, puis on enrichit vers le haut.",
+"mk.tbl.el":"Élément","mk.tbl.mob":"Mobile · ≤760","mk.tbl.tab":"Tablette · 761–1000","mk.tbl.desk":"Desktop · ≥1001",
+"mk.tbl.r1.el":"Navigation","mk.tbl.r1.mob":"Menu plein écran + dock bas","mk.tbl.r1.tab":"Bouton d'appel d'en-tête","mk.tbl.r1.desk":"Liens complets en en-tête",
+"mk.tbl.r2.el":"Tuiles services","mk.tbl.r2.mob":"2 colonnes","mk.tbl.r2.tab":"3 colonnes","mk.tbl.r2.desk":"4 colonnes",
+"mk.tbl.r3.el":"Héros","mk.tbl.r3.mob":"1 colonne, sans photo","mk.tbl.r3.tab":"1 colonne aérée","mk.tbl.r3.desk":"2 colonnes + visuel",
+"mk.tbl.r4.el":"Pages service / quartier","mk.tbl.r4.mob":"1 colonne","mk.tbl.r4.tab":"1 colonne large","mk.tbl.r4.desk":"Article + aside sticky",
+"mk.tbl.r5.el":"Actions d'urgence","mk.tbl.r5.mob":"Dock fixe en bas","mk.tbl.r5.tab":"Dock masqué, CTA en-tête","mk.tbl.r5.desk":"CTA en-tête + sections",
+"mk.tbl.r6.el":"Typographie titre","mk.tbl.r6.mob":"31–42 px","mk.tbl.r6.tab":"fluide","mk.tbl.r6.desk":"jusqu'à 64 px",
+"mk.perf":"<b>Performance mobile&nbsp;:</b> 2 polices web seulement, icônes SVG légères, animations limitées à de courts fondus (désactivés si « réduire les animations »), zéro image lourde décorative. Objectif&nbsp;: chargement fluide en 4G et bons Core Web Vitals.",
+"mk.footer":"Mockups mobiles · Tanger · Maroc · ☎ +212 6 68 19 59 92"
+});
+Object.assign(I18N.ar,{
+"meta.title":"نماذج الهاتف المحمول — ميلوسة للمساعدة | ديباناج طنجة",
+"meta.desc":"نماذج الهاتف المحمول التفصيلية لميلوسة للمساعدة: الرئيسية، الخدمة، الطوارئ والتواصل. تخطيطات الهاتف والتابلت وسطح المكتب.",
+"mk.nav.site":"زيارة الموقع","mk.nav.home":"الرئيسية","mk.nav.svc":"الخدمة","mk.nav.em":"الطوارئ","mk.nav.ct":"التواصل","mk.nav.str":"التصميم والسيو",
+"mk.meta.tag":"نماذج · Mobile-first · v2",
+"mk.h1":"نماذج الهاتف المحمول — مُصمَّمة كتطبيق",
+"mk.sub":"أكثر من 85% من الزوار يصلون عبر الهاتف الذكي. كل شاشة مُصمَّمة للإبهام أولاً ثم تُكيَّف للتابلت وسطح المكتب. النماذج أدناه <b style=\"color:#fff\">تفاعلية</b> — المسّها، غيّر اللغة، اختبرها.",
+"mk.feat1":"أزرار اتصال ضخمة","mk.feat2":"شريط ثابت اتصال / واتساب","mk.feat3":"ثلاثي اللغة FR / AR / EN","mk.feat4":"تحميل خفيف على 4G",
+"mk.open":"فتح على الشاشة الكاملة",
+"mk.bp.mob":"هاتف","mk.bp.tab":"تابلت","mk.bp.desk":"سطح المكتب","mk.bp.all":"جميع الشاشات",
+"mk.01.kicker":"الصفحة الرئيسية","mk.01.h2":"الرئيسية، كشاشة تطبيق.",
+"mk.01.lead":"بطل ملء الشاشة مع الوعد، زر اتصال كبير واحد، أدلة رقمية، ثم شبكة خدمات بلوحات لمسية. شريط الطوارئ يبقى ملتصقاً أسفل الشاشة.",
+"mk.01.mob":"عمود واحد. صورة البطل مخفية للوصول للجوهر. أزرار CTA بالعرض الكامل متراصّة. لوحات الخدمات بعمودين. شريط ثابت أسفل الشاشة.",
+"mk.01.tab":"بطل بعمود واحد مريح. لوحات الخدمات بثلاثة أعمدة. الشريط يفسح المجال لزر الاتصال في الرأس.",
+"mk.01.desk":"بطل بعمودين (نص + صورة + بطاقات عائمة). لوحات بأربعة أعمدة. تنقل كامل في الرأس.",
+"mk.s.hero":"البطل","mk.01.hero.mob":"عنوان 31–42 بكسل، نص فرعي قصير، زران CTA متراصّان بالعرض الكامل، 3 أدلة في شريط.","mk.01.hero.tab":"نفس العناصر بمسافات أوسع، أزرار CTA جانباً لجانب.","mk.01.hero.desk":"عمود نص + عنصر بصري على اليمين مع بطاقات «30 دقيقة» و«مؤمَّن».",
+"mk.s.svc":"الخدمات","mk.01.svc.mob":"لوحات بعمودين، هدف لمسي ≥ 128 بكسل ارتفاعاً، لوحة «الطوارئ» بالعرض الكامل.","mk.01.svc.tab":"3 أعمدة.","mk.01.svc.desk":"4 أعمدة، تحريك عند التحوّم يرفع البطاقة.",
+"mk.01.f1":"اتصال بلمسة واحدة","mk.01.f2":"شريط اتصال / واتساب / طوارئ","mk.01.f3":"محدّد اللغة",
+"mk.02.cap":"صفحة السحب","mk.02.kicker":"صفحة الخدمة","mk.02.h2":"الخدمة، واضحة وموجَّهة للعمل.",
+"mk.02.lead":"رأس داكن مع مسار التنقل والوعد، محتوى مقروء، FAQ أكورديون، وبطاقة اتصال تتبع التمرير على الشاشات الكبيرة.",
+"mk.02.mob":"عمود واحد: المحتوى ثم بطاقة الاتصال. قوائم نقاط مريحة. FAQ مطوية افتراضياً. شريط ثابت.",
+"mk.02.tab":"عمود واحد دائماً لكن بهوامش أوسع؛ عناوين أكبر.",
+"mk.02.desk":"عمودان: مقالة + بطاقة اتصال <b>sticky</b> على اليمين مع مواعيد وضمانات.",
+"mk.s.callcard":"بطاقة الاتصال","mk.02.call.mob":"مدرجة في التدفق بعد المحتوى؛ أزرار بالعرض الكامل.","mk.02.call.desk":"عمود ثابت دائماً مرئي أثناء القراءة.",
+"mk.s.faq":"FAQ والربط الداخلي","mk.02.faq":"أكورديون واحد مفتوح في كل مرة؛ رقائق الأحياء قابلة للنقر للسيو المحلي.",
+"mk.02.f1":"مسار تنقل SEO","mk.02.f2":"روابط خدمة ↔ أحياء","mk.02.f3":"FAQ منظَّمة",
+"mk.03.cap":"طلب سريع","mk.03.kicker":"طلب الطوارئ","mk.03.h2":"دبّانجي بثلاث لمسات.",
+"mk.03.lead":"أقصر مسار ممكن: زر اتصال ضخم في الأعلى، ثم — لمن يفضّل الكتابة — المشكلة، المركبة، موقع GPS والرقم، كلها تُرسل مكتوبة مسبقاً على واتساب.",
+"mk.03.mob":"مُصمَّم ليد واحدة: زر اتصال كبير، رقائق للمس، تحديد موقع آلي، لوحة مفاتيح محدودة (هاتف). إرسال واتساب مكتوب مسبقاً.",
+"mk.03.tab":"نموذج مركزي بعرض أقصى 560 بكسل؛ رقائق في 1–2 صفوف.",
+"mk.03.desk":"نفس التدفق المركزي؛ زر الاتصال يبقى أولوية في الأعلى.",
+"mk.s.clicks":"أقل عدد ممكن من النقرات",
+"mk.03.step0lbl":"خطوة 0","mk.03.step0":"اتصال مباشر بلمسة واحدة (أسرع مسار).",
+"mk.03.step1lbl":"خطوة 1–3","mk.03.step1":"المشكلة (رقاقة) ← المركبة (رقاقة) ← «استخدام موقعي» ← الرقم.",
+"mk.03.sendlbl":"الإرسال","mk.03.send":"يُفتح واتساب مع الرسالة مكتوبة. لا إدخال زائد.",
+"mk.03.f1":"تحديد الموقع بلمسة واحدة","mk.03.f2":"رقائق لمسية ≥ 50 بكسل","mk.03.f3":"واتساب مكتوب مسبقاً",
+"mk.04.cap":"التواصل","mk.04.kicker":"صفحة التواصل","mk.04.h2":"التواصل بإيماءة واحدة، حسب الاختيار.",
+"mk.04.lead":"أربع لوحات عمل كبيرة — اتصال، واتساب، اتجاهات، بريد إلكتروني — ثم المواعيد والمنطقة والخريطة ونموذج اتصال قصير.",
+"mk.04.mob":"لوحات العمل بعمودين، طويلة وسهلة اللمس. معلومات ثم خريطة ثم نموذج، متراصّة. شريط ثابت.",
+"mk.04.tab":"لوحات 2–4 أعمدة؛ المعلومات والنموذج يبدآن جنباً لجنب.",
+"mk.04.desk":"لوحات في 4 أعمدة؛ معلومات + خريطة على اليسار، نموذج على اليمين.",
+"mk.s.tiles":"لوحات العمل","mk.04.tiles.mob":"عمودان، كل لوحة ≥ 90 بكسل؛ «اتصال» في لوحة داكنة بارزة.","mk.04.tiles.desk":"صف من 4 لوحات متساوية.",
+"mk.04.f1":"4 قنوات في شاشة واحدة","mk.04.f2":"نموذج بيد واحدة","mk.04.f3":"خريطة مدمجة",
+"mk.resp.eyebrow":"نظام الاستجابة","mk.resp.h2":"شبكة واحدة، ثلاث أنفاس.",
+"mk.resp.sub":"نفس الكود يتكيّف عبر نقاط الكسر. الهاتف أولاً: الأنماط الأساسية تستهدف الهاتف ثم نُثري نحو الأعلى.",
+"mk.tbl.el":"العنصر","mk.tbl.mob":"هاتف · ≤760","mk.tbl.tab":"تابلت · 761–1000","mk.tbl.desk":"سطح المكتب · ≥1001",
+"mk.tbl.r1.el":"التنقل","mk.tbl.r1.mob":"قائمة ملء الشاشة + شريط أسفل","mk.tbl.r1.tab":"زر اتصال في الرأس","mk.tbl.r1.desk":"روابط كاملة في الرأس",
+"mk.tbl.r2.el":"لوحات الخدمات","mk.tbl.r2.mob":"عمودان","mk.tbl.r2.tab":"3 أعمدة","mk.tbl.r2.desk":"4 أعمدة",
+"mk.tbl.r3.el":"البطل","mk.tbl.r3.mob":"عمود واحد، بدون صورة","mk.tbl.r3.tab":"عمود واحد مريح","mk.tbl.r3.desk":"عمودان + عنصر بصري",
+"mk.tbl.r4.el":"صفحات الخدمة / الحي","mk.tbl.r4.mob":"عمود واحد","mk.tbl.r4.tab":"عمود واحد واسع","mk.tbl.r4.desk":"مقالة + aside ثابت",
+"mk.tbl.r5.el":"إجراءات الطوارئ","mk.tbl.r5.mob":"شريط ثابت أسفل","mk.tbl.r5.tab":"شريط مخفي، CTA في الرأس","mk.tbl.r5.desk":"CTA في الرأس + الأقسام",
+"mk.tbl.r6.el":"حجم خط العناوين","mk.tbl.r6.mob":"31–42 بكسل","mk.tbl.r6.tab":"متدرّج","mk.tbl.r6.desk":"حتى 64 بكسل",
+"mk.perf":"<b>أداء الهاتف المحمول:</b> خطّان فقط على الويب، أيقونات SVG خفيفة، رسوم متحركة محدودة بتلاشيات قصيرة (تُعطَّل عند «تقليل الحركة»)، لا صور ثقيلة ديكورية. الهدف: تحميل سلس على 4G وCore Web Vitals ممتازة.",
+"mk.footer":"نماذج الهاتف المحمول · طنجة · المغرب · ☎ +212 6 68 19 59 92"
+});
+Object.assign(I18N.en,{
+"meta.title":"Mobile mockups — Melloussa Assistance | Breakdown Tanger",
+"meta.desc":"Detailed mobile mockups for Melloussa Assistance: home, service, emergency and contact pages. Mobile, tablet and desktop layouts.",
+"mk.nav.site":"Visit site","mk.nav.home":"Home","mk.nav.svc":"Service","mk.nav.em":"Emergency","mk.nav.ct":"Contact","mk.nav.str":"Design & SEO",
+"mk.meta.tag":"Mockups · Mobile-first · v2",
+"mk.h1":"Mobile mockups — designed like an app",
+"mk.sub":"Over 85% of visitors arrive on smartphone. Every screen is designed thumb-first, then adapted for tablet and desktop. The mockups below are <b style=\"color:#fff\">interactive</b> — tap, switch languages, test.",
+"mk.feat1":"Large call buttons","mk.feat2":"Fixed Call / WhatsApp dock","mk.feat3":"Trilingual FR / AR / EN","mk.feat4":"Lightweight 4G load",
+"mk.open":"Open fullscreen",
+"mk.bp.mob":"Mobile","mk.bp.tab":"Tablet","mk.bp.desk":"Desktop","mk.bp.all":"All screens",
+"mk.01.kicker":"Home page","mk.01.h2":"Home — like an app's home screen.",
+"mk.01.lead":"A full-screen hero with the promise, one big call button, proof figures, then a grid of services as tap tiles. The emergency dock stays glued to the bottom.",
+"mk.01.mob":"1 column. Hero photo hidden to get to the point. Full-width stacked CTAs. Service tiles in 2 columns. Fixed dock at the bottom.",
+"mk.01.tab":"Spacious 1-column hero. Service tiles in 3 columns. Dock gives way to the header call button.",
+"mk.01.desk":"2-column hero (text + photo + floating cards). Tiles in 4 columns. Full nav in header.",
+"mk.s.hero":"Hero","mk.01.hero.mob":"Title 31–42 px, short sub, 2 full-width stacked CTAs, 3 proof figures in a segmented band.","mk.01.hero.tab":"Same elements, more breathing room, side-by-side CTAs.","mk.01.hero.desk":"Text column + visual on the right with '30 min' and 'insured' floating cards.",
+"mk.s.svc":"Services","mk.01.svc.mob":"2-column tiles, touch target ≥ 128 px tall, 'Emergency' tile full width.","mk.01.svc.tab":"3 columns.","mk.01.svc.desk":"4 columns, hover lifts the card.",
+"mk.01.f1":"1-touch call","mk.01.f2":"Call / WhatsApp / Emergency dock","mk.01.f3":"Language selector",
+"mk.02.cap":"Towing page","mk.02.kicker":"Service page","mk.02.h2":"The service, clear and action-oriented.",
+"mk.02.lead":"Dark header with breadcrumb and promise, readable content, accordion FAQ, and a call card that follows the scroll on large screens.",
+"mk.02.mob":"1 column: content then call card. Airy bullet lists. FAQ collapsed by default. Fixed dock.",
+"mk.02.tab":"Still 1 column but wider margins; larger headings.",
+"mk.02.desk":"2 columns: article + <b>sticky</b> call card on the right with timings and guarantees.",
+"mk.s.callcard":"Call card","mk.02.call.mob":"Embedded in the flow after content; full-width buttons.","mk.02.call.desk":"Sticky column always visible while reading.",
+"mk.s.faq":"FAQ & internal linking","mk.02.faq":"One-open-at-a-time accordion; clickable neighbourhood chips for local SEO.",
+"mk.02.f1":"SEO breadcrumb","mk.02.f2":"Service ↔ area links","mk.02.f3":"Structured FAQ",
+"mk.03.cap":"Express request","mk.03.kicker":"Emergency request","mk.03.h2":"A breakdown truck in 3 taps.",
+"mk.03.lead":"The shortest possible path: a giant call button at the top, then — for those who prefer to type — problem, vehicle, GPS position and number, all sent pre-filled to WhatsApp.",
+"mk.03.mob":"Designed for one hand: big call button, tap chips, auto geolocation, minimal keyboard (phone). Pre-filled WhatsApp send.",
+"mk.03.tab":"Centred form max-width 560 px; chips on 1–2 rows.",
+"mk.03.desk":"Same centred flow; call button stays priority at the top.",
+"mk.s.clicks":"Fewest clicks possible",
+"mk.03.step0lbl":"Step 0","mk.03.step0":"Direct call in 1 tap (the fastest path).",
+"mk.03.step1lbl":"Steps 1–3","mk.03.step1":"Problem (chip) → vehicle (chip) → 'Use my location' → number.",
+"mk.03.sendlbl":"Send","mk.03.send":"WhatsApp opens with the message already written. No unnecessary input.",
+"mk.03.f1":"1-tap geolocation","mk.03.f2":"Touch chips ≥ 50 px","mk.03.f3":"Pre-filled WhatsApp",
+"mk.04.cap":"Contact","mk.04.kicker":"Contact page","mk.04.h2":"Reach us in one gesture, your way.",
+"mk.04.lead":"Four large action tiles — Call, WhatsApp, Directions, Email — then hours, zone, map and a short callback form.",
+"mk.04.mob":"Action tiles in 2 tall, tappable columns. Info then map then form, stacked. Fixed dock.",
+"mk.04.tab":"Tiles in 2–4 columns; info and form start to run side by side.",
+"mk.04.desk":"Tiles in 4 columns; info + map left, form right.",
+"mk.s.tiles":"Action tiles","mk.04.tiles.mob":"2 columns, each tile ≥ 90 px; 'Call' in a dark highlighted tile.","mk.04.tiles.desk":"Row of 4 equal tiles.",
+"mk.04.f1":"4 channels in 1 screen","mk.04.f2":"One-hand form","mk.04.f3":"Embedded map",
+"mk.resp.eyebrow":"Responsive system","mk.resp.h2":"One grid, three breakpoints.",
+"mk.resp.sub":"The same code adapts at breakpoints. Mobile first: base styles target the phone, then we enrich upward.",
+"mk.tbl.el":"Element","mk.tbl.mob":"Mobile · ≤760","mk.tbl.tab":"Tablet · 761–1000","mk.tbl.desk":"Desktop · ≥1001",
+"mk.tbl.r1.el":"Navigation","mk.tbl.r1.mob":"Full-screen menu + bottom dock","mk.tbl.r1.tab":"Header call button","mk.tbl.r1.desk":"Full links in header",
+"mk.tbl.r2.el":"Service tiles","mk.tbl.r2.mob":"2 columns","mk.tbl.r2.tab":"3 columns","mk.tbl.r2.desk":"4 columns",
+"mk.tbl.r3.el":"Hero","mk.tbl.r3.mob":"1 column, no photo","mk.tbl.r3.tab":"Airy 1 column","mk.tbl.r3.desk":"2 columns + visual",
+"mk.tbl.r4.el":"Service / area pages","mk.tbl.r4.mob":"1 column","mk.tbl.r4.tab":"1 wide column","mk.tbl.r4.desk":"Article + sticky aside",
+"mk.tbl.r5.el":"Emergency actions","mk.tbl.r5.mob":"Fixed dock at bottom","mk.tbl.r5.tab":"Dock hidden, header CTA","mk.tbl.r5.desk":"Header CTA + sections",
+"mk.tbl.r6.el":"Heading typography","mk.tbl.r6.mob":"31–42 px","mk.tbl.r6.tab":"fluid","mk.tbl.r6.desk":"up to 64 px",
+"mk.perf":"<b>Mobile performance:</b> only 2 web fonts, lightweight SVG icons, animations limited to short fades (disabled with 'reduce motion'), zero heavy decorative images. Goal: smooth load on 4G and good Core Web Vitals.",
+"mk.footer":"Mobile mockups · Tanger · Morocco · ☎ +212 6 68 19 59 92"
+});
+if(window.__mlRelang) window.__mlRelang();
+</script>
+</body>
+</html>
