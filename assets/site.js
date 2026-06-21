@@ -490,30 +490,16 @@ function initEmergency(){
   rebuild();
 }
 
-/* ---- Lucide icons: off the critical path -----------------------------------
-   The full Lucide UMD is ~95KB and createIcons() builds 60+ inline SVGs — a long
-   main-thread task. We no longer ship it as a render/parse-blocking <script> in
-   <head>. Instead it is fetched + executed during browser idle time (or at most
-   ~1.6s via the timeout backstop), so it contributes ZERO to Total Blocking Time
-   during initial load. Icons sit in fixed-size containers (.svc-ico, .why-ico…),
-   so painting them a beat later causes no layout shift (CLS-safe).
+/* ---- Lucide icons: fully inlined at the source ------------------------------
+   Every icon now ships as a static, pre-rendered inline <svg> directly in the
+   HTML. We no longer download, parse or execute the ~95KB Lucide UMD, and we no
+   longer run createIcons() (which built 800+ SVGs across the site on the main
+   thread). Result: ZERO icon-related network requests, ZERO icon-related Total
+   Blocking Time, and icons that paint with the very first frame (better LCP/CLS).
+   The few names absent from Lucide 1.21.0 (lighthouse, hand-pointer) rendered
+   as nothing before and still do — visually identical, by design.
 ----------------------------------------------------------------------------- */
-function buildIcons(){
-  if(window.__iconsBuilt) return;
-  const run = ()=>{ if(window.lucide){ window.__iconsBuilt = true; lucide.createIcons(); } };
-  if(window.lucide){ run(); return; }
-  const s = document.createElement("script");
-  s.src = "https://unpkg.com/lucide@1.21.0/dist/umd/lucide.min.js"; // pinned → no 302
-  s.async = true;
-  s.onload = run;
-  document.head.appendChild(s);
-}
-function scheduleIcons(){
-  if("requestIdleCallback" in window) requestIdleCallback(buildIcons, {timeout:1600});
-  else setTimeout(buildIcons, 200);
-}
 
 document.addEventListener("DOMContentLoaded",()=>{
   initLang(); initMobileLangCycle(); initHeader(); initMobileMenu(); initFaq(); initReveal(); initTOC(); initEmergency(); initLenis();
-  scheduleIcons();
 });

@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Melloussa Assistance — Remorquage & dépannage auto 24h/24 à Tanger</title>
 <meta name="description" content="Remorquage et dépannage auto à Tanger 24h/24 et 7j/7. Dépanneuse en moins de 30 min : panne, accident, batterie, pneu, carburant, clés. ☎ 06 68 19 59 92.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/sora-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/public-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="/assets/favicon-light.ico" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/assets/favicon-dark.ico" media="(prefers-color-scheme: dark)">
 <link rel="preload" as="image" href="/assets/hero-depanneuse.webp" fetchpriority="high">
@@ -54,8 +53,8 @@
       <div class="lang-switch" role="group" aria-label="Language">
         <button data-lang="fr">FR</button><button data-lang="ar">ع</button><button data-lang="en">EN</button>
       </div>
-      <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="nav-call"><i data-lucide="phone"></i>06 68 19 59 92</a>
-      <button class="menu-toggle" aria-label="Menu"><i data-lucide="menu"></i></button>
+      <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="nav-call"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>06 68 19 59 92</a>
+      <button class="menu-toggle" aria-label="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></button>
     </div>
   </div>
 </header>
@@ -68,16 +67,16 @@
       <div class="lang-switch" role="group" aria-label="Language">
         <button data-lang="fr">FR</button><button data-lang="ar">ع</button><button data-lang="en">EN</button>
       </div>
-      <button class="mm-close" aria-label="Fermer"><i data-lucide="x"></i></button>
+      <button class="mm-close" aria-label="Fermer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
     </div>
   </div>
   <nav>
-    <a href="#services"><i data-lucide="grid-2x2"></i><span data-i18n="nav.services">Services</span></a>
-    <a href="#how"><i data-lucide="list-checks"></i><span data-i18n="nav.how">Comment ça marche</span></a>
-    <a href="#zones"><i data-lucide="map-pin"></i><span data-i18n="nav.zones">Zones</span></a>
-    <a href="#reviews"><i data-lucide="star"></i><span data-i18n="nav.reviews">Avis</span></a>
-    <a href="/contact/"><i data-lucide="phone"></i><span data-i18n="nav.contact">Contact</span></a>
-    <a href="/emergency/"><i data-lucide="siren"></i><span data-i18n="dock.express">Urgence</span></a>
+    <a href="#services"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-grid-2x2" aria-hidden="true"><path d="M12 3v18"/><path d="M3 12h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span data-i18n="nav.services">Services</span></a>
+    <a href="#how"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-checks" aria-hidden="true"><path d="M13 5h8"/><path d="M13 12h8"/><path d="M13 19h8"/><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/></svg><span data-i18n="nav.how">Comment ça marche</span></a>
+    <a href="#zones"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="nav.zones">Zones</span></a>
+    <a href="#reviews"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><span data-i18n="nav.reviews">Avis</span></a>
+    <a href="/contact/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><span data-i18n="nav.contact">Contact</span></a>
+    <a href="/emergency/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-siren" aria-hidden="true"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/><path d="M21 12h1"/><path d="M18.5 4.5 18 5"/><path d="M2 12h1"/><path d="M12 2v1"/><path d="m4.929 4.929.707.707"/><path d="M12 12v6"/></svg><span data-i18n="dock.express">Urgence</span></a>
   </nav>
 
   <div class="mm-stats">
@@ -86,8 +85,8 @@
     <div class="mm-stat"><b>★ 4,9</b><span data-i18n="trust.rating.l">480+ avis</span></div>
   </div>
   <div class="mm-cta">
-    <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-block btn-lg"><i data-lucide="phone-call"></i><span data-i18n="cta.truck">Appeler une dépanneuse</span></a>
-    <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="btn btn-whatsapp btn-block"><i data-lucide="message-circle"></i>WhatsApp</a>
+    <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-block btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><span data-i18n="cta.truck">Appeler une dépanneuse</span></a>
+    <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="btn btn-whatsapp btn-block"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>WhatsApp</a>
   </div>
 </div>
 
@@ -102,8 +101,8 @@
       <h1 class="reveal" data-delay="1"><span data-i18n="hero.title">Remorquage &amp; dépannage auto à Tanger,</span> <span class="accent" data-i18n="hero.title.accent">24h/24.</span></h1>
       <p class="sub reveal" data-delay="2" data-i18n="hero.sub">En panne, accident, batterie à plat ou pneu crevé ? Une dépanneuse arrive vers vous en moins de 30 minutes, partout à Tanger.</p>
       <div class="hero-cta reveal" data-delay="3">
-        <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-lg"><i data-lucide="phone-call"></i><span data-i18n="cta.truck">Appeler une dépanneuse</span></a>
-        <a href="/emergency/" class="btn btn-ghost-light btn-lg"><i data-lucide="siren"></i><span data-i18n="cta.express">Demande express</span></a>
+        <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><span data-i18n="cta.truck">Appeler une dépanneuse</span></a>
+        <a href="/emergency/" class="btn btn-ghost-light btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-siren" aria-hidden="true"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/><path d="M21 12h1"/><path d="M18.5 4.5 18 5"/><path d="M2 12h1"/><path d="M12 2v1"/><path d="m4.929 4.929.707.707"/><path d="M12 12v6"/></svg><span data-i18n="cta.express">Demande express</span></a>
       </div>
       <div class="hero-trust reveal" data-delay="4">
         <div class="ht"><b data-i18n="trust.eta.b">&lt; 30 min</b><span data-i18n="trust.eta.l">Arrivée moyenne</span></div>
@@ -119,11 +118,11 @@
            fetchpriority="high"
            width="1366" height="911">
       <div class="hero-float hero-float--tl">
-        <div class="fi" style="background:var(--orange-tint);color:var(--orange-600)"><i data-lucide="timer"></i></div>
+        <div class="fi" style="background:var(--orange-tint);color:var(--orange-600)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-timer" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg></div>
         <div><small data-i18n="trust.eta.l">Arrivée moyenne</small><b data-i18n="trust.eta.b">&lt; 30 min</b></div>
       </div>
       <div class="hero-float hero-float--br">
-        <div class="fi" style="background:#e8f7ee;color:#1faf54"><i data-lucide="shield-check"></i></div>
+        <div class="fi" style="background:#e8f7ee;color:#1faf54"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <div><small data-i18n="why.4.t">Dépanneurs assurés</small><b data-i18n="em.safe.l">Voiture protégée</b></div>
       </div>
     </div>
@@ -133,10 +132,10 @@
 <!-- PROOF STRIP -->
 <div class="proof-strip">
   <div class="wrap">
-    <div class="ps-item"><i data-lucide="badge-check"></i><span data-i18n="why.2.t">Réponse immédiate</span></div>
-    <div class="ps-item"><i data-lucide="shield-check"></i><span data-i18n="why.4.t">Dépanneurs assurés</span></div>
-    <div class="ps-item"><i data-lucide="truck"></i><span data-i18n="why.3.t">Tous véhicules</span></div>
-    <div class="ps-item"><i data-lucide="clock"></i><span data-i18n="trust.open.l">Jour & nuit</span></div>
+    <div class="ps-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="why.2.t">Réponse immédiate</span></div>
+    <div class="ps-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="why.4.t">Dépanneurs assurés</span></div>
+    <div class="ps-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><span data-i18n="why.3.t">Tous véhicules</span></div>
+    <div class="ps-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="trust.open.l">Jour & nuit</span></div>
   </div>
 </div>
 
@@ -149,14 +148,14 @@
       <p class="lead" data-i18n="svc.lead">Voiture, 4x4, utilitaire ou moto — nous intervenons sur place ou nous remorquons.</p>
     </div>
     <div class="tiles">
-      <a href="/service/" class="tile reveal"><div class="tile-ico"><i data-lucide="truck"></i></div><h3 data-i18n="svc.tow.t">Remorquage</h3><p data-i18n="svc.tow.d">Véhicule en panne ou accidenté, remorqué en sécurité.</p></a>
-      <a href="/depannage-batterie-tanger/" class="tile reveal"><div class="tile-ico"><i data-lucide="battery-charging"></i></div><h3 data-i18n="svc.bat.t">Batterie / démarrage</h3><p data-i18n="svc.bat.d">Batterie à plat ? Démarrage immédiat sur place.</p></a>
-      <a href="/crevaison-pneu-tanger/" class="tile reveal"><div class="tile-ico"><i data-lucide="disc-3"></i></div><h3 data-i18n="svc.tire.t">Pneu crevé</h3><p data-i18n="svc.tire.d">Changement de roue ou réparation rapide sur place.</p></a>
-      <a href="/service/" class="tile reveal"><div class="tile-ico"><i data-lucide="fuel"></i></div><h3 data-i18n="svc.fuel.t">Panne de carburant</h3><p data-i18n="svc.fuel.d">Livraison de carburant là où vous êtes.</p></a>
-      <a href="/ouverture-porte-vehicule-tanger/" class="tile reveal"><div class="tile-ico"><i data-lucide="key-round"></i></div><h3 data-i18n="svc.key.t">Clés enfermées</h3><p data-i18n="svc.key.d">Ouverture de véhicule sans dégât.</p></a>
-      <a href="/remorquage-poids-lourd-tanger-med/" class="tile reveal"><div class="tile-ico"><i data-lucide="container"></i></div><h3 data-i18n="svc.pl.t">Poids lourd &amp; flotte</h3><p data-i18n="svc.pl.d">Camions, utilitaires et contrats entreprise à Tanger Med.</p></a>
-      <a href="/service/" class="tile reveal"><div class="tile-ico"><i data-lucide="car-front"></i></div><h3 data-i18n="svc.accident.t">Accident / enlèvement</h3><p data-i18n="svc.accident.d">Assistance et enlèvement après accident.</p></a>
-      <a href="/emergency/" class="tile tile-urgent reveal"><div class="tile-ico"><i data-lucide="siren"></i></div><h3 data-i18n="dock.express">Urgence</h3><span class="tile-go"><span data-i18n="cta.express">Demande express</span><i data-lucide="arrow-right"></i></span></a>
+      <a href="/service/" class="tile reveal"><div class="tile-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div><h3 data-i18n="svc.tow.t">Remorquage</h3><p data-i18n="svc.tow.d">Véhicule en panne ou accidenté, remorqué en sécurité.</p></a>
+      <a href="/depannage-batterie-tanger/" class="tile reveal"><div class="tile-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-battery-charging" aria-hidden="true"><path d="m11 7-3 5h4l-3 5"/><path d="M14.856 6H16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.935"/><path d="M22 14v-4"/><path d="M5.14 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2.936"/></svg></div><h3 data-i18n="svc.bat.t">Batterie / démarrage</h3><p data-i18n="svc.bat.d">Batterie à plat ? Démarrage immédiat sur place.</p></a>
+      <a href="/crevaison-pneu-tanger/" class="tile reveal"><div class="tile-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-disc-3" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M6 12c0-1.7.7-3.2 1.8-4.2"/><circle cx="12" cy="12" r="2"/><path d="M18 12c0 1.7-.7 3.2-1.8 4.2"/></svg></div><h3 data-i18n="svc.tire.t">Pneu crevé</h3><p data-i18n="svc.tire.d">Changement de roue ou réparation rapide sur place.</p></a>
+      <a href="/service/" class="tile reveal"><div class="tile-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-fuel" aria-hidden="true"><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0v-6.998a2 2 0 0 0-.59-1.42L18 5"/><path d="M14 21V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16"/><path d="M2 21h13"/><path d="M3 9h11"/></svg></div><h3 data-i18n="svc.fuel.t">Panne de carburant</h3><p data-i18n="svc.fuel.d">Livraison de carburant là où vous êtes.</p></a>
+      <a href="/ouverture-porte-vehicule-tanger/" class="tile reveal"><div class="tile-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round" aria-hidden="true"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg></div><h3 data-i18n="svc.key.t">Clés enfermées</h3><p data-i18n="svc.key.d">Ouverture de véhicule sans dégât.</p></a>
+      <a href="/remorquage-poids-lourd-tanger-med/" class="tile reveal"><div class="tile-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-container" aria-hidden="true"><path d="M22 7.7c0-.6-.4-1.2-.8-1.5l-6.3-3.9a1.72 1.72 0 0 0-1.7 0l-10.3 6c-.5.2-.9.8-.9 1.4v6.6c0 .5.4 1.2.8 1.5l6.3 3.9a1.72 1.72 0 0 0 1.7 0l10.3-6c.5-.3.9-1 .9-1.5Z"/><path d="M10 21.9V14L2.1 9.1"/><path d="m10 14 11.9-6.9"/><path d="M14 19.8v-8.1"/><path d="M18 17.5V9.4"/></svg></div><h3 data-i18n="svc.pl.t">Poids lourd &amp; flotte</h3><p data-i18n="svc.pl.d">Camions, utilitaires et contrats entreprise à Tanger Med.</p></a>
+      <a href="/service/" class="tile reveal"><div class="tile-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-car-front" aria-hidden="true"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8"/><path d="M7 14h.01"/><path d="M17 14h.01"/><rect width="18" height="8" x="3" y="10" rx="2"/><path d="M5 18v2"/><path d="M19 18v2"/></svg></div><h3 data-i18n="svc.accident.t">Accident / enlèvement</h3><p data-i18n="svc.accident.d">Assistance et enlèvement après accident.</p></a>
+      <a href="/emergency/" class="tile tile-urgent reveal"><div class="tile-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-siren" aria-hidden="true"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/><path d="M21 12h1"/><path d="M18.5 4.5 18 5"/><path d="M2 12h1"/><path d="M12 2v1"/><path d="m4.929 4.929.707.707"/><path d="M12 12v6"/></svg></div><h3 data-i18n="dock.express">Urgence</h3><span class="tile-go"><span data-i18n="cta.express">Demande express</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
     </div>
   </div>
 </section>
@@ -174,7 +173,7 @@
       <div class="estep"><div class="num">3</div><div><b data-i18n="how.s3.t">On arrive vite</b><span data-i18n="how.s3.d">Arrivée sous 30 min en moyenne, avec le matériel adapté.</span></div></div>
     </div>
     <div class="reveal" style="margin-top:30px">
-      <a href="/emergency/" class="btn btn-primary btn-lg"><i data-lucide="siren"></i><span data-i18n="cta.express">Demande express</span></a>
+      <a href="/emergency/" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-siren" aria-hidden="true"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/><path d="M21 12h1"/><path d="M18.5 4.5 18 5"/><path d="M2 12h1"/><path d="M12 2v1"/><path d="m4.929 4.929.707.707"/><path d="M12 12v6"/></svg><span data-i18n="cta.express">Demande express</span></a>
     </div>
   </div>
 </section>
@@ -188,10 +187,10 @@
       <p class="lead" data-i18n="why.lead">Une équipe tangéroise joignable à toute heure, avec des engagements clairs.</p>
     </div>
     <div class="why-grid">
-      <div class="why-card reveal"><div class="why-ico"><i data-lucide="gauge"></i></div><h3 data-i18n="why.1.t">Rapidité réelle</h3><p data-i18n="why.1.d">Dépanneuses positionnées dans toute la ville et sur les axes.</p></div>
-      <div class="why-card reveal"><div class="why-ico"><i data-lucide="phone-call"></i></div><h3 data-i18n="why.2.t">Réponse immédiate</h3><p data-i18n="why.2.d">Un opérateur vous répond en moins de deux sonneries, jour et nuit.</p></div>
-      <div class="why-card reveal"><div class="why-ico"><i data-lucide="truck"></i></div><h3 data-i18n="why.3.t">Tous véhicules</h3><p data-i18n="why.3.d">Voiture, 4x4, utilitaire, moto — matériel adapté.</p></div>
-      <div class="why-card reveal"><div class="why-ico"><i data-lucide="shield-check"></i></div><h3 data-i18n="why.4.t">Dépanneurs assurés</h3><p data-i18n="why.4.d">Professionnels expérimentés et assurés. Véhicule en sécurité.</p></div>
+      <div class="why-card reveal"><div class="why-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div><h3 data-i18n="why.1.t">Rapidité réelle</h3><p data-i18n="why.1.d">Dépanneuses positionnées dans toute la ville et sur les axes.</p></div>
+      <div class="why-card reveal"><div class="why-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg></div><h3 data-i18n="why.2.t">Réponse immédiate</h3><p data-i18n="why.2.d">Un opérateur vous répond en moins de deux sonneries, jour et nuit.</p></div>
+      <div class="why-card reveal"><div class="why-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div><h3 data-i18n="why.3.t">Tous véhicules</h3><p data-i18n="why.3.d">Voiture, 4x4, utilitaire, moto — matériel adapté.</p></div>
+      <div class="why-card reveal"><div class="why-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 data-i18n="why.4.t">Dépanneurs assurés</h3><p data-i18n="why.4.d">Professionnels expérimentés et assurés. Véhicule en sécurité.</p></div>
     </div>
   </div>
 </section>
@@ -206,7 +205,7 @@
     <div class="rating-summary reveal">
       <div class="score">4,9</div>
       <div><div class="stars">★★★★★</div><div style="color:var(--on-dark-dim);font-size:14px;margin-top:4px" data-i18n="rv.summary">Note moyenne · avis vérifiés</div></div>
-      <div style="margin-inline-start:auto;display:flex;align-items:center;gap:8px;font-size:14px;color:var(--on-dark-dim)"><i data-lucide="badge-check" style="width:18px;height:18px;color:var(--orange-400)"></i>480+ · Google</div>
+      <div style="margin-inline-start:auto;display:flex;align-items:center;gap:8px;font-size:14px;color:var(--on-dark-dim)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check" aria-hidden="true" style="width:18px;height:18px;color:var(--orange-400)"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>480+ · Google</div>
     </div>
     <div class="tst-grid">
       <div class="tst-card reveal"><div class="stars">★★★★★</div><blockquote data-i18n="rv.1.q">Tombé en panne sur la rocade à minuit…</blockquote><div class="tst-who"><div class="tst-av">K</div><div><b data-i18n="rv.1.n">Karim E.</b><span data-i18n="rv.1.r">Rocade de Tanger</span></div></div></div>
@@ -225,14 +224,14 @@
       <h2 style="margin-top:14px;font-size:clamp(26px,3.6vw,38px)" data-i18n="zn.title">Partout à Tanger et sur les grands axes.</h2>
       <p class="lead" style="margin-top:16px;color:var(--slate-500)" data-i18n="zn.lead">En ville comme sur l'autoroute, une dépanneuse Melloussa intervient rapidement près de vous.</p>
       <div class="zone-pins">
-        <a href="/depannage-medina-kasbah-tanger/" class="zone-pin"><i data-lucide="landmark"></i><span data-i18n="zn.mk">Médina &amp; Kasbah</span></a>
+        <a href="/depannage-medina-kasbah-tanger/" class="zone-pin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-landmark" aria-hidden="true"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg><span data-i18n="zn.mk">Médina &amp; Kasbah</span></a>
         <a href="/depannage-cap-spartel-grottes-hercule/" class="zone-pin"><i data-lucide="lighthouse"></i><span data-i18n="zn.cs">Cap Spartel</span></a>
-        <a href="/depannage-centreville-tanger/" class="zone-pin"><i data-lucide="building-2"></i><span data-i18n="zn.cv">Centre ville</span></a>
-        <a href="/district/" class="zone-pin"><i data-lucide="map-pin"></i><span data-i18n="zn.mal">Malabata</span></a>
-        <a href="/depannage-corniche-iberia-tanger/" class="zone-pin"><i data-lucide="waves"></i><span data-i18n="zn.ci">Corniche &amp; Iberia</span></a>
-        <a href="/depannage-tanger-med-zone-franche/" class="zone-pin"><i data-lucide="anchor"></i><span data-i18n="zn.tm">Tanger Med</span></a>
-        <a href="/depannage-aeroport-ibn-battouta-boukhalef-tanger/" class="zone-pin"><i data-lucide="plane"></i><span data-i18n="zn.ap">Aéroport Ibn Battouta</span></a>
-        <a href="/contact/" class="zone-pin" style="border-style:dashed;color:var(--orange-700)"><span data-i18n="zn.cta">Votre secteur</span><i data-lucide="arrow-right"></i></a>
+        <a href="/depannage-centreville-tanger/" class="zone-pin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building-2" aria-hidden="true"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg><span data-i18n="zn.cv">Centre ville</span></a>
+        <a href="/district/" class="zone-pin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="zn.mal">Malabata</span></a>
+        <a href="/depannage-corniche-iberia-tanger/" class="zone-pin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-waves" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg><span data-i18n="zn.ci">Corniche &amp; Iberia</span></a>
+        <a href="/depannage-tanger-med-zone-franche/" class="zone-pin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-anchor" aria-hidden="true"><path d="M12 6v16"/><path d="m19 13 2-1a9 9 0 0 1-18 0l2 1"/><path d="M9 11h6"/><circle cx="12" cy="4" r="2"/></svg><span data-i18n="zn.tm">Tanger Med</span></a>
+        <a href="/depannage-aeroport-ibn-battouta-boukhalef-tanger/" class="zone-pin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg><span data-i18n="zn.ap">Aéroport Ibn Battouta</span></a>
+        <a href="/contact/" class="zone-pin" style="border-style:dashed;color:var(--orange-700)"><span data-i18n="zn.cta">Votre secteur</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -254,14 +253,14 @@
 
       <h3 data-i18n="guide.h3.3">Que faire en attendant la dépanneuse&nbsp;?</h3>
       <ul>
-        <li><i data-lucide="check-circle-2"></i><span data-i18n="guide.li1">Mettez-vous en sécurité&nbsp;: allumez les feux de détresse et, si possible, dégagez la chaussée.</span></li>
-        <li><i data-lucide="check-circle-2"></i><span data-i18n="guide.li2">Sur un grand axe, placez le triangle de signalisation et tenez-vous derrière la glissière.</span></li>
-        <li><i data-lucide="check-circle-2"></i><span data-i18n="guide.li3">Repérez un point de repère précis (sortie, kilomètre, commerce) pour accélérer notre arrivée.</span></li>
-        <li><i data-lucide="check-circle-2"></i><span data-i18n="guide.li4">Gardez votre téléphone chargé et restez joignable&nbsp;: nous vous rappelons en approche.</span></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="guide.li1">Mettez-vous en sécurité&nbsp;: allumez les feux de détresse et, si possible, dégagez la chaussée.</span></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="guide.li2">Sur un grand axe, placez le triangle de signalisation et tenez-vous derrière la glissière.</span></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="guide.li3">Repérez un point de repère précis (sortie, kilomètre, commerce) pour accélérer notre arrivée.</span></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="guide.li4">Gardez votre téléphone chargé et restez joignable&nbsp;: nous vous rappelons en approche.</span></li>
       </ul>
 
       <div class="callout">
-        <i data-lucide="languages"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
         <p data-i18n="guide.callout">Nos opérateurs vous répondent en <strong>français, en arabe (darija)</strong> et en <strong>anglais</strong>. Que vous disiez «&nbsp;j'ai besoin d'une dépanneuse&nbsp;», «&nbsp;<span lang="ar" dir="rtl">عندي طوموبيل خاصها الريمورکاج</span>&nbsp;» ou «&nbsp;I need a tow truck&nbsp;», vous serez compris immédiatement.</p>
       </div>
 
@@ -279,14 +278,14 @@
       <h2 data-i18n="faq.title">Tout ce qu'il faut savoir.</h2>
     </div>
     <div class="faq-list reveal">
-      <div class="faq-item open"><button class="faq-q"><span data-i18n="faq.1.q">En combien de temps la dépanneuse arrive ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></button><div class="faq-a"><p data-i18n="faq.1.a">En moyenne sous 30 minutes…</p></div></div>
-      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.2.q">Intervenez-vous la nuit et les jours fériés ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></button><div class="faq-a"><p data-i18n="faq.2.a">Oui, 24h/24 et 7j/7…</p></div></div>
-      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.3.q">Intervenez-vous sur l'autoroute et les grands axes ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></button><div class="faq-a"><p data-i18n="faq.3.a">Oui, en ville comme sur les voies rapides…</p></div></div>
-      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.4.q">Quels véhicules pouvez-vous remorquer ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></button><div class="faq-a"><p data-i18n="faq.4.a">Voitures, 4x4, utilitaires et motos…</p></div></div>
-      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.5.q">Dois-je rester près de mon véhicule ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></button><div class="faq-a"><p data-i18n="faq.5.a">Si vous êtes en sécurité, restez à proximité pour accueillir le dépanneur.</p></div></div>
+      <div class="faq-item open"><button class="faq-q"><span data-i18n="faq.1.q">En combien de temps la dépanneuse arrive ?</span><span class="chev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="faq-a"><p data-i18n="faq.1.a">En moyenne sous 30 minutes…</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.2.q">Intervenez-vous la nuit et les jours fériés ?</span><span class="chev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="faq-a"><p data-i18n="faq.2.a">Oui, 24h/24 et 7j/7…</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.3.q">Intervenez-vous sur l'autoroute et les grands axes ?</span><span class="chev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="faq-a"><p data-i18n="faq.3.a">Oui, en ville comme sur les voies rapides…</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.4.q">Quels véhicules pouvez-vous remorquer ?</span><span class="chev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="faq-a"><p data-i18n="faq.4.a">Voitures, 4x4, utilitaires et motos…</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.5.q">Dois-je rester près de mon véhicule ?</span><span class="chev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="faq-a"><p data-i18n="faq.5.a">Si vous êtes en sécurité, restez à proximité pour accueillir le dépanneur.</p></div></div>
     </div>
     <div class="callout reveal" style="margin-top:28px;max-width:720px;margin-inline:auto">
-      <i data-lucide="message-circle"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
       <div>
         <p><strong data-i18n="faq.darija.t">Vous cherchez en darija ou en français marocain&nbsp;?</strong></p>
         <p style="margin-top:6px;font-size:0.88em;line-height:1.75;color:var(--slate-500)" data-i18n="faq.darija.p">On comprend aussi&nbsp;: <b>depannage tomobil tanger</b> · <b>batri taht lia</b> · <b>sokours auto autoroute Melloussa</b> · <b>grue Tanger Med</b> · <b>mecanicien hdaya</b>. Appelez le <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent">06&nbsp;68&nbsp;19&nbsp;59&nbsp;92</a> — réponse immédiate, 24h/24.</p>
@@ -301,8 +300,8 @@
     <span class="eyebrow" style="color:var(--orange-400);justify-content:center" data-i18n="em.badge">Intervention immédiate</span>
     <h2 style="max-width:640px;margin-top:12px" data-i18n="hero.title">Remorquage &amp; dépannage auto à Tanger, 24h/24.</h2>
     <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:26px">
-      <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-lg"><i data-lucide="phone-call"></i>06 68 19 59 92</a>
-      <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="btn btn-whatsapp btn-lg"><i data-lucide="message-circle"></i>WhatsApp</a>
+      <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>06 68 19 59 92</a>
+      <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="btn btn-whatsapp btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>WhatsApp</a>
     </div>
   </div>
 </section>
@@ -315,9 +314,9 @@
         <a href="/" class="logo"><span class="logo-mark"><span>M</span></span><span class="logo-text"><b style="color:#fff">Melloussa</b><small>Assistance</small></span></a>
         <p data-i18n="ft.tag">Remorquage et dépannage auto de confiance à Tanger. Assistance routière 24h/24 et 7j/7.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Site web"><i data-lucide="globe"></i></a>
-          <a href="#" aria-label="Instagram"><i data-lucide="camera"></i></a>
-          <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+          <a href="#" aria-label="Site web"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera" aria-hidden="true"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></svg></a>
+          <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg></a>
         </div>
       </div>
       <div class="footer-col"><h4 data-i18n="ft.services">Services</h4><ul>
@@ -336,8 +335,8 @@
         <li><a href="/depannage-corniche-iberia-tanger/" data-i18n="zn.ci">Corniche &amp; Iberia</a></li>
       </ul></div>
       <div class="footer-col"><h4 data-i18n="ft.cta">Urgence 24/7</h4>
-        <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-block" style="margin-bottom:12px"><i data-lucide="phone"></i>06 68 19 59 92</a>
-        <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="btn btn-whatsapp btn-block"><i data-lucide="message-circle"></i>WhatsApp</a>
+        <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="btn btn-primary btn-block" style="margin-bottom:12px"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>06 68 19 59 92</a>
+        <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="btn btn-whatsapp btn-block"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>WhatsApp</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -349,9 +348,9 @@
 
 <!-- APP DOCK -->
 <nav class="app-dock" aria-label="Actions rapides">
-  <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="dock-side wa"><i data-lucide="message-circle"></i><span data-i18n="dock.wa">WhatsApp</span></a>
-  <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="dock-call"><i data-lucide="phone-call"></i><span data-i18n="dock.call">Appeler</span></a>
-  <a href="/emergency/" class="dock-side"><i data-lucide="siren"></i><span data-i18n="dock.express">Urgence</span></a>
+  <a href="https://wa.me/212668195992" data-umami-event="Clic WhatsApp Urgent" class="dock-side wa"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg><span data-i18n="dock.wa">WhatsApp</span></a>
+  <a href="tel:+212668195992" data-umami-event="Clic Appel Urgent" class="dock-call"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><span data-i18n="dock.call">Appeler</span></a>
+  <a href="/emergency/" class="dock-side"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-siren" aria-hidden="true"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/><path d="M21 12h1"/><path d="M18.5 4.5 18 5"/><path d="M2 12h1"/><path d="M12 2v1"/><path d="m4.929 4.929.707.707"/><path d="M12 12v6"/></svg><span data-i18n="dock.express">Urgence</span></a>
 </nav>
 
 
