@@ -1244,3 +1244,19 @@ button,[role="button"]{
   .dot-live{animation:pulse 2.4s infinite;}
 }
 
+/* =================================================================
+   RENDERING PERF — content-visibility (below-the-fold sections only)
+   The browser skips layout + paint for these off-screen sections until they
+   approach the viewport, cutting initial main-thread rendering work (helps
+   Speed Index / TBT) on the long homepage. `contain-intrinsic-size: auto <h>`
+   reserves a placeholder height so the scrollbar stays stable; after the first
+   render the browser remembers each section's real size (zero CLS thereafter).
+   Targets are STRICTLY below the fold and are NOT in-page anchor targets
+   (#services / #how / #zones / #reviews stay fully eager, so smooth-scroll
+   offsets are untouched). Browsers without support (older Safari) ignore the
+   property and render normally — purely additive, no visual change.
+   ================================================================= */
+#guide{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
+#faq{content-visibility:auto;contain-intrinsic-size:auto 900px;}
+.site-footer{content-visibility:auto;contain-intrinsic-size:auto 720px;}
+
