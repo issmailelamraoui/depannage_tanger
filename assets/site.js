@@ -11,6 +11,7 @@ const I18N = {
     "nav.services":"Services","nav.how":"Comment ça marche","nav.zones":"Zones","nav.reviews":"Avis","nav.contact":"Contact","nav.home":"Accueil",
     "cs.veh":"Véhicule","cs.incident":"Incident","cs.time":"Temps réel","cs.result":"Résultat","cs.verified":"Intervention vérifiée",
     "zn.cv":"Centre ville","zn.ci":"Corniche & Iberia","zn.mk":"Médina & Kasbah","zn.cs":"Cap Spartel","zn.tm":"Tanger Med","zn.ap":"Aéroport","zn.mal":"Malabata",
+    "zn.gz":"Gzenaya","zn.mgh":"Mghogha","zn.bm":"Beni Makada","zn.mar":"Marshan","zn.dra":"Dradeb","zn.mes":"Mesnana","zn.bra":"Branes","zn.ach":"Achakar","zn.cal":"California & La Montagne","zn.rr":"Route de Rabat","zn.rt":"Route de Tétouan",
     "dock.call":"Appeler","dock.wa":"WhatsApp","dock.express":"Urgence",
     "cta.truck":"Appeler une dépanneuse","cta.wa":"WhatsApp","cta.express":"Demande express",
 
@@ -75,7 +76,7 @@ const I18N = {
 
     /* Emergency page */
     "em.badge":"Intervention immédiate","em.title":"Demander une dépanneuse","em.sub":"Le plus rapide&nbsp;: appelez. Sinon, envoyez votre demande en 3 touches.",
-    "em.callnow":"Appeler maintenant · 06 68 19 59 92","em.or":"ou envoyez votre demande",
+    "em.callnow":"Appeler maintenant · 06 68 19 59 92","em.callnow.s":"Appeler maintenant","em.or":"ou envoyez votre demande",
     "em.q1":"1 · Quel est le problème&nbsp;?","em.q2":"2 · Où êtes-vous&nbsp;?","em.q3":"3 · Votre numéro",
     "em.locate":"Utiliser ma position","em.loc.ph":"Adresse, route ou point de repère","em.phone.ph":"Votre numéro de téléphone",
     "em.veh":"Type de véhicule","em.send":"Envoyer sur WhatsApp","em.note":"Réponse immédiate · la dépanneuse la plus proche est envoyée",
@@ -93,6 +94,7 @@ const I18N = {
     "nav.services":"الخدمات","nav.how":"كيف نعمل","nav.zones":"المناطق","nav.reviews":"الآراء","nav.contact":"اتصل بنا","nav.home":"الرئيسية",
     "cs.veh":"المركبة","cs.incident":"العطل","cs.time":"الوقت الفعلي","cs.result":"النتيجة","cs.verified":"تدخّل موثَّق",
     "zn.cv":"وسط المدينة","zn.ci":"الكورنيش وإيبيريا","zn.mk":"المدينة العتيقة والقصبة","zn.cs":"رأس سبارطيل","zn.tm":"طنجة المتوسط","zn.ap":"المطار","zn.mal":"مالاباطا",
+    "zn.gz":"كزناية","zn.mgh":"مغوغة","zn.bm":"بني مكادة","zn.mar":"مرشان","zn.dra":"درادب","zn.mes":"مسنانة","zn.bra":"برانص","zn.ach":"أشقار","zn.cal":"كاليفورنيا والجبل","zn.rr":"طريق الرباط","zn.rt":"طريق تطوان",
     "dock.call":"اتصل","dock.wa":"واتساب","dock.express":"طوارئ",
     "cta.truck":"اتصل بشاحنة السحب","cta.wa":"واتساب","cta.express":"طلب سريع",
 
@@ -156,7 +158,7 @@ const I18N = {
     "ft.services":"الخدمات","ft.zones":"المناطق","ft.cta":"طوارئ 24/7","ft.rights":"جميع الحقوق محفوظة.","ft.legal":"إشعارات قانونية","ft.privacy":"الخصوصية",
 
     "em.badge":"تدخّل فوري","em.title":"اطلب شاحنة سحب","em.sub":"الأسرع: اتصلوا. أو أرسلوا طلبكم في 3 لمسات.",
-    "em.callnow":"اتصل الآن · 06 68 19 59 92","em.or":"أو أرسلوا طلبكم",
+    "em.callnow":"اتصل الآن · 06 68 19 59 92","em.callnow.s":"اتصل الآن","em.or":"أو أرسلوا طلبكم",
     "em.q1":"1 · ما المشكلة؟","em.q2":"2 · أين أنتم؟","em.q3":"3 · رقمكم",
     "em.locate":"استخدام موقعي","em.loc.ph":"العنوان، الطريق أو علامة مميّزة","em.phone.ph":"رقم هاتفكم",
     "em.veh":"نوع المركبة","em.send":"أرسل عبر واتساب","em.note":"ردّ فوري · تُرسَل أقرب شاحنة سحب",
@@ -173,6 +175,7 @@ const I18N = {
     "nav.services":"Services","nav.how":"How it works","nav.zones":"Areas","nav.reviews":"Reviews","nav.contact":"Contact","nav.home":"Home",
     "cs.veh":"Vehicle","cs.incident":"Incident","cs.time":"Actual time","cs.result":"Result","cs.verified":"Verified intervention",
     "zn.cv":"City centre","zn.ci":"Corniche & Iberia","zn.mk":"Medina & Kasbah","zn.cs":"Cap Spartel","zn.tm":"Tanger Med","zn.ap":"Airport","zn.mal":"Malabata",
+    "zn.gz":"Gzenaya","zn.mgh":"Mghogha","zn.bm":"Beni Makada","zn.mar":"Marshan","zn.dra":"Dradeb","zn.mes":"Mesnana","zn.bra":"Branes","zn.ach":"Achakar","zn.cal":"California & La Montagne","zn.rr":"Rabat road","zn.rt":"Tetouan road",
     "dock.call":"Call","dock.wa":"WhatsApp","dock.express":"Emergency",
     "cta.truck":"Call a tow truck","cta.wa":"WhatsApp","cta.express":"Express request",
 
@@ -236,7 +239,7 @@ const I18N = {
     "ft.services":"Services","ft.zones":"Areas","ft.cta":"24/7 emergency","ft.rights":"All rights reserved.","ft.legal":"Legal notice","ft.privacy":"Privacy",
 
     "em.badge":"Immediate response","em.title":"Request a tow truck","em.sub":"Fastest: call us. Otherwise, send your request in 3 taps.",
-    "em.callnow":"Call now · 06 68 19 59 92","em.or":"or send your request",
+    "em.callnow":"Call now · 06 68 19 59 92","em.callnow.s":"Call now","em.or":"or send your request",
     "em.q1":"1 · What's the problem?","em.q2":"2 · Where are you?","em.q3":"3 · Your number",
     "em.locate":"Use my location","em.loc.ph":"Address, road or landmark","em.phone.ph":"Your phone number",
     "em.veh":"Vehicle type","em.send":"Send on WhatsApp","em.note":"Immediate response · the closest tow truck is dispatched",
